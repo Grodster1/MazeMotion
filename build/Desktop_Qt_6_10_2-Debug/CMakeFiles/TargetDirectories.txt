@@ -1,0 +1,9 @@
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/MazeMotion.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/edit_cache.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/rebuild_cache.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/list_install_components.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/install.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/install/local.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/install/strip.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/MazeMotion_autogen_timestamp_deps.dir
+/home/wiktor/Desktop/WDS/MazeMotion/build/Desktop_Qt_6_10_2-Debug/CMakeFiles/MazeMotion_autogen.dir
