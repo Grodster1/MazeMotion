@@ -11,6 +11,7 @@ qt_add_executable(MazeMotion
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    gamewidget.h gamewidget.cpp
 )
 
 target_link_libraries(MazeMotion

@@ -1,0 +1,34 @@
+#ifndef GAMEWIDGET_H
+#define GAMEWIDGET_H
+
+#include <QWidget>
+#include <QKeyEvent>
+#include <QPainter>
+#include <QTimer>
+
+
+class GameWidget : public QWidget
+{
+    Q_OBJECT
+    double ballX = 0.5;
+    double ballY = 0.5;
+
+    QTimer *timer;
+    bool goLeft = false;
+    bool goRight = false;
+    bool goUp = false;
+    bool goDown = false;
+
+public:
+    explicit GameWidget(QWidget *parent = nullptr);
+    void paintEvent(QPaintEvent *event) override;
+    void updatePos();
+
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
+
+signals:
+};
+
+#endif // GAMEWIDGET_H
