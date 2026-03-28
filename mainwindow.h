@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "gamewidget.h"
+#include "sensorreader.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -13,6 +15,9 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    GameWidget *gameWidget;
+    SensorReader *sensorReader;
+
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

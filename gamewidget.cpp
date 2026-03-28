@@ -115,3 +115,10 @@ void GameWidget::keyReleaseEvent(QKeyEvent *event){
         break;
     }
 }
+
+void GameWidget::onSensorData(float ax, float ay, float az, float gx, float gy, float gz){
+    qDebug() << "ax:" << ax << "ay:" << ay << "az:" << az;
+    accX = ax * scaleFactor;
+    accY = -ay * scaleFactor;
+
+}

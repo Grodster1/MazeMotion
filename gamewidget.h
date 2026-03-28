@@ -13,6 +13,8 @@ class GameWidget : public QWidget
     double ballX = 0.5;
     double ballY = 0.5;
 
+    double scaleFactor = 0.001;
+
     QTimer *timer;
 
     //Implementacja przyśpieszenia
@@ -38,6 +40,9 @@ public:
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
+
+public slots:
+    void onSensorData(float ax, float ay, float az, float gx, float gy, float gz);
 
 signals:
 };

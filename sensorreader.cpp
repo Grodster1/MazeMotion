@@ -52,3 +52,5 @@ void SensorReader::onReadyRead(){
 }
 
 
+
+
