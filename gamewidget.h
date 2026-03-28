@@ -14,6 +14,17 @@ class GameWidget : public QWidget
     double ballY = 0.5;
 
     QTimer *timer;
+
+    //Implementacja przyśpieszenia
+    double velX = 0.0;
+    double velY = 0.0;
+    double accX = 0.0;
+    double accY = 0.0;
+
+    const double friction = 0.02;
+    const double accelStep = 0.0005;
+
+
     bool goLeft = false;
     bool goRight = false;
     bool goUp = false;

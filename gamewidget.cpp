@@ -14,6 +14,7 @@ void GameWidget::paintEvent(QPaintEvent *event){
     double boardSize = qMin(height(), width()) * 0.9;
     double offsetX = (width() - boardSize) / 2.0;
     double offsetY = (height() - boardSize) / 2.0;
+
     painter.setBrush(QColor::fromRgb(196, 195, 169));
     painter.drawRect(offsetX, offsetY, boardSize, boardSize);
 
@@ -27,13 +28,25 @@ void GameWidget::paintEvent(QPaintEvent *event){
 }
 
 void GameWidget::updatePos(){
-    if(goLeft)  ballX -= 0.005;
-    if(goRight) ballX += 0.005;
-    if(goUp)    ballY -= 0.005;
-    if(goDown)  ballY += 0.005;
+    // if(goLeft)  ballX -= 0.005;
+    // if(goRight) ballX += 0.005;
+    // if(goUp)    ballY -= 0.005;
+    // if(goDown)  ballY += 0.005;
+    velX += accX;
+    velY += accY;
+    velX *= (1.0 - friction);
+    velY *= (1.0 - friction);
+    ballX += velX;
+    ballY += velY;
 
-    ballX = qBound(0.0, ballX, 1.0);
-    ballY = qBound(0.0, ballY, 1.0);
+    if(ballX < 0.0){ballX = 0.0; velX = 0.0;}
+    if(ballX > 1.0){ballX = 1.0; velX = 0.0;}
+    if(ballY < 0.0){ballY = 0.0; velY = 0.0;}
+    if(ballY > 1.0){ballY = 1.0; velY = 0.0;}
+
+
+    // ballX = qBound(0.0, ballX, 1.0);
+    // ballY = qBound(0.0, ballY, 1.0);
 
     update();
 }
@@ -48,21 +61,25 @@ void GameWidget::keyPressEvent(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_Up:
         goUp=true;
+        accY -= accelStep;
         event->accept();
         qDebug() << "Przycisk up wciśnięty";
         break;
     case Qt::Key_Down:
         goDown=true;
+        accY += accelStep;
         event->accept();
         qDebug() << "Przycisk down wciśnięty";
         break;
     case Qt::Key_Left:
         goLeft=true;
+        accX -= accelStep;
         event->accept();
         qDebug() << "Przycisk left wciśnięty";
         break;
     case Qt::Key_Right:
         goRight=true;
+        accX += accelStep;
         event->accept();
         qDebug() << "Przycisk right wciśnięty";
         break;
@@ -78,18 +95,22 @@ void GameWidget::keyReleaseEvent(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_Up:
         goUp=false;
+        accY = 0.0;
         qDebug() << "Przycisk up odkliknięty";
         break;
     case Qt::Key_Down:
         goDown=false;
+        accY = 0.0;
         qDebug() << "Przycisk down odkliknięty";
         break;
     case Qt::Key_Left:
         goLeft=false;
+        accX = 0.0;
         qDebug() << "Przycisk left odkliknięty";
         break;
     case Qt::Key_Right:
         goRight=false;
+        accX = 0.0;
         qDebug() << "Przycisk right odkliknięty";
         break;
     }
