@@ -1,0 +1,69 @@
+\doxysection{Dokumentacja klasy Game\+Widget}
+\hypertarget{classGameWidget}{}\label{classGameWidget}\index{GameWidget@{GameWidget}}
+
+
+Widget odpowiedzialny za renderowanie planszy i kuli.  
+
+
+
+
+{\ttfamily \#include $<$gamewidget.\+h$>$}
+
+
+
+Diagram dziedziczenia dla Game\+Widget
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classGameWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Game\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classGameWidget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sloty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c}\label{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c} 
+void {\bfseries on\+Sensor\+Data} (float ax, float ay, float az, float gx, float gy, float gz)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGameWidget_a2a749d7f4d54e75f921d9ed980971633}\label{classGameWidget_a2a749d7f4d54e75f921d9ed980971633} 
+{\bfseries Game\+Widget} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
+void {\bfseries paint\+Event} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+\Hypertarget{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}\label{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2} 
+void {\bfseries update\+Pos} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
+void {\bfseries key\+Press\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+\Hypertarget{classGameWidget_a834496522f3fb964cfa0c87c17be3558}\label{classGameWidget_a834496522f3fb964cfa0c87c17be3558} 
+void {\bfseries key\+Release\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Widget odpowiedzialny za renderowanie planszy i kuli. 
+
+Obsługuję rysowanie sceny gdy, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/gamewidget.\+h\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/gamewidget.\+cpp\end{DoxyCompactItemize}

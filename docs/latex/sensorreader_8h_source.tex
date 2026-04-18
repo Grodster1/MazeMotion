@@ -1,0 +1,30 @@
+\doxysection{sensorreader.\+h}
+\hypertarget{sensorreader_8h_source}{}\label{sensorreader_8h_source}\index{/home/wiktor/Desktop/WDS/MazeMotion/src/sensorreader.h@{/home/wiktor/Desktop/WDS/MazeMotion/src/sensorreader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SENSORREADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SENSORREADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSensorReader}{SensorReader}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ \ \ \ \ QSerialPort\ *serialPort;\ }
+\DoxyCodeLine{00020\ \ \ \ \ QByteArray\ buffer;\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSensorReader}{SensorReader}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a8847ed9d1c9147fe0c2f50ded87b2fd8}{open}}(\textcolor{keyword}{const}\ QString\ \&portName);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ signals:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}{dataReceived}}(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az,\ \textcolor{keywordtype}{float}\ gx,\ \textcolor{keywordtype}{float}\ gy,\ \textcolor{keywordtype}{float}\ gz);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SENSORREADER\_H}}
+
+\end{DoxyCode}

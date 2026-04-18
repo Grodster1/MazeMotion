@@ -1,0 +1,98 @@
+\doxysection{Dokumentacja klasy Sensor\+Reader}
+\hypertarget{classSensorReader}{}\label{classSensorReader}\index{SensorReader@{SensorReader}}
+
+
+Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy.  
+
+
+
+
+{\ttfamily \#include $<$sensorreader.\+h$>$}
+
+
+
+Diagram dziedziczenia dla Sensor\+Reader
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classSensorReader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Sensor\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classSensorReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}{data\+Received}} (float ax, float ay, float az, float gx, float gy, float gz)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSensorReader_a15f06ed449d5a2606797e6fa2f8882e6}\label{classSensorReader_a15f06ed449d5a2606797e6fa2f8882e6} 
+{\bfseries Sensor\+Reader} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{classSensorReader_a8847ed9d1c9147fe0c2f50ded87b2fd8}{open}} (const QString \&port\+Name)
+\begin{DoxyCompactList}\small\item\em Otwiera port szeregowy o danej nazwie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy. 
+
+Odbiera dane z IMU (akcelerometr i żyroskop) przesyłane w formacie CSV\+: ax, ay, az, gx, gy, gz. Realizuje buforowanie przychodzących bajtów, arsowanie ramek danych oraz emisję sygnału \doxylink{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}{data\+Received()} z odczytanymi wiadomościami. 
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}\label{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e} 
+\index{SensorReader@{SensorReader}!dataReceived@{dataReceived}}
+\index{dataReceived@{dataReceived}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{dataReceived}{dataReceived}}
+{\footnotesize\ttfamily void Sensor\+Reader\+::data\+Received (\begin{DoxyParamCaption}\item[{float}]{ax,  }\item[{float}]{ay,  }\item[{float}]{az,  }\item[{float}]{gx,  }\item[{float}]{gy,  }\item[{float}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em ax} & Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
+\hline
+{\em ay} & Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
+\hline
+{\em az} & Przyspieszenie liniowe w osi Z \mbox{[}g\mbox{]} \\
+\hline
+{\em gx} & Prędkość kątowa w osi X \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gy} & Prędkość kątowa w osi Y \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gz} & Prędkość kątowa w osi Z \mbox{[}°/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSensorReader_a8847ed9d1c9147fe0c2f50ded87b2fd8}\label{classSensorReader_a8847ed9d1c9147fe0c2f50ded87b2fd8} 
+\index{SensorReader@{SensorReader}!open@{open}}
+\index{open@{open}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Sensor\+Reader\+::open (\begin{DoxyParamCaption}\item[{const QString \&}]{port\+Name }\end{DoxyParamCaption})}
+
+
+
+Otwiera port szeregowy o danej nazwie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em port\+Name} & nazwa portu (np. /dev/tty\+ACM0) \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/sensorreader.\+h\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/sensorreader.\+cpp\end{DoxyCompactItemize}
