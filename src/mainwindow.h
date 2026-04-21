@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "gamewidget.h"
 #include "sensorreader.h"
+#include "chartpanel.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     GameWidget *gameWidget;
     SensorReader *sensorReader;
+    ChartPanel *chartPanel;
 
 
 public:

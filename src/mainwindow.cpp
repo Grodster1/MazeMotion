@@ -16,16 +16,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QSplitter *splitter = new QSplitter(Qt::Horizontal);
 
-    QLabel *chartsLabel = new QLabel("Charts");
-    chartsLabel->setAlignment(Qt::AlignCenter);
+    //QLabel *chartsLabel = new QLabel("Charts");
+    chartPanel = new ChartPanel(this);
+    //chartsLabel->setAlignment(Qt::AlignCenter);
 
     splitter->addWidget(gameWidget);
-    splitter->addWidget(chartsLabel);
+    splitter->addWidget(chartPanel);
 
     QHBoxLayout *layout = new QHBoxLayout(central);
     layout->addWidget(splitter);
 
     connect(sensorReader, &SensorReader::dataReceived, gameWidget, &GameWidget::onSensorData);
+    connect(sensorReader, &SensorReader::dataReceived, chartPanel, &ChartPanel::onSensorData);
     sensorReader->open("/dev/ttyACM0");
 }
 
