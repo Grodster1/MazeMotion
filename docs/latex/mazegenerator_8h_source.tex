@@ -1,0 +1,35 @@
+\doxysection{mazegenerator.\+h}
+\hypertarget{mazegenerator_8h_source}{}\label{mazegenerator_8h_source}\index{/home/wiktor/Desktop/WDS/MazeMotion/src/mazegenerator.h@{/home/wiktor/Desktop/WDS/MazeMotion/src/mazegenerator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAZEGENERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAZEGENERATOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCell}{Cell}}\{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{bool}\ topW\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{bool}\ botW\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ leftW\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ rightW\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ visited\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMazeGenerator}{MazeGenerator}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ QVector<QVector<Cell>>\ grid;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ rows,\ cols;}
+\DoxyCodeLine{00020\ \ \ \ \ std::mt19937\ rng;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classMazeGenerator}{MazeGenerator}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ generate(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ makePath(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col);}
+\DoxyCodeLine{00026\ \ \ \ \ QVector<QRectF>\ getWalls();}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAZEGENERATOR\_H}}
+
+\end{DoxyCode}

@@ -11,8 +11,7 @@ Widget odpowiedzialny za renderowanie planszy i kuli.
 
 
 
-Diagram dziedziczenia dla Game\+Widget
-\nopagebreak
+Diagram dziedziczenia dla Game\+Widget\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Diagram dziedziczenia dla Game\+Widget
 \end{figure}
 
 
-Diagram współpracy dla Game\+Widget\+:
-\nopagebreak
+Diagram współpracy dla Game\+Widget\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,27 +39,87 @@ void {\bfseries on\+Sensor\+Data} (float ax, float ay, float az, float gx, float
 \Hypertarget{classGameWidget_a2a749d7f4d54e75f921d9ed980971633}\label{classGameWidget_a2a749d7f4d54e75f921d9ed980971633} 
 {\bfseries Game\+Widget} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
 \item 
-\Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
-void {\bfseries paint\+Event} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
-\Hypertarget{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}\label{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2} 
-void {\bfseries update\+Pos} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Rysuje scenę gry — planszę, ściany labiryntu i kulkę. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}{update\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje pozycję kulki na planszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
-void {\bfseries key\+Press\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
-\Hypertarget{classGameWidget_a834496522f3fb964cfa0c87c17be3558}\label{classGameWidget_a834496522f3fb964cfa0c87c17be3558} 
-void {\bfseries key\+Release\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGameWidget_a350024625893bd439fe761c4df0e7c6f}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje naciśnięcie klawisza strzałki. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{key\+Release\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zwolnienie klawisza strzałki. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegółowy}
 Widget odpowiedzialny za renderowanie planszy i kuli. 
 
 Obsługuję rysowanie sceny gdy, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU 
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
+\index{GameWidget@{GameWidget}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje naciśnięcie klawisza strzałki. 
+
+Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-\/repeat systemu operacyjnego.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie klawiatury \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameWidget_a834496522f3fb964cfa0c87c17be3558}\label{classGameWidget_a834496522f3fb964cfa0c87c17be3558} 
+\index{GameWidget@{GameWidget}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zwolnienie klawisza strzałki. 
+
+Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-\/repeat systemu operacyjnego.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie klawiatury \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
+\index{GameWidget@{GameWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Rysuje scenę gry — planszę, ściany labiryntu i kulkę. 
+
+Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza rysowana jest jako kwadrat wycentrowany w widgecie, a wszystkie elementy skalują się proporcjonalnie do rozmiaru okna.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie rysowania (nieużywane bezpośrednio) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}\label{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2} 
+\index{GameWidget@{GameWidget}!updatePos@{updatePos}}
+\index{updatePos@{updatePos}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{updatePos()}{updatePos()}}
+{\footnotesize\ttfamily void Game\+Widget\+::update\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aktualizuje pozycję kulki na planszy. 
+
+Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, ogranicza pozycję do granic planszy i wywołuje update() w celu przerysowania widgetu. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sensorreader_0',['SensorReader',['../classSensorReader.html',1,'']]]
+  ['mainwindow_0',['MainWindow',['../classMainWindow.html',1,'']]],
+  ['mazegenerator_1',['MazeGenerator',['../classMazeGenerator.html',1,'']]]
 ];

@@ -114,26 +114,152 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a2a749d7f4d54e75f921d9ed980971633" id="r_a2a749d7f4d54e75f921d9ed980971633"><td class="memItemLeft" align="right" valign="top"><a id="a2a749d7f4d54e75f921d9ed980971633" name="a2a749d7f4d54e75f921d9ed980971633"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>GameWidget</b> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a2a749d7f4d54e75f921d9ed980971633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top"><a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>paintEvent</b> (QPaintEvent *event) override</td></tr>
+<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">paintEvent</a> (QPaintEvent *event) override</td></tr>
+<tr class="memdesc:a3f30642bf770cf31856999d2f713cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje scenę gry — planszę, ściany labiryntu i kulkę.  <br /></td></tr>
 <tr class="separator:a3f30642bf770cf31856999d2f713cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1cdaf4afeea032a52303a3c71cdeda2" id="r_aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memItemLeft" align="right" valign="top"><a id="aa1cdaf4afeea032a52303a3c71cdeda2" name="aa1cdaf4afeea032a52303a3c71cdeda2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updatePos</b> ()</td></tr>
+<tr class="memitem:aa1cdaf4afeea032a52303a3c71cdeda2" id="r_aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">updatePos</a> ()</td></tr>
+<tr class="memdesc:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje pozycję kulki na planszy.  <br /></td></tr>
 <tr class="separator:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Metody chronione</h2></td></tr>
-<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top"><a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressEvent</b> (QKeyEvent *event) override</td></tr>
+<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a350024625893bd439fe761c4df0e7c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje naciśnięcie klawisza strzałki.  <br /></td></tr>
 <tr class="separator:a350024625893bd439fe761c4df0e7c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top"><a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>keyReleaseEvent</b> (QKeyEvent *event) override</td></tr>
+<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">keyReleaseEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a834496522f3fb964cfa0c87c17be3558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zwolnienie klawisza strzałki.  <br /></td></tr>
 <tr class="separator:a834496522f3fb964cfa0c87c17be3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Widget odpowiedzialny za renderowanie planszy i kuli. </p>
 <p>Obsługuję rysowanie sceny gdy, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU </p>
-</div><hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350024625893bd439fe761c4df0e7c6f">&#9670;&#160;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje naciśnięcie klawisza strzałki. </p>
+<p>Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834496522f3fb964cfa0c87c17be3558">&#9670;&#160;</a></span>keyReleaseEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zwolnienie klawisza strzałki. </p>
+<p>Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f30642bf770cf31856999d2f713cf50">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rysuje scenę gry — planszę, ściany labiryntu i kulkę. </p>
+<p>Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza rysowana jest jako kwadrat wycentrowany w widgecie, a wszystkie elementy skalują się proporcjonalnie do rozmiaru okna.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie rysowania (nieużywane bezpośrednio) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1cdaf4afeea032a52303a3c71cdeda2" name="aa1cdaf4afeea032a52303a3c71cdeda2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cdaf4afeea032a52303a3c71cdeda2">&#9670;&#160;</a></span>updatePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::updatePos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aktualizuje pozycję kulki na planszy. </p>
+<p>Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, ogranicza pozycję do granic planszy i wywołuje update() w celu przerysowania widgetu. </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<a class="el" href="gamewidget_8h_source.html">gamewidget.h</a></li>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<b>gamewidget.cpp</b></li>
 </ul>

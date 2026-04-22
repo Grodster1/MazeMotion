@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gamewidget_0',['GameWidget',['../classGameWidget.html',1,'']]]
+  ['cell_0',['Cell',['../structCell.html',1,'']]],
+  ['chartpanel_1',['ChartPanel',['../classChartPanel.html',1,'']]]
 ];
