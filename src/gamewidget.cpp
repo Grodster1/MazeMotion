@@ -1,9 +1,13 @@
 #include "gamewidget.h"
 
 
-GameWidget::GameWidget(QWidget *parent) : QWidget{parent}{
+GameWidget::GameWidget(int r, int c, QWidget *parent) : rows(r), cols(c), QWidget{parent}{
     this->setFocusPolicy(Qt::StrongFocus); //potrzebne do obsługi klawiatury
     timer = new QTimer(this);
+    generator = new MazeGenerator();
+    generator->generate(rows, cols);
+    walls = generator->getWalls();
+
     connect(timer, &QTimer::timeout, this, &GameWidget::updatePos);
     timer->start(16);
 }
@@ -25,13 +29,20 @@ void GameWidget::paintEvent(QPaintEvent *event){
     painter.setBrush(QColor::fromRgb(0,0,0));
     painter.drawEllipse(QPointF(posX, posY), radius, radius);
 
+    painter.setBrush(QColor::fromRgb(80, 50, 20));
+    for(const QRectF &wall : walls) {
+        QRectF screenWall(
+            offsetX + wall.x() * boardSize,
+            offsetY + wall.y() * boardSize,
+            wall.width() * boardSize,
+            wall.height() * boardSize
+            );
+        painter.drawRect(screenWall);
+    }
+
 }
 
 void GameWidget::updatePos(){
-    // if(goLeft)  ballX -= 0.005;
-    // if(goRight) ballX += 0.005;
-    // if(goUp)    ballY -= 0.005;
-    // if(goDown)  ballY += 0.005;
     velX += accX;
     velY += accY;
     velX *= (1.0 - friction);

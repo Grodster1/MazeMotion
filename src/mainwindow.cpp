@@ -8,7 +8,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     //ui->setupUi(this);
-    gameWidget = new GameWidget(this);
+    gameWidget = new GameWidget(10, 10, this);
     sensorReader = new SensorReader(this);
 
     QWidget *central = new QWidget(this);

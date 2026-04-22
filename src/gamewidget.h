@@ -5,6 +5,7 @@
 #include <QKeyEvent>
 #include <QPainter>
 #include <QTimer>
+#include "mazegenerator.h"
 
 
 
@@ -32,7 +33,12 @@ class GameWidget : public QWidget
 
     const double friction = 0.02; ///< Wartość tarcia
     const double accelStep = 0.0005;
+    MazeGenerator *generator;
 
+    QVector<QRectF> walls;
+
+    int rows;
+    int cols;
 
     bool goLeft = false;
     bool goRight = false;
@@ -40,8 +46,7 @@ class GameWidget : public QWidget
     bool goDown = false;
 
 public:
-    explicit GameWidget(QWidget *parent = nullptr);
-
+    explicit GameWidget(int r, int c, QWidget *parent = nullptr);
     /**
      * @brief Rysuje scenę gry — planszę, ściany labiryntu i kulkę.
      *
