@@ -7,6 +7,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    resize(1600, 800);
     //ui->setupUi(this);
     gameWidget = new GameWidget(10, 10, this);
     sensorReader = new SensorReader(this);
@@ -29,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(sensorReader, &SensorReader::dataReceived, gameWidget, &GameWidget::onSensorData);
     connect(sensorReader, &SensorReader::dataReceived, chartPanel, &ChartPanel::onSensorData);
     sensorReader->open("/dev/ttyACM0");
+
+
 }
 
 MainWindow::~MainWindow()

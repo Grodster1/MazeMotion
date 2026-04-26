@@ -48,7 +48,6 @@ QVector<QRectF> MazeGenerator::getWalls(){
     QVector<QRectF> walls;
     double cellW = 1.0 / cols;
     double cellH = 1.0 / rows;
-    double thick = 0.01;
 
     for(int i = 0; i < rows; ++i){
         for(int j = 0; j < cols; ++j){
