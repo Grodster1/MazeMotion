@@ -33,6 +33,29 @@ void SensorReader::onReadyRead(){
         QByteArray byteLine = buffer.left(index);
         buffer.remove(0, index+1);
         QString line = QString::fromUtf8(byteLine).trimmed();
+
+        int starIndex = line.indexOf('*');
+        if(starIndex == -1){
+            index = buffer.indexOf('\n');
+            continue;
+        }
+
+        QString data = line.left(starIndex);
+        QString receivedChecksum = line.mid(starIndex + 1);
+
+        uint8_t checksum = 0;
+        for(int i = 0; i < data.length(); i++){
+            checksum ^= data.at(i).toLatin1();
+        }
+        QString calculatedChecksum = QString("%1").arg(checksum, 2, 16, QChar('0')).toUpper();
+
+        if(calculatedChecksum != receivedChecksum.toUpper()){
+            qDebug() << "Błędna suma kontrolna:" << calculatedChecksum << "!=" << receivedChecksum;
+            index = buffer.indexOf('\n');
+            continue;
+        }
+
+
         QStringList list = line.split(',');
 
         if(list.size() == 6){
