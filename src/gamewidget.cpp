@@ -7,9 +7,8 @@ GameWidget::GameWidget(int r, int c, QWidget *parent) : rows(r), cols(c), QWidge
     generator = new MazeGenerator();
     generator->generate(rows, cols);
     walls = generator->getWalls();
-    double radius = qMin(height(), width()) * 0.02;
-    ballY = 1/rows + radius/rows - generator->getThickness();
-    ballX = 1/cols + radius/cols - generator->getThickness();
+    ballX = 1.0 / (2.0 * cols);
+    ballY = 1.0 / (2.0 * rows);
 
     connect(timer, &QTimer::timeout, this, &GameWidget::updatePos);
     timer->start(16);
@@ -25,7 +24,7 @@ void GameWidget::paintEvent(QPaintEvent *event){
     painter.setBrush(QColor::fromRgb(196, 195, 169));
     painter.drawRect(offsetX, offsetY, boardSize, boardSize);
 
-    double radius = qMin(height(), width()) * 0.02;
+    double radius = ballRadius * boardSize;
     double posX = offsetX + boardSize*ballX;
     double posY = offsetY + boardSize*ballY;
 
@@ -58,10 +57,31 @@ void GameWidget::updatePos(){
     if(ballY < 0.0){ballY = 0.0; velY = 0.0;}
     if(ballY > 1.0){ballY = 1.0; velY = 0.0;}
 
+    for(int i = 0; i < 3; ++i){
 
-    // ballX = qBound(0.0, ballX, 1.0);
-    // ballY = qBound(0.0, ballY, 1.0);
+        for(const QRectF &wall : walls){
+            double closestX = qBound(wall.left(), ballX, wall.right());
+            double closestY = qBound(wall.top(), ballY, wall.bottom());
 
+            double distX = ballX - closestX;
+            double distY = ballY - closestY;
+            double dist = std::sqrt(distX * distX + distY * distY);
+
+            if(dist <= ballRadius && dist > 0){
+                double nx = distX / dist;
+                double ny = distY / dist;
+
+                ballX = closestX + nx * ballRadius;
+                ballY = closestY + ny * ballRadius;
+
+                double dotProduct = velX * nx + velY * ny;
+                if(dotProduct < 0) {
+                    velX -= dotProduct * nx;
+                    velY -= dotProduct * ny;
+                }
+            }
+        }
+    }
     update();
 }
 
