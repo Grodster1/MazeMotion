@@ -7,6 +7,9 @@ GameWidget::GameWidget(int r, int c, QWidget *parent) : rows(r), cols(c), QWidge
     generator = new MazeGenerator();
     generator->generate(rows, cols);
     walls = generator->getWalls();
+    double radius = qMin(height(), width()) * 0.02;
+    ballY = 1/rows + radius/rows - generator->getThickness();
+    ballX = 1/cols + radius/cols - generator->getThickness();
 
     connect(timer, &QTimer::timeout, this, &GameWidget::updatePos);
     timer->start(16);

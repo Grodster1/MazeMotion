@@ -18,8 +18,8 @@
 class GameWidget : public QWidget
 {
     Q_OBJECT
-    double ballX = 0.5; ///< Znormalizowana pozycja kulki w osi X 
-    double ballY = 0.5; ///< Znormalizowana pozycja kulki w osi Y
+    double ballX; ///< Znormalizowana pozycja kulki w osi X
+    double ballY; ///< Znormalizowana pozycja kulki w osi Y
 
     double scaleFactor = 0.001; ///< Współczynnik skalujący dane pochodzące z akcelerometru
 
