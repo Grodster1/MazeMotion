@@ -20,18 +20,19 @@ void loop() {
     IMU.readGyroscope(gx, gy, gz);
     IMU.readAcceleration(ax, ay, az);
 
-    Serial.print(ax);
-    Serial.print(',');
-    Serial.print(ay);
-    Serial.print(',');
-    Serial.print(az);
-    Serial.print(',');
-    Serial.print(gx);
-    Serial.print(',');
-    Serial.print(gy);
-    Serial.print(',');
-    Serial.println(gz);
+    String data = String(ax, 2) + "," + String(ay, 2) + "," + String(az, 2) + ","
+                + String(gx, 2) + "," + String(gy, 2) + "," + String(gz, 2);
 
-    delay(16); //16 ms = 62 fps
+    byte checksum = 0;
+    for (int i = 0; i < data.length(); i++) {
+      checksum ^= data.charAt(i);
+    }
+
+    Serial.print(data);
+    Serial.print('*');
+    if (checksum < 0x10) Serial.print('0');  
+    Serial.println(String(checksum, HEX));
+
+    delay(16);
   }
 }
