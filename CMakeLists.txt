@@ -16,7 +16,10 @@ qt_add_executable(MazeMotion
     src/gamewidget.cpp
     src/sensorreader.h
     src/sensorreader.cpp
-    src/chartpanel.h src/chartpanel.cpp
+    src/chartpanel.h
+    src/chartpanel.cpp
+    src/mazegenerator.cpp
+    src/mazegenerator.h
 )
 
 target_include_directories(MazeMotion PRIVATE src)
