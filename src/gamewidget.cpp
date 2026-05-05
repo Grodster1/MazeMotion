@@ -68,9 +68,38 @@ void GameWidget::paintEvent(QPaintEvent *event){
     painter.setBrush(QColor::fromRgb(0,0,0));
     painter.drawEllipse(QPointF(posX, posY), radius, radius);
 
+    if(gameWon) {
+        painter.setBrush(QColor(0, 0, 0, 150));
+        painter.setPen(Qt::NoPen);
+        painter.drawRect(0, 0, width(), height());
+
+        painter.setPen(QColor(0, 220, 0));
+        QFont font = painter.font();
+        font.setPixelSize(boardSize * 0.08);
+        font.setBold(true);
+        painter.setFont(font);
+        painter.drawText(QRect(0, 0, width(), height()),
+                         Qt::AlignCenter, "Wygrana!");
+    }
+
+}
+
+void GameWidget::resetMaze() {
+    gameWon = false;
+    generator->generate(rows, cols);
+    walls = generator->getWalls();
+    auto [goalRow, goalCol] = generator->findFarthestCell();
+    goalX = (goalCol + 0.5) / cols;
+    goalY = (goalRow + 0.5) / rows;
+    ballX = 1.0 / (2.0 * cols);
+    ballY = 1.0 / (2.0 * rows);
+    velX = velY = accX = accY = 0.0;
+    update();
 }
 
 void GameWidget::updatePos(){
+    if(gameWon) { update(); return; }
+
     velX += accX;
     velY += accY;
     velX *= (1.0 - friction);
@@ -106,11 +135,19 @@ void GameWidget::updatePos(){
                     velY -= dotProduct * ny;
                 }
             }
+
+            double dx = ballX - goalX;
+            double dy = ballY - goalY;
+            if(std::sqrt(dx*dx + dy*dy) < ballRadius) {
+                gameWon = true;
+                velX = velY = accX = accY = 0.0;
+            }
         }
     }
 
     pulsePhase += 0.05;
     if(pulsePhase > 2 * M_PI) pulsePhase -= 2 * M_PI;
+
 
     update();
 }

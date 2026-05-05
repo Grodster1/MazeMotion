@@ -48,6 +48,8 @@ class GameWidget : public QWidget
     bool goUp = false;     ///< Flaga naciśnięcia klawisza w górę
     bool goDown = false;   ///< Flaga naciśnięcia klawisza w dół
 
+    bool gameWon = false; ///< Flaga wygranej gry
+
 public:
     /**
      * @brief Konstruktor tworzący widget gry z labiryntem.
@@ -71,6 +73,16 @@ public:
      * @param event Zdarzenie rysowania (nieużywane bezpośrednio)
      */
     void paintEvent(QPaintEvent *event) override;
+
+    /**
+     * @brief Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej.
+     *
+     * Wywoływana po dotarciu kulki do celu lub na żądanie użytkownika
+     * (przycisk "Nowy labirynt"). Generuje nowy układ ścian, wyznacza
+     * nowy punkt docelowy i zeruje prędkość oraz przyspieszenie kulki.
+     */
+    void resetMaze();
+
 
     /**
      * @brief Aktualizuje pozycję kulki na planszy.
