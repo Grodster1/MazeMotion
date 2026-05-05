@@ -25,6 +25,10 @@ void SensorReader::open(const QString &portName){
     }
 }
 
+void SensorReader::close(){
+    serialPort->close();
+}
+
 void SensorReader::onReadyRead(){
     buffer += serialPort->readAll();
     int index = buffer.indexOf('\n');

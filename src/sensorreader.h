@@ -26,6 +26,10 @@ public:
  */
     void open(const QString &portName);
 
+/**
+ * @brief Zamyka otwarty port szeregowy.
+ */
+    void close();
 signals:
 /**
  * @brief Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych.
