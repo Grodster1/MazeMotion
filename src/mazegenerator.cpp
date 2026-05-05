@@ -1,5 +1,5 @@
 #include "mazegenerator.h"
-
+#include <queue>
 
 MazeGenerator::MazeGenerator() : rng(std::random_device{}()) {}
 
@@ -10,6 +10,37 @@ void MazeGenerator::generate(int rows, int cols){
     grid = QVector<QVector<Cell>>(rows, QVector<Cell>(cols));
     makePath(0, 0);
 
+}
+std::pair<int, int> MazeGenerator::findFarthestCell(){
+    QVector<QVector<int>> dist(rows, QVector<int>(cols,-1));
+    std::queue<std::pair<int, int>> q;
+    q.push({0,0});
+    dist[0][0] = 0;
+
+    int farthestRow=0, farthestCol=0, maxDist=0;
+
+    while(!q.empty()){
+        auto [r,c] = q.front();
+        q.pop();
+        std::vector<std::pair<int, int>> neighbors;
+        if(!grid[r][c].topW) neighbors.push_back({r-1, c});
+        if(!grid[r][c].botW) neighbors.push_back({r+1, c});
+        if(!grid[r][c].leftW) neighbors.push_back({r, c-1});
+        if(!grid[r][c].rightW) neighbors.push_back({r, c+1});
+
+        for(auto [nr, nc] : neighbors) {
+            if(dist[nr][nc] == -1) {
+                dist[nr][nc] = dist[r][c] + 1;
+                q.push({nr, nc});
+                if(dist[nr][nc] > maxDist) {
+                    maxDist = dist[nr][nc];
+                    farthestRow = nr;
+                    farthestCol = nc;
+                }
+            }
+        }
+    }
+    return {farthestRow, farthestCol};
 }
 
 void MazeGenerator::makePath(int row, int col){
