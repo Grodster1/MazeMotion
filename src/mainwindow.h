@@ -5,6 +5,9 @@
 #include "gamewidget.h"
 #include "sensorreader.h"
 #include "chartpanel.h"
+#include <QComboBox>
+#include <QPushButton>
+#include <QToolBar>
 
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +22,10 @@ class MainWindow : public QMainWindow
     GameWidget *gameWidget;
     SensorReader *sensorReader;
     ChartPanel *chartPanel;
+    QComboBox *portCombo;
+    QPushButton *connectButton;
+    QPushButton *newMazeButton;
+    bool connected = false;
 
 
 public:
@@ -27,5 +34,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+public slots:
+    void onConnectClicked();
 };
 #endif // MAINWINDOW_H

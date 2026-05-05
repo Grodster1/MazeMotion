@@ -4,11 +4,11 @@
 #include <QSplitter>
 #include <QLabel>
 #include <QHBoxLayout>
+#include <QSerialPortInfo>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     resize(1600, 800);
-    //ui->setupUi(this);
     gameWidget = new GameWidget(10, 10, this);
     sensorReader = new SensorReader(this);
 
@@ -17,9 +17,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QSplitter *splitter = new QSplitter(Qt::Horizontal);
 
-    //QLabel *chartsLabel = new QLabel("Charts");
     chartPanel = new ChartPanel(this);
-    //chartsLabel->setAlignment(Qt::AlignCenter);
 
     splitter->addWidget(gameWidget);
     splitter->addWidget(chartPanel);
@@ -27,11 +25,38 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QHBoxLayout *layout = new QHBoxLayout(central);
     layout->addWidget(splitter);
 
+    QToolBar *toolBar = addToolBar("Narzędzia");
+    portCombo = new QComboBox();
+    for(const QSerialPortInfo &info : QSerialPortInfo::availablePorts()){
+        portCombo->addItem(info.portName());
+    }
+
+    connectButton = new QPushButton("Połącz");
+    newMazeButton = new QPushButton("Generuj labirynt");
+
+    toolBar->addWidget(portCombo);
+    toolBar->addWidget(connectButton);
+    toolBar->addWidget(newMazeButton);
+
     connect(sensorReader, &SensorReader::dataReceived, gameWidget, &GameWidget::onSensorData);
     connect(sensorReader, &SensorReader::dataReceived, chartPanel, &ChartPanel::onSensorData);
+    connect(connectButton, &QPushButton::clicked, this, &MainWindow::onConnectClicked);
+    connect(newMazeButton, &QPushButton::clicked, gameWidget, &GameWidget::resetMaze);
     sensorReader->open("/dev/ttyACM0");
 
+}
 
+
+void MainWindow::onConnectClicked() {
+    if(!connected) {
+        sensorReader->open(portCombo->currentText());
+        connectButton->setText("Rozłącz");
+        connected = true;
+    } else {
+        sensorReader->close();
+        connectButton->setText("Połącz");
+        connected = false;
+    }
 }
 
 MainWindow::~MainWindow()
