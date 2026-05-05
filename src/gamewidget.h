@@ -22,7 +22,7 @@ class GameWidget : public QWidget
     double ballY; ///< Znormalizowana pozycja kulki w osi Y
     double ballRadius = 0.02; ///< Znormalizowany promień kulki
     double scaleFactor = 0.001; ///< Współczynnik skalujący dane pochodzące z akcelerometru
-
+    double pulsePhase = 0.0; ///<Zmienna odpowiedzialna za animację miejsca docelowego
     QTimer *timer;
 
     //Implementacja przyśpieszenia
@@ -39,6 +39,9 @@ class GameWidget : public QWidget
 
     int rows;
     int cols;
+
+    double goalX; ///<Znormalizowana pozycja środka współrzędnej X komórki docelowej
+    double goalY; ///<Znormalizowana pozycja środka współrzędnej Y komórki docelowej
 
     bool goLeft = false;
     bool goRight = false;

@@ -1,5 +1,5 @@
 #include "gamewidget.h"
-
+#include <cmath>
 
 GameWidget::GameWidget(int r, int c, QWidget *parent) : rows(r), cols(c), QWidget{parent}{
     this->setFocusPolicy(Qt::StrongFocus); //potrzebne do obsługi klawiatury
@@ -9,6 +9,10 @@ GameWidget::GameWidget(int r, int c, QWidget *parent) : rows(r), cols(c), QWidge
     walls = generator->getWalls();
     ballX = 1.0 / (2.0 * cols);
     ballY = 1.0 / (2.0 * rows);
+
+    auto [goalRow, goalCol] = generator->findFarthestCell();
+    goalX = (goalCol + 0.5) / cols;
+    goalY = (goalRow + 0.5) / rows;
 
     connect(timer, &QTimer::timeout, this, &GameWidget::updatePos);
     timer->start(16);
@@ -21,6 +25,7 @@ void GameWidget::paintEvent(QPaintEvent *event){
     double offsetX = (width() - boardSize) / 2.0;
     double offsetY = (height() - boardSize) / 2.0;
 
+    painter.setPen(Qt::NoPen);
     painter.setBrush(QColor::fromRgb(196, 195, 169));
     painter.drawRect(offsetX, offsetY, boardSize, boardSize);
 
@@ -28,10 +33,9 @@ void GameWidget::paintEvent(QPaintEvent *event){
     double posX = offsetX + boardSize*ballX;
     double posY = offsetY + boardSize*ballY;
 
-    painter.setBrush(QColor::fromRgb(0,0,0));
-    painter.drawEllipse(QPointF(posX, posY), radius, radius);
-
+    painter.setPen(Qt::NoPen);
     painter.setBrush(QColor::fromRgb(80, 50, 20));
+    painter.setRenderHint(QPainter::Antialiasing);
     for(const QRectF &wall : walls) {
         QRectF screenWall(
             offsetX + wall.x() * boardSize,
@@ -41,6 +45,28 @@ void GameWidget::paintEvent(QPaintEvent *event){
             );
         painter.drawRect(screenWall);
     }
+
+    double pulse = 0.7 + 0.3 * std::sin(pulsePhase);  // skala 0.7 - 1.0
+    double goalRadius = radius * pulse;
+    double glowRadius = radius * 1.5 * pulse;
+
+    QColor glowColor(0, 200, 0, 60);
+    painter.setBrush(glowColor);
+    painter.drawEllipse(
+        QPointF(offsetX + goalX * boardSize, offsetY + goalY * boardSize),
+        glowRadius, glowRadius
+        );
+
+    QColor goalColor(0, 200, 0, 200);
+    painter.setBrush(goalColor);
+    painter.drawEllipse(
+        QPointF(offsetX + goalX * boardSize, offsetY + goalY * boardSize),
+        goalRadius, goalRadius
+        );
+
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor::fromRgb(0,0,0));
+    painter.drawEllipse(QPointF(posX, posY), radius, radius);
 
 }
 
@@ -82,6 +108,10 @@ void GameWidget::updatePos(){
             }
         }
     }
+
+    pulsePhase += 0.05;
+    if(pulsePhase > 2 * M_PI) pulsePhase -= 2 * M_PI;
+
     update();
 }
 
