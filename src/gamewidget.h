@@ -50,6 +50,12 @@ class GameWidget : public QWidget
 
     bool gameWon = false; ///< Flaga wygranej gry
 
+    void drawBoard(QPainter &painter, double offsetX, double offsetY, double boardSize);
+    void drawWalls(QPainter &painter, double offsetX, double offsetY, double boardSize);
+    void drawBall(QPainter &painter, double offsetX, double offsetY, double boardSize);
+    void drawGoal(QPainter &painter, double offsetX, double offsetY, double boardSize);
+    void drawWinOverlay(QPainter &painter, double boardSize);
+
 public:
     /**
      * @brief Konstruktor tworzący widget gry z labiryntem.
