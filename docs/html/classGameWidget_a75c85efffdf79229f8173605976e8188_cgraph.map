@@ -1,0 +1,14 @@
+<map id="GameWidget::GameWidget" name="GameWidget::GameWidget">
+<area shape="rect" id="Node000001" title="Konstruktor tworzący widget gry z labiryntem." alt="" coords="5,80,205,105"/>
+<area shape="rect" id="Node000002" href="$classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95" title="Wyznacza komórkę najdalszą od punktu startowego (0, 0)." alt="" coords="253,5,484,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,77,253,39,286,31,288,36,254,45,141,82"/>
+<area shape="rect" id="Node000003" href="$classMazeGenerator.html#af77955852c4c984380267aad381c10e9" title="Generuje nowy labirynt o zadanym rozmiarze." alt="" coords="275,55,463,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,80,260,75,261,80,206,86"/>
+<area shape="rect" id="Node000005" href="$classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583" title="Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych." alt="" coords="275,104,462,129"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="206,99,262,104,261,110,205,104"/>
+<area shape="rect" id="Node000006" href="$classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2" title="Aktualizuje pozycję kulki na planszy." alt="" coords="277,153,460,179"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="143,103,254,138,292,148,291,153,253,143,142,108"/>
+<area shape="rect" id="Node000004" href="$classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7" title="Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS)." alt="" coords="532,55,727,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,65,518,65,518,70,463,70"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="588,56,578,46,583,36,600,30,629,28,666,32,676,37,680,42,676,45,673,41,664,37,629,33,602,35,587,40,584,46,591,53"/>
+</map>

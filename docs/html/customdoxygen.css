@@ -1,0 +1,249 @@
+/* MazeMotion – purple gradient theme for doxygen-awesome */
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT MODE – CSS variables
+═══════════════════════════════════════════════════════════════ */
+html {
+  --primary-color:             #7c3aed;
+  --primary-dark-color:        #5b21b6;
+  --primary-light-color:       #c4b5fd;
+  --on-primary-color:          #ffffff;
+
+  /* page – soft contrast, not stark black-on-white */
+  --page-background-color:     #faf8ff;
+  --page-foreground-color:     #3d3056;
+  --page-secondary-foreground-color: #7c6fa0;
+
+  --link-color:                #7c3aed;
+
+  /* sidebar – use gradient via variable so sidebar-only.css picks it up */
+  --side-nav-background:       linear-gradient(180deg, #f0ebff 0%, #e9e3fb 100%);
+
+  /* header */
+  --header-background:         linear-gradient(135deg, #6d28d9 0%, #8b5cf6 55%, #c084fc 100%);
+  --header-foreground:         #ffffff;
+
+  /* code */
+  --code-background:           #f3eeff;
+  --fragment-background:       #f3eeff;
+  --fragment-foreground:       #3d3056;
+  --fragment-keyword:          #7c3aed;
+  --fragment-keywordtype:      #a855f7;
+  --fragment-comment:          #8b7aa8;
+  --fragment-preprocessor:     #5b21b6;
+  --fragment-token:            #059669;
+
+  /* separators */
+  --separator-color:           #ddd6fe;
+  --box-shadow:                0 4px 24px 0 rgba(124,58,237,.10);
+
+  /* content boxes */
+  --note-color:                #ede9fe;
+  --note-color-dark:           #7c3aed;
+  --note-color-darker:         #4c1d95;
+  --warning-color:             #fdf4ff;
+  --warning-color-dark:        #a855f7;
+  --warning-color-darker:      #7e22ce;
+  --todo-color:                #eef2ff;
+  --todo-color-dark:           #6366f1;
+  --todo-color-darker:         #3730a3;
+
+  /* scrollbar */
+  --scrollbar-thumb-color:     #c4b5fd;
+  --scrollbar-background:      #f0ebff;
+
+  /* table */
+  --odd-color:                 rgba(124,58,237,.05);
+}
+
+/* ── gradient header bar ─────────────────────────────────────── */
+#top {
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 55%, #c084fc 100%) !important;
+  box-shadow: 0 2px 12px rgba(109,40,217,.28);
+}
+
+#projectname, #projectbrief {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,.18);
+}
+
+/* ── titlearea layout – project name gets all space, search stays right ── */
+#titlearea table {
+  width: 100%;
+}
+
+/* Give project name cell 100% width – search/toggle cell shrinks to content */
+#titlearea table tbody tr#projectrow td#projectalign {
+  width: 100%;
+}
+
+#projectname {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── search box ─────────────────────────────────────────────────── */
+/* Override sidebar-only-darkmode-toggle.css width (designed for sidebar, not header) */
+#MSearchBox {
+  width:     160px !important;
+  max-width: 160px !important;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 6px;
+  background: rgba(255,255,255,.15);
+}
+
+#MSearchField {
+  width: auto !important;
+  max-width: 100%;
+  color: #fff;
+  background: transparent;
+}
+
+#MSearchField::placeholder {
+  color: rgba(255,255,255,.60);
+}
+
+
+/* ── nav tabs ─────────────────────────────────────────────────── */
+.tabs, .tabs2, .tabs3 {
+  background: linear-gradient(90deg, #5b21b6, #8b5cf6) !important;
+}
+
+.tablist a       { color: #e9d5ff !important; }
+.tablist a:hover,
+.tablist li.current a {
+  color: #fff !important;
+  border-bottom: 2px solid #c4b5fd;
+}
+
+/* ── sidebar ──────────────────────────────────────────────────── */
+/* border only – background comes from --side-nav-background variable */
+#side-nav {
+  border-right: 2px solid #ddd6fe;
+}
+
+#nav-tree a           { color: #3d3056; }
+#nav-tree a:hover     { color: #5b21b6 !important; }
+
+#nav-tree .selected {
+  background: linear-gradient(90deg, #ddd6fe, #ede9fe) !important;
+  border-left: 3px solid #7c3aed;
+}
+
+/* ── member declarations ──────────────────────────────────────── */
+.memname, .memItemLeft, .memItemRight { color: #6d28d9; }
+
+.memproto {
+  background: linear-gradient(90deg, #f3eeff, #faf7ff);
+  border-left: 4px solid #8b5cf6;
+  box-shadow: 0 2px 8px rgba(124,58,237,.08);
+}
+
+/* ── section headers ──────────────────────────────────────────── */
+h1, h2, h3          { color: #5b21b6; }
+h2.groupheader      { border-bottom: 2px solid #c4b5fd; color: #6d28d9; }
+
+/* ── fragment copy button ─────────────────────────────────────── */
+.doxygen-awesome-fragment-copy-button {
+  color: #7c3aed !important;
+  border-color: #c4b5fd !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════════════════════════════ */
+html.dark-mode {
+  --primary-color:             #a78bfa;
+  --primary-dark-color:        #7c3aed;
+  --primary-light-color:       #6d28d9;
+  --on-primary-color:          #ffffff;
+
+  /* clearly dark-purple, not black */
+  --page-background-color:     #1e1638;
+  --page-foreground-color:     #e2dcf5;
+  --page-secondary-foreground-color: #b8aed6;
+
+  --link-color:                #c4b5fd;
+
+  /* sidebar variable – sidebar-only.css reads this */
+  --side-nav-background:       linear-gradient(180deg, #2a1f4a 0%, #231740 100%);
+
+  --code-background:           #261e48;
+  --fragment-background:       #261e48;
+  --fragment-foreground:       #e2dcf5;
+  --fragment-keyword:          #c084fc;
+  --fragment-keywordtype:      #a78bfa;
+  --fragment-comment:          #8b7aa8;
+  --fragment-preprocessor:     #818cf8;
+  --fragment-token:            #34d399;
+
+  --separator-color:           #3b2f6e;
+  --box-shadow:                0 4px 24px 0 rgba(0,0,0,.45);
+  --odd-color:                 rgba(167,139,250,.07);
+
+  --note-color:                #2d1b5e;
+  --note-color-dark:           #a78bfa;
+  --note-color-darker:         #c4b5fd;
+  --warning-color:             #2e1040;
+  --warning-color-dark:        #c084fc;
+  --warning-color-darker:      #e9d5ff;
+  --todo-color:                #1e1d40;
+  --todo-color-dark:           #818cf8;
+  --todo-color-darker:         #c7d2fe;
+
+  --scrollbar-thumb-color:     #5b21b6;
+  --scrollbar-background:      #1e1638;
+}
+
+/* header dark */
+html.dark-mode #top {
+  background: linear-gradient(135deg, #1e1035 0%, #4c1d95 55%, #6d28d9 100%) !important;
+}
+
+/* sidebar border only – background from variable above */
+html.dark-mode #side-nav {
+  border-right: 2px solid #3b2f6e;
+}
+
+/* nav tree text – must be light on dark background */
+html.dark-mode #nav-tree a {
+  color: #d4cafe !important;
+}
+html.dark-mode #nav-tree a:hover {
+  color: #a78bfa !important;
+}
+html.dark-mode #nav-tree .selected {
+  background: linear-gradient(90deg, #2d1b5e, #3b2f6e) !important;
+  border-left: 3px solid #a78bfa;
+}
+
+/* member names */
+html.dark-mode .memname,
+html.dark-mode .memItemLeft,
+html.dark-mode .memItemRight { color: #c4b5fd; }
+
+html.dark-mode .memproto {
+  background: linear-gradient(90deg, #261e48, #2a1f4a);
+  border-left: 4px solid #7c3aed;
+}
+
+/* section headers */
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3          { color: #c4b5fd; }
+html.dark-mode h2.groupheader {
+  border-bottom: 2px solid #4c1d95;
+  color: #a78bfa;
+}
+
+/* search box dark */
+html.dark-mode #MSearchBox {
+  border-color: rgba(167,139,250,.35);
+  background: rgba(255,255,255,.07);
+}
+html.dark-mode #MSearchField { color: #e2dcf5; }
+
+/* tables */
+html.dark-mode .markdownTable td,
+html.dark-mode .doxtable td { border-color: #3b2f6e; }

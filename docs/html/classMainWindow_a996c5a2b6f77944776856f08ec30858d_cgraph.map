@@ -1,0 +1,27 @@
+<map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,131,203,156"/>
+<area shape="rect" id="Node000002" href="$classSensorReader.html#a3ac283d48a779b4fb75432f3c9819c1e" title="Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych." alt="" coords="261,5,470,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,128,173,85,210,60,250,40,270,32,272,37,252,44,213,65,176,89,121,133"/>
+<area shape="rect" id="Node000003" href="$classMainWindow.html#ab191d4445d7faca3b2d48e2374d1d35a" title=" " alt="" coords="251,55,480,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,128,250,97,304,81,306,86,251,102,147,133"/>
+<area shape="rect" id="Node000005" href="$classSensorReader.html#a8847ed9d1c9147fe0c2f50ded87b2fd8" title="Otwiera port szeregowy o danej nazwie." alt="" coords="567,105,719,131"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="203,136,553,120,554,125,203,141"/>
+<area shape="rect" id="Node000006" href="$classChartPanel.html#a21590716113a934cb2a6747f99dcd0ae" title=" " alt="" coords="270,156,461,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="203,150,256,155,256,161,202,156"/>
+<area shape="rect" id="Node000007" href="$classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c" title="Slot odbierający dane z czujnika IMU." alt="" coords="262,205,469,231"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="140,154,251,190,289,200,288,205,250,195,139,159"/>
+<area shape="rect" id="Node000008" href="$classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec" title="Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej." alt="" coords="274,255,457,280"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="122,154,177,196,213,220,252,240,276,248,274,253,250,244,210,224,173,201,118,158"/>
+<area shape="rect" id="Node000004" href="$classSensorReader.html#a2cbf6c3ccf9fc63bfcd0a4c6115b25d5" title="Zamyka otwarty port szeregowy." alt="" coords="566,55,721,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="480,65,552,65,552,70,480,70"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="436,77,560,100,559,105,435,83"/>
+<area shape="rect" id="Node000009" href="$classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95" title="Wyznacza komórkę najdalszą od punktu startowego (0, 0)." alt="" coords="528,205,759,231"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="437,252,557,231,558,236,438,257"/>
+<area shape="rect" id="Node000010" href="$classMazeGenerator.html#af77955852c4c984380267aad381c10e9" title="Generuje nowy labirynt o zadanym rozmiarze." alt="" coords="549,255,737,280"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="457,265,536,265,536,270,457,270"/>
+<area shape="rect" id="Node000012" href="$classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583" title="Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych." alt="" coords="550,304,737,329"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="438,277,558,299,557,304,437,283"/>
+<area shape="rect" id="Node000011" href="$classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7" title="Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS)." alt="" coords="807,255,1001,280"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="737,265,793,265,793,270,737,270"/>
+<area shape="poly" id="edge12_Node000011_Node000011" title=" " alt="" coords="862,256,853,246,858,236,875,230,904,228,941,232,951,237,955,242,950,245,947,241,939,237,904,233,876,235,861,240,858,246,866,253"/>
+</map>

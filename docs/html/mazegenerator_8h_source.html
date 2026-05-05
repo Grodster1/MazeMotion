@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
@@ -6,13 +7,36 @@
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MazeMotion: Plik źródłowy /home/wiktor/Desktop/WDS/MazeMotion/src/mazegenerator.h</title>
+<script type="text/javascript">document.documentElement.classList.add('dark-mode');</script>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeTabs.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,6 +48,18 @@
    <div id="projectname">MazeMotion
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,22 +71,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Szukaj');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('mazegenerator_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function() { init_codefold(0); });
-/* @license-end */
-</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,54 +109,74 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">mazegenerator.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MAZEGENERATOR_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MAZEGENERATOR_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QVector&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QRectF&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="structCell.html">    7</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structCell.html">Cell</a>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">bool</span> topW = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">bool</span> botW = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">bool</span> leftW = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">bool</span> rightW = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> visited = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QRectF&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structCell.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structCell.html">Cell</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structCell.html#a0e8dbbb57c0604b5a33173a1bdfa4d91">   15</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCell.html#a0e8dbbb57c0604b5a33173a1bdfa4d91">topW</a> = <span class="keyword">true</span>;    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structCell.html#afabc0893de3ceb5fc3e236bb3c1ae7f5">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCell.html#afabc0893de3ceb5fc3e236bb3c1ae7f5">botW</a> = <span class="keyword">true</span>;    </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structCell.html#a3a640e7a96a00ac5b1956a6377cf7a54">   17</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCell.html#a3a640e7a96a00ac5b1956a6377cf7a54">leftW</a> = <span class="keyword">true</span>;   </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structCell.html#ab547de008d910a9fcc8e9aad4f437310">   18</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCell.html#ab547de008d910a9fcc8e9aad4f437310">rightW</a> = <span class="keyword">true</span>;  </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structCell.html#ac0fdf52adc7d9dd8c5de95635ff04de3">   19</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structCell.html#ac0fdf52adc7d9dd8c5de95635ff04de3">visited</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classMazeGenerator.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classMazeGenerator.html">MazeGenerator</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    QVector&lt;QVector&lt;Cell&gt;&gt; grid;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> rows, cols;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::mt19937 rng;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="classMazeGenerator.html">MazeGenerator</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> generate(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> makePath(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    QVector&lt;QRectF&gt; getWalls();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classMazeGenerator.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classMazeGenerator.html">MazeGenerator</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    QVector&lt;QVector&lt;Cell&gt;&gt; grid;  </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">int</span> rows;    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> cols;    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::mt19937 rng;       </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">double</span> thick = 0.015;   </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573">MazeGenerator</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">generate</a>(<span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7">makePath</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    std::pair&lt;int, int&gt; <a class="code hl_function" href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">findFarthestCell</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QVector&lt;QRectF&gt; <a class="code hl_function" href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">getWalls</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classMazeGenerator.html#a18659b92b0d6a1faeee1c9f7f381bed2">   92</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classMazeGenerator.html#a18659b92b0d6a1faeee1c9f7f381bed2">getThickness</a>() { <span class="keywordflow">return</span> thick; };</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// MAZEGENERATOR_H</span></div>
-<div class="ttc" id="aclassMazeGenerator_html"><div class="ttname"><a href="classMazeGenerator.html">MazeGenerator</a></div><div class="ttdef"><b>Definition</b> mazegenerator.h:17</div></div>
-<div class="ttc" id="astructCell_html"><div class="ttname"><a href="structCell.html">Cell</a></div><div class="ttdef"><b>Definition</b> mazegenerator.h:7</div></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">// MAZEGENERATOR_H</span></div>
+<div class="ttc" id="aclassMazeGenerator_html"><div class="ttname"><a href="classMazeGenerator.html">MazeGenerator</a></div><div class="ttdoc">Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:31</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_a18659b92b0d6a1faeee1c9f7f381bed2"><div class="ttname"><a href="classMazeGenerator.html#a18659b92b0d6a1faeee1c9f7f381bed2">MazeGenerator::getThickness</a></div><div class="ttdeci">double getThickness()</div><div class="ttdoc">Zwraca grubość ścian w znormalizowanych współrzędnych.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:92</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_a2d39ddff6b97442c74dc31f88b2653a7"><div class="ttname"><a href="classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7">MazeGenerator::makePath</a></div><div class="ttdeci">void makePath(int row, int col)</div><div class="ttdoc">Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS).</div><div class="ttdef"><b>Definition</b> mazegenerator.cpp:46</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_a2fc679414b0d2bbea0a5b4aee8103583"><div class="ttname"><a href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">MazeGenerator::getWalls</a></div><div class="ttdeci">QVector&lt; QRectF &gt; getWalls()</div><div class="ttdoc">Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych.</div><div class="ttdef"><b>Definition</b> mazegenerator.cpp:78</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_ad2614d8adc80721dbae5660402d48573"><div class="ttname"><a href="classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573">MazeGenerator::MazeGenerator</a></div><div class="ttdeci">MazeGenerator()</div><div class="ttdoc">Konstruktor inicjalizujący generator liczb losowych.</div><div class="ttdef"><b>Definition</b> mazegenerator.cpp:4</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_ae17625db3730bbdc67f682346d691d95"><div class="ttname"><a href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">MazeGenerator::findFarthestCell</a></div><div class="ttdeci">std::pair&lt; int, int &gt; findFarthestCell()</div><div class="ttdoc">Wyznacza komórkę najdalszą od punktu startowego (0, 0).</div><div class="ttdef"><b>Definition</b> mazegenerator.cpp:14</div></div>
+<div class="ttc" id="aclassMazeGenerator_html_af77955852c4c984380267aad381c10e9"><div class="ttname"><a href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">MazeGenerator::generate</a></div><div class="ttdeci">void generate(int rows, int cols)</div><div class="ttdoc">Generuje nowy labirynt o zadanym rozmiarze.</div><div class="ttdef"><b>Definition</b> mazegenerator.cpp:6</div></div>
+<div class="ttc" id="astructCell_html"><div class="ttname"><a href="structCell.html">Cell</a></div><div class="ttdoc">Struktura reprezentująca pojedynczą komórkę labiryntu.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:14</div></div>
+<div class="ttc" id="astructCell_html_a0e8dbbb57c0604b5a33173a1bdfa4d91"><div class="ttname"><a href="structCell.html#a0e8dbbb57c0604b5a33173a1bdfa4d91">Cell::topW</a></div><div class="ttdeci">bool topW</div><div class="ttdoc">Ściana górna.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:15</div></div>
+<div class="ttc" id="astructCell_html_a3a640e7a96a00ac5b1956a6377cf7a54"><div class="ttname"><a href="structCell.html#a3a640e7a96a00ac5b1956a6377cf7a54">Cell::leftW</a></div><div class="ttdeci">bool leftW</div><div class="ttdoc">Ściana lewa.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:17</div></div>
+<div class="ttc" id="astructCell_html_ab547de008d910a9fcc8e9aad4f437310"><div class="ttname"><a href="structCell.html#ab547de008d910a9fcc8e9aad4f437310">Cell::rightW</a></div><div class="ttdeci">bool rightW</div><div class="ttdoc">Ściana prawa.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:18</div></div>
+<div class="ttc" id="astructCell_html_ac0fdf52adc7d9dd8c5de95635ff04de3"><div class="ttname"><a href="structCell.html#ac0fdf52adc7d9dd8c5de95635ff04de3">Cell::visited</a></div><div class="ttdeci">bool visited</div><div class="ttdoc">Flaga odwiedzenia podczas generowania (DFS)</div><div class="ttdef"><b>Definition</b> mazegenerator.h:19</div></div>
+<div class="ttc" id="astructCell_html_afabc0893de3ceb5fc3e236bb3c1ae7f5"><div class="ttname"><a href="structCell.html#afabc0893de3ceb5fc3e236bb3c1ae7f5">Cell::botW</a></div><div class="ttdeci">bool botW</div><div class="ttdoc">Ściana dolna.</div><div class="ttdef"><b>Definition</b> mazegenerator.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.8-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>mazegenerator.h</b></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

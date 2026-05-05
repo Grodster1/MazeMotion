@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
@@ -6,13 +7,36 @@
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MazeMotion: Dokumentacja klasy MazeGenerator</title>
+<script type="text/javascript">document.documentElement.classList.add('dark-mode');</script>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeTabs.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,6 +48,18 @@
    <div id="projectname">MazeMotion
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,17 +71,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Szukaj');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('classMazeGenerator.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +109,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Metody publiczne</a> &#124;
@@ -75,27 +116,202 @@ $(function() {
   <div class="headertitle"><div class="title">Dokumentacja klasy MazeGenerator</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego.  
+ <a href="classMazeGenerator.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mazegenerator_8h_source.html">mazegenerator.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla MazeGenerator:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMazeGenerator__coll__graph.svg" width="151" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:af77955852c4c984380267aad381c10e9" id="r_af77955852c4c984380267aad381c10e9"><td class="memItemLeft" align="right" valign="top"><a id="af77955852c4c984380267aad381c10e9" name="af77955852c4c984380267aad381c10e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generate</b> (int rows, int cols)</td></tr>
+<tr class="memitem:ad2614d8adc80721dbae5660402d48573" id="r_ad2614d8adc80721dbae5660402d48573"><td class="memItemLeft" align="right" valign="top"><a id="ad2614d8adc80721dbae5660402d48573" name="ad2614d8adc80721dbae5660402d48573"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MazeGenerator</b> ()</td></tr>
+<tr class="memdesc:ad2614d8adc80721dbae5660402d48573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor inicjalizujący generator liczb losowych. <br /></td></tr>
+<tr class="separator:ad2614d8adc80721dbae5660402d48573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77955852c4c984380267aad381c10e9" id="r_af77955852c4c984380267aad381c10e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">generate</a> (int rows, int cols)</td></tr>
+<tr class="memdesc:af77955852c4c984380267aad381c10e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generuje nowy labirynt o zadanym rozmiarze.  <br /></td></tr>
 <tr class="separator:af77955852c4c984380267aad381c10e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d39ddff6b97442c74dc31f88b2653a7" id="r_a2d39ddff6b97442c74dc31f88b2653a7"><td class="memItemLeft" align="right" valign="top"><a id="a2d39ddff6b97442c74dc31f88b2653a7" name="a2d39ddff6b97442c74dc31f88b2653a7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>makePath</b> (int row, int col)</td></tr>
+<tr class="memitem:a2d39ddff6b97442c74dc31f88b2653a7" id="r_a2d39ddff6b97442c74dc31f88b2653a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7">makePath</a> (int row, int col)</td></tr>
+<tr class="memdesc:a2d39ddff6b97442c74dc31f88b2653a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS).  <br /></td></tr>
 <tr class="separator:a2d39ddff6b97442c74dc31f88b2653a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc679414b0d2bbea0a5b4aee8103583" id="r_a2fc679414b0d2bbea0a5b4aee8103583"><td class="memItemLeft" align="right" valign="top"><a id="a2fc679414b0d2bbea0a5b4aee8103583" name="a2fc679414b0d2bbea0a5b4aee8103583"></a>
-QVector&lt; QRectF &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getWalls</b> ()</td></tr>
+<tr class="memitem:ae17625db3730bbdc67f682346d691d95" id="r_ae17625db3730bbdc67f682346d691d95"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">findFarthestCell</a> ()</td></tr>
+<tr class="memdesc:ae17625db3730bbdc67f682346d691d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyznacza komórkę najdalszą od punktu startowego (0, 0).  <br /></td></tr>
+<tr class="separator:ae17625db3730bbdc67f682346d691d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc679414b0d2bbea0a5b4aee8103583" id="r_a2fc679414b0d2bbea0a5b4aee8103583"><td class="memItemLeft" align="right" valign="top">QVector&lt; QRectF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">getWalls</a> ()</td></tr>
+<tr class="memdesc:a2fc679414b0d2bbea0a5b4aee8103583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych.  <br /></td></tr>
 <tr class="separator:a2fc679414b0d2bbea0a5b4aee8103583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18659b92b0d6a1faeee1c9f7f381bed2" id="r_a18659b92b0d6a1faeee1c9f7f381bed2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMazeGenerator.html#a18659b92b0d6a1faeee1c9f7f381bed2">getThickness</a> ()</td></tr>
+<tr class="memdesc:a18659b92b0d6a1faeee1c9f7f381bed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca grubość ścian w znormalizowanych współrzędnych.  <br /></td></tr>
+<tr class="separator:a18659b92b0d6a1faeee1c9f7f381bed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego. </p>
+<p>Generuje labirynt metodą Recursive Backtracking (DFS), zapewniającą dokładnie jedną ścieżkę między dowolnymi dwoma komórkami. Udostępnia listę ścian jako znormalizowane prostokąty (0.0 &ndash; 1.0) oraz wyznacza najdalszą komórkę od startu za pomocą BFS. </p>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ae17625db3730bbdc67f682346d691d95" name="ae17625db3730bbdc67f682346d691d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17625db3730bbdc67f682346d691d95">&#9670;&#160;</a></span>findFarthestCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, int &gt; MazeGenerator::findFarthestCell </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyznacza komórkę najdalszą od punktu startowego (0, 0). </p>
+<p>Wykorzystuje algorytm BFS do obliczenia odległości od komórki startowej do wszystkich pozostałych komórek.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Para (wiersz, kolumna) najdalszej komórki </dd></dl>
+
+</div>
+</div>
+<a id="af77955852c4c984380267aad381c10e9" name="af77955852c4c984380267aad381c10e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77955852c4c984380267aad381c10e9">&#9670;&#160;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MazeGenerator::generate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generuje nowy labirynt o zadanym rozmiarze. </p>
+<p>Tworzy siatkę komórek i uruchamia algorytm Recursive Backtracking począwszy od komórki (0, 0).</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>Liczba wierszy labiryntu </td></tr>
+    <tr><td class="paramname">cols</td><td>Liczba kolumn labiryntu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18659b92b0d6a1faeee1c9f7f381bed2" name="a18659b92b0d6a1faeee1c9f7f381bed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18659b92b0d6a1faeee1c9f7f381bed2">&#9670;&#160;</a></span>getThickness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double MazeGenerator::getThickness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca grubość ścian w znormalizowanych współrzędnych. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Grubość ściany </dd></dl>
+
+</div>
+</div>
+<a id="a2fc679414b0d2bbea0a5b4aee8103583" name="a2fc679414b0d2bbea0a5b4aee8103583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc679414b0d2bbea0a5b4aee8103583">&#9670;&#160;</a></span>getWalls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QRectF &gt; MazeGenerator::getWalls </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych. </p>
+<p>Każda ściana reprezentowana jest jako QRectF o współrzędnych z zakresu 0.0 &ndash; 1.0. Dla uniknięcia duplikatów, w głównej pętli uwzględniane są tylko ściany górne i lewe każdej komórki, a krawędzie dolna i prawa siatki dodawane są osobno.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wektor prostokątów reprezentujących ściany </dd></dl>
+
+</div>
+</div>
+<a id="a2d39ddff6b97442c74dc31f88b2653a7" name="a2d39ddff6b97442c74dc31f88b2653a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d39ddff6b97442c74dc31f88b2653a7">&#9670;&#160;</a></span>makePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MazeGenerator::makePath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS). </p>
+<p>Odwiedza komórkę, losowo miesza kolejność kierunków, a następnie dla każdego nieodwiedzonego sąsiada usuwa ścianę i rekurencyjnie kontynuuje drążenie.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Wiersz aktualnej komórki </td></tr>
+    <tr><td class="paramname">col</td><td>Kolumna aktualnej komórki </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<a class="el" href="mazegenerator_8h_source.html">mazegenerator.h</a></li>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<b>mazegenerator.cpp</b></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.8-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMazeGenerator.html">MazeGenerator</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

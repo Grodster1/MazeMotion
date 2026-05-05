@@ -1,24 +1,47 @@
 \doxysection{Dokumentacja struktury Cell}
 \hypertarget{structCell}{}\label{structCell}\index{Cell@{Cell}}
+
+
+Struktura reprezentująca pojedynczą komórkę labiryntu.  
+
+
+
+
+{\ttfamily \#include $<$mazegenerator.\+h$>$}
+
+
+
+Diagram współpracy dla Cell\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{structCell__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Atrybuty publiczne}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{structCell_a0e8dbbb57c0604b5a33173a1bdfa4d91}\label{structCell_a0e8dbbb57c0604b5a33173a1bdfa4d91} 
 bool {\bfseries topW} = true
-\item 
+\begin{DoxyCompactList}\small\item\em Ściana górna. \end{DoxyCompactList}\item 
 \Hypertarget{structCell_afabc0893de3ceb5fc3e236bb3c1ae7f5}\label{structCell_afabc0893de3ceb5fc3e236bb3c1ae7f5} 
 bool {\bfseries botW} = true
-\item 
+\begin{DoxyCompactList}\small\item\em Ściana dolna. \end{DoxyCompactList}\item 
 \Hypertarget{structCell_a3a640e7a96a00ac5b1956a6377cf7a54}\label{structCell_a3a640e7a96a00ac5b1956a6377cf7a54} 
 bool {\bfseries leftW} = true
-\item 
+\begin{DoxyCompactList}\small\item\em Ściana lewa. \end{DoxyCompactList}\item 
 \Hypertarget{structCell_ab547de008d910a9fcc8e9aad4f437310}\label{structCell_ab547de008d910a9fcc8e9aad4f437310} 
 bool {\bfseries rightW} = true
-\item 
+\begin{DoxyCompactList}\small\item\em Ściana prawa. \end{DoxyCompactList}\item 
 \Hypertarget{structCell_ac0fdf52adc7d9dd8c5de95635ff04de3}\label{structCell_ac0fdf52adc7d9dd8c5de95635ff04de3} 
 bool {\bfseries visited} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flaga odwiedzenia podczas generowania (DFS) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Opis szczegółowy}
+Struktura reprezentująca pojedynczą komórkę labiryntu. 
+
+Przechowuje informacje o istnieniu ścian w czterech kierunkach oraz o tym, czy komórka została odwiedzona podczas generowania. 
 
 Dokumentacja dla tej struktury została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
 \item 

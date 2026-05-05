@@ -1,0 +1,7 @@
+<map id="MainWindow::onConnectClicked" name="MainWindow::onConnectClicked">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,235,56"/>
+<area shape="rect" id="Node000002" href="$classSensorReader.html#a2cbf6c3ccf9fc63bfcd0a4c6115b25d5" title="Zamyka otwarty port szeregowy." alt="" coords="283,5,437,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,29,269,25,269,30,235,34"/>
+<area shape="rect" id="Node000003" href="$classSensorReader.html#a8847ed9d1c9147fe0c2f50ded87b2fd8" title="Otwiera port szeregowy o danej nazwie." alt="" coords="284,55,436,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,52,271,56,270,61,235,57"/>
+</map>

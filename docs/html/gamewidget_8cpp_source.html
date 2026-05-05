@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MazeMotion: Plik źródłowy gamewidget.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MazeMotion<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra labirynt sterowana IMU z wizualizacją danych sensorycznych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('gamewidget_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">gamewidget.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="gamewidget_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="gamewidget_8h.html">gamewidget.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classGameWidget.html#a75c85efffdf79229f8173605976e8188">    4</a></span><a class="code hl_function" href="classGameWidget.html#a75c85efffdf79229f8173605976e8188">GameWidget::GameWidget</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> c, QWidget *parent) : rows(r), cols(c), QWidget{parent}{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    this-&gt;setFocusPolicy(Qt::StrongFocus); <span class="comment">//potrzebne do obsługi klawiatury</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_variable" href="classGameWidget.html#ad5ed08dae345759b9b943dab56c0faaa">timer</a> = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a> = <span class="keyword">new</span> <a class="code hl_class" href="classMazeGenerator.html">MazeGenerator</a>();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">generate</a>(<a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>, <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_variable" href="classGameWidget.html#af096c43e4903b5a581f181146f3c7383">walls</a> = <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">getWalls</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> = 1.0 / (2.0 * <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> = 1.0 / (2.0 * <a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">auto</span> [goalRow, goalCol] = <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">findFarthestCell</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="classGameWidget.html#ab50333b84a2342abc255b557763bb092">goalX</a> = (goalCol + 0.5) / <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="classGameWidget.html#a526a8799762fbc0b43e63dfea3e99a6b">goalY</a> = (goalRow + 0.5) / <a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    connect(<a class="code hl_variable" href="classGameWidget.html#ad5ed08dae345759b9b943dab56c0faaa">timer</a>, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;<a class="code hl_function" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">GameWidget::updatePos</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_variable" href="classGameWidget.html#ad5ed08dae345759b9b943dab56c0faaa">timer</a>-&gt;start(16);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classGameWidget.html#a9a42d26c07c92d4d8f9809f63460ffcf">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a9a42d26c07c92d4d8f9809f63460ffcf">GameWidget::drawBoard</a>(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    QLinearGradient boardGradient(offsetX, offsetY, offsetX, offsetY + boardSize);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    boardGradient.setColorAt(0, QColor(220, 210, 180));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    boardGradient.setColorAt(1, QColor(160, 150, 125));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    painter.setBrush(boardGradient);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    painter.setPen(Qt::NoPen);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    painter.drawRect(offsetX, offsetY, boardSize, boardSize);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classGameWidget.html#a699ef7b92d9829b3cd9235af37bfcaa6">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a699ef7b92d9829b3cd9235af37bfcaa6">GameWidget::drawWalls</a>(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    painter.setBrush(QColor(80, 50, 20));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    painter.setPen(Qt::NoPen);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QRectF &amp;wall : <a class="code hl_variable" href="classGameWidget.html#af096c43e4903b5a581f181146f3c7383">walls</a>) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        QRectF screenWall(</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            offsetX + wall.x() * boardSize,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            offsetY + wall.y() * boardSize,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            wall.width() * boardSize,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            wall.height() * boardSize</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            );</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        painter.drawRect(screenWall);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classGameWidget.html#a35413c58d711b9f7210df1511f14c941">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a35413c58d711b9f7210df1511f14c941">GameWidget::drawGoal</a>(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">double</span> radius = <a class="code hl_variable" href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">ballRadius</a> * boardSize;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">double</span> pulse = 0.7 + 0.3 * std::sin(<a class="code hl_variable" href="classGameWidget.html#a550b0f3c02c5c7102f748539455ee8e2">pulsePhase</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">double</span> goalRadius = radius * pulse;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">double</span> glowRadius = radius * 1.5 * pulse;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    QPointF goalPos(offsetX + <a class="code hl_variable" href="classGameWidget.html#ab50333b84a2342abc255b557763bb092">goalX</a> * boardSize, offsetY + <a class="code hl_variable" href="classGameWidget.html#a526a8799762fbc0b43e63dfea3e99a6b">goalY</a> * boardSize);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    painter.setBrush(QColor(0, 200, 0, 60));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    painter.setPen(Qt::NoPen);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    painter.drawEllipse(goalPos, glowRadius, glowRadius);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    painter.setBrush(QColor(0, 200, 0, 200));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    painter.drawEllipse(goalPos, goalRadius, goalRadius);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classGameWidget.html#abca7dfae60226e3b6d168745da0a0874">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#abca7dfae60226e3b6d168745da0a0874">GameWidget::drawBall</a>(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">double</span> posX = offsetX + boardSize * <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">double</span> posY = offsetY + boardSize * <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">double</span> radius = <a class="code hl_variable" href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">ballRadius</a> * boardSize;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    painter.setPen(Qt::NoPen);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    painter.setBrush(QColor(0, 0, 0, 40));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    painter.drawEllipse(QPointF(posX + radius * 0.15, posY + radius * 0.15), radius, radius);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QRadialGradient ballGradient(posX - radius * 0.3, posY - radius * 0.3, radius * 1.5);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    ballGradient.setColorAt(0, QColor(120, 120, 120));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    ballGradient.setColorAt(0.4, QColor(50, 50, 50));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ballGradient.setColorAt(1, QColor(10, 10, 10));</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    painter.setBrush(ballGradient);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    painter.drawEllipse(QPointF(posX, posY), radius, radius);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    QRadialGradient highlight(posX - radius * 0.25, posY - radius * 0.35, radius * 0.4);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    highlight.setColorAt(0, QColor(255, 255, 255, 180));</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    highlight.setColorAt(1, QColor(255, 255, 255, 0));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    painter.setBrush(highlight);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    painter.drawEllipse(QPointF(posX - radius * 0.25, posY - radius * 0.35), radius * 0.35, radius * 0.35);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classGameWidget.html#a8ce9403a55c5ccc56cc8e4fd6bc43857">   83</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a8ce9403a55c5ccc56cc8e4fd6bc43857">GameWidget::drawWinOverlay</a>(QPainter &amp;painter, <span class="keywordtype">double</span> boardSize) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    painter.setBrush(QColor(0, 0, 0, 150));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    painter.setPen(Qt::NoPen);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    painter.drawRect(0, 0, width(), height());</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    painter.setPen(QColor(0, 220, 0));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    QFont font = painter.font();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    font.setPixelSize(boardSize * 0.08);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    font.setBold(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    painter.setFont(font);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    painter.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, <span class="stringliteral">&quot;Wygrana!&quot;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">GameWidget::paintEvent</a>(QPaintEvent *event) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    QPainter painter(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    painter.setRenderHint(QPainter::Antialiasing);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">double</span> boardSize = qMin(height(), width()) * 0.9;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">double</span> offsetX = (width() - boardSize) / 2.0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">double</span> offsetY = (height() - boardSize) / 2.0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="classGameWidget.html#a9a42d26c07c92d4d8f9809f63460ffcf">drawBoard</a>(painter, offsetX, offsetY, boardSize);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="classGameWidget.html#a699ef7b92d9829b3cd9235af37bfcaa6">drawWalls</a>(painter, offsetX, offsetY, boardSize);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_function" href="classGameWidget.html#a35413c58d711b9f7210df1511f14c941">drawGoal</a>(painter, offsetX, offsetY, boardSize);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="classGameWidget.html#abca7dfae60226e3b6d168745da0a0874">drawBall</a>(painter, offsetX, offsetY, boardSize);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classGameWidget.html#af7849ebf03b39f4b39dc3bf8ce737f22">gameWon</a>) <a class="code hl_function" href="classGameWidget.html#a8ce9403a55c5ccc56cc8e4fd6bc43857">drawWinOverlay</a>(painter, boardSize);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec">  111</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec">GameWidget::resetMaze</a>() {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_variable" href="classGameWidget.html#af7849ebf03b39f4b39dc3bf8ce737f22">gameWon</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">generate</a>(<a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>, <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_variable" href="classGameWidget.html#af096c43e4903b5a581f181146f3c7383">walls</a> = <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">getWalls</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">auto</span> [goalRow, goalCol] = <a class="code hl_variable" href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">generator</a>-&gt;<a class="code hl_function" href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">findFarthestCell</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_variable" href="classGameWidget.html#ab50333b84a2342abc255b557763bb092">goalX</a> = (goalCol + 0.5) / <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_variable" href="classGameWidget.html#a526a8799762fbc0b43e63dfea3e99a6b">goalY</a> = (goalRow + 0.5) / <a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> = 1.0 / (2.0 * <a class="code hl_variable" href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">cols</a>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> = 1.0 / (2.0 * <a class="code hl_variable" href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">rows</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> = <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> = <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> = <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> = 0.0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    update();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">  124</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">GameWidget::updatePos</a>(){</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#af7849ebf03b39f4b39dc3bf8ce737f22">gameWon</a>) { update(); <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> += <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> += <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> *= (1.0 - <a class="code hl_variable" href="classGameWidget.html#ae148fc517c31731794ba9dc687671967">friction</a>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> *= (1.0 - <a class="code hl_variable" href="classGameWidget.html#ae148fc517c31731794ba9dc687671967">friction</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> += <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> += <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> &lt; 0.0){<a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> = 0.0; <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> = 0.0;}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> &gt; 1.0){<a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> = 1.0; <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> = 0.0;}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> &lt; 0.0){<a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> = 0.0; <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> = 0.0;}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> &gt; 1.0){<a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> = 1.0; <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> = 0.0;}</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i){</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> QRectF &amp;wall : <a class="code hl_variable" href="classGameWidget.html#af096c43e4903b5a581f181146f3c7383">walls</a>){</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordtype">double</span> closestX = qBound(wall.left(), <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a>, wall.right());</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordtype">double</span> closestY = qBound(wall.top(), <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a>, wall.bottom());</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordtype">double</span> distX = <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> - closestX;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordtype">double</span> distY = <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> - closestY;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordtype">double</span> dist = std::sqrt(distX * distX + distY * distY);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">if</span>(dist &lt;= ballRadius &amp;&amp; dist &gt; 0){</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                <span class="keywordtype">double</span> nx = distX / dist;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <span class="keywordtype">double</span> ny = distY / dist;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> = closestX + nx * <a class="code hl_variable" href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">ballRadius</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> = closestY + ny * <a class="code hl_variable" href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">ballRadius</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <span class="keywordtype">double</span> dotProduct = <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> * nx + <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> * ny;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="keywordflow">if</span>(dotProduct &lt; 0) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> -= dotProduct * nx;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> -= dotProduct * ny;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordtype">double</span> dx = <a class="code hl_variable" href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">ballX</a> - <a class="code hl_variable" href="classGameWidget.html#ab50333b84a2342abc255b557763bb092">goalX</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordtype">double</span> dy = <a class="code hl_variable" href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">ballY</a> - <a class="code hl_variable" href="classGameWidget.html#a526a8799762fbc0b43e63dfea3e99a6b">goalY</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">if</span>(std::sqrt(dx*dx + dy*dy) &lt; <a class="code hl_variable" href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">ballRadius</a>) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <a class="code hl_variable" href="classGameWidget.html#af7849ebf03b39f4b39dc3bf8ce737f22">gameWon</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <a class="code hl_variable" href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">velX</a> = <a class="code hl_variable" href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">velY</a> = <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> = <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> = 0.0;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_variable" href="classGameWidget.html#a550b0f3c02c5c7102f748539455ee8e2">pulsePhase</a> += 0.05;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classGameWidget.html#a550b0f3c02c5c7102f748539455ee8e2">pulsePhase</a> &gt; 2 * M_PI) <a class="code hl_variable" href="classGameWidget.html#a550b0f3c02c5c7102f748539455ee8e2">pulsePhase</a> -= 2 * M_PI;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    update();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">  179</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">GameWidget::keyPressEvent</a>(QKeyEvent *event){</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span>(event-&gt;isAutoRepeat()){</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">event</span>-&gt;ignore();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">switch</span>(event-&gt;key()){</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">case</span> Qt::Key_Up:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_variable" href="classGameWidget.html#a46ed6709985035492c64c03a8bb825c1">goUp</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> -= <a class="code hl_variable" href="classGameWidget.html#a55b5881ae342d5f5eead2ed25f446cfa">accelStep</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keyword">event</span>-&gt;accept();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">case</span> Qt::Key_Down:</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <a class="code hl_variable" href="classGameWidget.html#a2c9172a94c2f143e8fe305cbb362baf0">goDown</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> += <a class="code hl_variable" href="classGameWidget.html#a55b5881ae342d5f5eead2ed25f446cfa">accelStep</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keyword">event</span>-&gt;accept();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">case</span> Qt::Key_Left:</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_variable" href="classGameWidget.html#a31d45ca6a163fa44492e03dc558767fa">goLeft</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> -= <a class="code hl_variable" href="classGameWidget.html#a55b5881ae342d5f5eead2ed25f446cfa">accelStep</a>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">event</span>-&gt;accept();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">case</span> Qt::Key_Right:</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <a class="code hl_variable" href="classGameWidget.html#a2a8ac7c120a6a5590edb03fcba945ccb">goRight</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> += <a class="code hl_variable" href="classGameWidget.html#a55b5881ae342d5f5eead2ed25f446cfa">accelStep</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keyword">event</span>-&gt;accept();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">  210</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">GameWidget::keyReleaseEvent</a>(QKeyEvent *event){</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">if</span>(event-&gt;isAutoRepeat()){</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keyword">event</span>-&gt;ignore();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">switch</span>(event-&gt;key()){</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordflow">case</span> Qt::Key_Up:</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_variable" href="classGameWidget.html#a46ed6709985035492c64c03a8bb825c1">goUp</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> = 0.0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordflow">case</span> Qt::Key_Down:</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <a class="code hl_variable" href="classGameWidget.html#a2c9172a94c2f143e8fe305cbb362baf0">goDown</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> = 0.0;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">case</span> Qt::Key_Left:</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <a class="code hl_variable" href="classGameWidget.html#a31d45ca6a163fa44492e03dc558767fa">goLeft</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> = 0.0;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">case</span> Qt::Key_Right:</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <a class="code hl_variable" href="classGameWidget.html#a2a8ac7c120a6a5590edb03fcba945ccb">goRight</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> = 0.0;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>}</div>
+</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c">  236</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c">GameWidget::onSensorData</a>(<span class="keywordtype">float</span> ax, <span class="keywordtype">float</span> ay, <span class="keywordtype">float</span> az, <span class="keywordtype">float</span> gx, <span class="keywordtype">float</span> gy, <span class="keywordtype">float</span> gz){</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;ax:&quot;</span> &lt;&lt; ax &lt;&lt; <span class="stringliteral">&quot;ay:&quot;</span> &lt;&lt; ay &lt;&lt; <span class="stringliteral">&quot;az:&quot;</span> &lt;&lt; az;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_variable" href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">accX</a> = ax * <a class="code hl_variable" href="classGameWidget.html#a223d2606754e0182df360f7be7541fb6">scaleFactor</a>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_variable" href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">accY</a> = -ay * <a class="code hl_variable" href="classGameWidget.html#a223d2606754e0182df360f7be7541fb6">scaleFactor</a>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
+</div>
+<div class="ttc" id="aclassGameWidget_html_a223d2606754e0182df360f7be7541fb6"><div class="ttname"><a href="classGameWidget.html#a223d2606754e0182df360f7be7541fb6">GameWidget::scaleFactor</a></div><div class="ttdeci">double scaleFactor</div><div class="ttdoc">Współczynnik skalujący dane z akcelerometru na przyspieszenie kulki.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00024">gamewidget.h:24</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a24c2111eefe7583b04d9c0c3cbd51d1e"><div class="ttname"><a href="classGameWidget.html#a24c2111eefe7583b04d9c0c3cbd51d1e">GameWidget::velX</a></div><div class="ttdeci">double velX</div><div class="ttdoc">Składowa prędkości kulki w osi X.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00029">gamewidget.h:29</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a2a8ac7c120a6a5590edb03fcba945ccb"><div class="ttname"><a href="classGameWidget.html#a2a8ac7c120a6a5590edb03fcba945ccb">GameWidget::goRight</a></div><div class="ttdeci">bool goRight</div><div class="ttdoc">Flaga naciśnięcia klawisza w prawo.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00047">gamewidget.h:47</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a2c9172a94c2f143e8fe305cbb362baf0"><div class="ttname"><a href="classGameWidget.html#a2c9172a94c2f143e8fe305cbb362baf0">GameWidget::goDown</a></div><div class="ttdeci">bool goDown</div><div class="ttdoc">Flaga naciśnięcia klawisza w dół</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00049">gamewidget.h:49</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a31d45ca6a163fa44492e03dc558767fa"><div class="ttname"><a href="classGameWidget.html#a31d45ca6a163fa44492e03dc558767fa">GameWidget::goLeft</a></div><div class="ttdeci">bool goLeft</div><div class="ttdoc">Flaga naciśnięcia klawisza w lewo.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00046">gamewidget.h:46</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a350024625893bd439fe761c4df0e7c6f"><div class="ttname"><a href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">GameWidget::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje naciśnięcie klawisza strzałki.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00179">gamewidget.cpp:179</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a35413c58d711b9f7210df1511f14c941"><div class="ttname"><a href="classGameWidget.html#a35413c58d711b9f7210df1511f14c941">GameWidget::drawGoal</a></div><div class="ttdeci">void drawGoal(QPainter &amp;painter, double offsetX, double offsetY, double boardSize)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00044">gamewidget.cpp:44</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a3f30642bf770cf31856999d2f713cf50"><div class="ttname"><a href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">GameWidget::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00096">gamewidget.cpp:96</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a46ed6709985035492c64c03a8bb825c1"><div class="ttname"><a href="classGameWidget.html#a46ed6709985035492c64c03a8bb825c1">GameWidget::goUp</a></div><div class="ttdeci">bool goUp</div><div class="ttdoc">Flaga naciśnięcia klawisza w górę</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00048">gamewidget.h:48</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a526a8799762fbc0b43e63dfea3e99a6b"><div class="ttname"><a href="classGameWidget.html#a526a8799762fbc0b43e63dfea3e99a6b">GameWidget::goalY</a></div><div class="ttdeci">double goalY</div><div class="ttdoc">Znormalizowana pozycja Y środka komórki docelowej.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00044">gamewidget.h:44</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a550b0f3c02c5c7102f748539455ee8e2"><div class="ttname"><a href="classGameWidget.html#a550b0f3c02c5c7102f748539455ee8e2">GameWidget::pulsePhase</a></div><div class="ttdeci">double pulsePhase</div><div class="ttdoc">Faza animacji pulsowania punktu docelowego [rad].</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00025">gamewidget.h:25</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a55b5881ae342d5f5eead2ed25f446cfa"><div class="ttname"><a href="classGameWidget.html#a55b5881ae342d5f5eead2ed25f446cfa">GameWidget::accelStep</a></div><div class="ttdeci">const double accelStep</div><div class="ttdoc">Wartość przyspieszenia nadawanego przez klawiaturę</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00035">gamewidget.h:35</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a67b92c74678cd8fa81d588628ee15b70"><div class="ttname"><a href="classGameWidget.html#a67b92c74678cd8fa81d588628ee15b70">GameWidget::ballRadius</a></div><div class="ttdeci">double ballRadius</div><div class="ttdoc">Znormalizowany promień kulki do detekcji kolizji.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00023">gamewidget.h:23</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a699ef7b92d9829b3cd9235af37bfcaa6"><div class="ttname"><a href="classGameWidget.html#a699ef7b92d9829b3cd9235af37bfcaa6">GameWidget::drawWalls</a></div><div class="ttdeci">void drawWalls(QPainter &amp;painter, double offsetX, double offsetY, double boardSize)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00030">gamewidget.cpp:30</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a75c85efffdf79229f8173605976e8188"><div class="ttname"><a href="classGameWidget.html#a75c85efffdf79229f8173605976e8188">GameWidget::GameWidget</a></div><div class="ttdeci">GameWidget(int r, int c, QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor tworzący widget gry z labiryntem.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00004">gamewidget.cpp:4</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a76859a3083804713db05109cd6be51d9"><div class="ttname"><a href="classGameWidget.html#a76859a3083804713db05109cd6be51d9">GameWidget::velY</a></div><div class="ttdeci">double velY</div><div class="ttdoc">Składowa prędkości kulki w osi Y.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00030">gamewidget.h:30</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a834496522f3fb964cfa0c87c17be3558"><div class="ttname"><a href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">GameWidget::keyReleaseEvent</a></div><div class="ttdeci">void keyReleaseEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje zwolnienie klawisza strzałki.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00210">gamewidget.cpp:210</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a871684b9a1c5f716ffd85cdf4b56fc0c"><div class="ttname"><a href="classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c">GameWidget::onSensorData</a></div><div class="ttdeci">void onSensorData(float ax, float ay, float az, float gx, float gy, float gz)</div><div class="ttdoc">Slot odbierający dane z czujnika IMU.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00236">gamewidget.cpp:236</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a8ce9403a55c5ccc56cc8e4fd6bc43857"><div class="ttname"><a href="classGameWidget.html#a8ce9403a55c5ccc56cc8e4fd6bc43857">GameWidget::drawWinOverlay</a></div><div class="ttdeci">void drawWinOverlay(QPainter &amp;painter, double boardSize)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00083">gamewidget.cpp:83</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a95036a644cfb8df8d11402f8ecf8ccff"><div class="ttname"><a href="classGameWidget.html#a95036a644cfb8df8d11402f8ecf8ccff">GameWidget::accY</a></div><div class="ttdeci">double accY</div><div class="ttdoc">Składowa przyspieszenia kulki w osi Y.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00032">gamewidget.h:32</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a9a42d26c07c92d4d8f9809f63460ffcf"><div class="ttname"><a href="classGameWidget.html#a9a42d26c07c92d4d8f9809f63460ffcf">GameWidget::drawBoard</a></div><div class="ttdeci">void drawBoard(QPainter &amp;painter, double offsetX, double offsetY, double boardSize)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00021">gamewidget.cpp:21</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a9cbbfe68168c7f77846e3cb86758ab38"><div class="ttname"><a href="classGameWidget.html#a9cbbfe68168c7f77846e3cb86758ab38">GameWidget::generator</a></div><div class="ttdeci">MazeGenerator * generator</div><div class="ttdoc">Generator labiryntu.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00037">gamewidget.h:37</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_a9ddc411f8f27dfb2f825a389d0de56c7"><div class="ttname"><a href="classGameWidget.html#a9ddc411f8f27dfb2f825a389d0de56c7">GameWidget::ballX</a></div><div class="ttdeci">double ballX</div><div class="ttdoc">Znormalizowana pozycja kulki w osi X (0.0 – 1.0)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00021">gamewidget.h:21</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_aa1aa6deff9557d396ddd5eed3547868e"><div class="ttname"><a href="classGameWidget.html#aa1aa6deff9557d396ddd5eed3547868e">GameWidget::cols</a></div><div class="ttdeci">int cols</div><div class="ttdoc">Liczba kolumn labiryntu.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00041">gamewidget.h:41</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_aa1cdaf4afeea032a52303a3c71cdeda2"><div class="ttname"><a href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">GameWidget::updatePos</a></div><div class="ttdeci">void updatePos()</div><div class="ttdoc">Aktualizuje pozycję kulki na planszy.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00124">gamewidget.cpp:124</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_aa822318c62ab66ca7515ebde55379e20"><div class="ttname"><a href="classGameWidget.html#aa822318c62ab66ca7515ebde55379e20">GameWidget::ballY</a></div><div class="ttdeci">double ballY</div><div class="ttdoc">Znormalizowana pozycja kulki w osi Y (0.0 – 1.0)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00022">gamewidget.h:22</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_ab00ce2812014da4ff82b9575df74b250"><div class="ttname"><a href="classGameWidget.html#ab00ce2812014da4ff82b9575df74b250">GameWidget::accX</a></div><div class="ttdeci">double accX</div><div class="ttdoc">Składowa przyspieszenia kulki w osi X.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00031">gamewidget.h:31</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_ab50333b84a2342abc255b557763bb092"><div class="ttname"><a href="classGameWidget.html#ab50333b84a2342abc255b557763bb092">GameWidget::goalX</a></div><div class="ttdeci">double goalX</div><div class="ttdoc">Znormalizowana pozycja X środka komórki docelowej.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00043">gamewidget.h:43</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_abca7dfae60226e3b6d168745da0a0874"><div class="ttname"><a href="classGameWidget.html#abca7dfae60226e3b6d168745da0a0874">GameWidget::drawBall</a></div><div class="ttdeci">void drawBall(QPainter &amp;painter, double offsetX, double offsetY, double boardSize)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00059">gamewidget.cpp:59</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_abe8620a29bc6a722bfb26ef85522e0ec"><div class="ttname"><a href="classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec">GameWidget::resetMaze</a></div><div class="ttdeci">void resetMaze()</div><div class="ttdoc">Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8cpp_source.html#l00111">gamewidget.cpp:111</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_ad5ed08dae345759b9b943dab56c0faaa"><div class="ttname"><a href="classGameWidget.html#ad5ed08dae345759b9b943dab56c0faaa">GameWidget::timer</a></div><div class="ttdeci">QTimer * timer</div><div class="ttdoc">Timer odpalający aktualizację pozycji co 16 ms (~60 FPS)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00027">gamewidget.h:27</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_adf22f85c0faf8832810038e698abe830"><div class="ttname"><a href="classGameWidget.html#adf22f85c0faf8832810038e698abe830">GameWidget::rows</a></div><div class="ttdeci">int rows</div><div class="ttdoc">Liczba wierszy labiryntu.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00040">gamewidget.h:40</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_ae148fc517c31731794ba9dc687671967"><div class="ttname"><a href="classGameWidget.html#ae148fc517c31731794ba9dc687671967">GameWidget::friction</a></div><div class="ttdeci">const double friction</div><div class="ttdoc">Współczynnik tarcia (0.0 – 1.0)</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00034">gamewidget.h:34</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_af096c43e4903b5a581f181146f3c7383"><div class="ttname"><a href="classGameWidget.html#af096c43e4903b5a581f181146f3c7383">GameWidget::walls</a></div><div class="ttdeci">QVector&lt; QRectF &gt; walls</div><div class="ttdoc">Lista prostokątów ścian w znormalizowanych współrzędnych.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00038">gamewidget.h:38</a></div></div>
+<div class="ttc" id="aclassGameWidget_html_af7849ebf03b39f4b39dc3bf8ce737f22"><div class="ttname"><a href="classGameWidget.html#af7849ebf03b39f4b39dc3bf8ce737f22">GameWidget::gameWon</a></div><div class="ttdeci">bool gameWon</div><div class="ttdoc">Flaga wygranej gry.</div><div class="ttdef"><b>Definition</b> <a href="gamewidget_8h_source.html#l00051">gamewidget.h:51</a></div></div>
+<div class="ttc" id="aclassMazeGenerator_html"><div class="ttname"><a href="classMazeGenerator.html">MazeGenerator</a></div><div class="ttdoc">Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego.</div><div class="ttdef"><b>Definition</b> <a href="mazegenerator_8h_source.html#l00030">mazegenerator.h:31</a></div></div>
+<div class="ttc" id="aclassMazeGenerator_html_a2fc679414b0d2bbea0a5b4aee8103583"><div class="ttname"><a href="classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583">MazeGenerator::getWalls</a></div><div class="ttdeci">QVector&lt; QRectF &gt; getWalls()</div><div class="ttdoc">Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych.</div><div class="ttdef"><b>Definition</b> <a href="mazegenerator_8cpp_source.html#l00078">mazegenerator.cpp:78</a></div></div>
+<div class="ttc" id="aclassMazeGenerator_html_ae17625db3730bbdc67f682346d691d95"><div class="ttname"><a href="classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95">MazeGenerator::findFarthestCell</a></div><div class="ttdeci">std::pair&lt; int, int &gt; findFarthestCell()</div><div class="ttdoc">Wyznacza komórkę najdalszą od punktu startowego (0, 0).</div><div class="ttdef"><b>Definition</b> <a href="mazegenerator_8cpp_source.html#l00014">mazegenerator.cpp:14</a></div></div>
+<div class="ttc" id="aclassMazeGenerator_html_af77955852c4c984380267aad381c10e9"><div class="ttname"><a href="classMazeGenerator.html#af77955852c4c984380267aad381c10e9">MazeGenerator::generate</a></div><div class="ttdeci">void generate(int rows, int cols)</div><div class="ttdoc">Generuje nowy labirynt o zadanym rozmiarze.</div><div class="ttdef"><b>Definition</b> <a href="mazegenerator_8cpp_source.html#l00006">mazegenerator.cpp:6</a></div></div>
+<div class="ttc" id="agamewidget_8h_html"><div class="ttname"><a href="gamewidget_8h.html">gamewidget.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="gamewidget_8cpp.html">gamewidget.cpp</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

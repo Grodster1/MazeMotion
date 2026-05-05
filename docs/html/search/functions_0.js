@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datareceived_0',['dataReceived',['../classSensorReader.html#a3ac283d48a779b4fb75432f3c9819c1e',1,'SensorReader']]]
+  ['close_0',['close',['../classSensorReader.html#a2cbf6c3ccf9fc63bfcd0a4c6115b25d5',1,'SensorReader']]]
 ];

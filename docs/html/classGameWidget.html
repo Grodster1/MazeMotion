@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
@@ -6,13 +7,36 @@
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MazeMotion: Dokumentacja klasy GameWidget</title>
+<script type="text/javascript">document.documentElement.classList.add('dark-mode');</script>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeTabs.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,6 +48,18 @@
    <div id="projectname">MazeMotion
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,17 +71,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Szukaj');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('classGameWidget.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +109,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Sloty publiczne</a> &#124;
@@ -78,45 +119,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Widget odpowiedzialny za renderowanie planszy i kuli.  
+<p>Widget odpowiedzialny za renderowanie planszy i kulki.  
  <a href="classGameWidget.html#details">Więcej...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gamewidget_8h_source.html">gamewidget.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagram dziedziczenia dla GameWidget</div>
 <div class="dyncontent">
-<div class="center"><img src="classGameWidget__inherit__graph.png" border="0" usemap="#aGameWidget_inherit__map" alt="Inheritance graph"/></div>
-<map name="aGameWidget_inherit__map" id="aGameWidget_inherit__map">
-<area shape="rect" title="Widget odpowiedzialny za renderowanie planszy i kuli." alt="" coords="5,79,112,104"/>
-<area shape="rect" title=" " alt="" coords="19,5,98,31"/>
-<area shape="poly" title=" " alt="" coords="61,44,61,79,56,79,56,44"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__inherit__graph.svg" width="162" height="310"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Diagram współpracy dla GameWidget:</div>
 <div class="dyncontent">
-<div class="center"><img src="classGameWidget__coll__graph.png" border="0" usemap="#aGameWidget_coll__map" alt="Collaboration graph"/></div>
-<map name="aGameWidget_coll__map" id="aGameWidget_coll__map">
-<area shape="rect" title="Widget odpowiedzialny za renderowanie planszy i kuli." alt="" coords="5,79,112,104"/>
-<area shape="rect" title=" " alt="" coords="19,5,98,31"/>
-<area shape="poly" title=" " alt="" coords="61,44,61,79,56,79,56,44"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__coll__graph.svg" width="162" height="310"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Sloty publiczne</h2></td></tr>
-<tr class="memitem:a871684b9a1c5f716ffd85cdf4b56fc0c" id="r_a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="memItemLeft" align="right" valign="top"><a id="a871684b9a1c5f716ffd85cdf4b56fc0c" name="a871684b9a1c5f716ffd85cdf4b56fc0c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onSensorData</b> (float ax, float ay, float az, float gx, float gy, float gz)</td></tr>
+<tr class="memitem:a871684b9a1c5f716ffd85cdf4b56fc0c" id="r_a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c">onSensorData</a> (float ax, float ay, float az, float gx, float gy, float gz)</td></tr>
+<tr class="memdesc:a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot odbierający dane z czujnika IMU.  <br /></td></tr>
 <tr class="separator:a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a2a749d7f4d54e75f921d9ed980971633" id="r_a2a749d7f4d54e75f921d9ed980971633"><td class="memItemLeft" align="right" valign="top"><a id="a2a749d7f4d54e75f921d9ed980971633" name="a2a749d7f4d54e75f921d9ed980971633"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameWidget</b> (QWidget *parent=nullptr)</td></tr>
-<tr class="separator:a2a749d7f4d54e75f921d9ed980971633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c85efffdf79229f8173605976e8188" id="r_a75c85efffdf79229f8173605976e8188"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a75c85efffdf79229f8173605976e8188">GameWidget</a> (int r, int c, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a75c85efffdf79229f8173605976e8188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor tworzący widget gry z labiryntem.  <br /></td></tr>
+<tr class="separator:a75c85efffdf79229f8173605976e8188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">paintEvent</a> (QPaintEvent *event) override</td></tr>
-<tr class="memdesc:a3f30642bf770cf31856999d2f713cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje scenę gry — planszę, ściany labiryntu i kulkę.  <br /></td></tr>
+<tr class="memdesc:a3f30642bf770cf31856999d2f713cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę.  <br /></td></tr>
 <tr class="separator:a3f30642bf770cf31856999d2f713cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8620a29bc6a722bfb26ef85522e0ec" id="r_abe8620a29bc6a722bfb26ef85522e0ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec">resetMaze</a> ()</td></tr>
+<tr class="memdesc:abe8620a29bc6a722bfb26ef85522e0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej.  <br /></td></tr>
+<tr class="separator:abe8620a29bc6a722bfb26ef85522e0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1cdaf4afeea032a52303a3c71cdeda2" id="r_aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">updatePos</a> ()</td></tr>
 <tr class="memdesc:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje pozycję kulki na planszy.  <br /></td></tr>
 <tr class="separator:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,9 +165,63 @@ Metody chronione</h2></td></tr>
 <tr class="separator:a834496522f3fb964cfa0c87c17be3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>Widget odpowiedzialny za renderowanie planszy i kuli. </p>
-<p>Obsługuję rysowanie sceny gdy, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU </p>
-</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<div class="textblock"><p>Widget odpowiedzialny za renderowanie planszy i kulki. </p>
+<p>Obsługuje rysowanie sceny gry, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU. Plansza jest skalowalna i zawsze rysowana jako wycentrowany kwadrat. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a75c85efffdf79229f8173605976e8188" name="a75c85efffdf79229f8173605976e8188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c85efffdf79229f8173605976e8188">&#9670;&#160;</a></span>GameWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameWidget::GameWidget </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor tworzący widget gry z labiryntem. </p>
+<p>Generuje labirynt o zadanym rozmiarze, wyznacza punkt docelowy i uruchamia timer aktualizacji pozycji.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Liczba wierszy labiryntu </td></tr>
+    <tr><td class="paramname">c</td><td>Liczba kolumn labiryntu </td></tr>
+    <tr><td class="paramname">parent</td><td>Widget rodzica (domyślnie nullptr) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
 <a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a350024625893bd439fe761c4df0e7c6f">&#9670;&#160;</a></span>keyPressEvent()</h2>
 
@@ -204,6 +292,80 @@ Metody chronione</h2></td></tr>
 
 </div>
 </div>
+<a id="a871684b9a1c5f716ffd85cdf4b56fc0c" name="a871684b9a1c5f716ffd85cdf4b56fc0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871684b9a1c5f716ffd85cdf4b56fc0c">&#9670;&#160;</a></span>onSensorData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::onSensorData </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>az</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot odbierający dane z czujnika IMU. </p>
+<p>Mapuje odczyty z akcelerometru na przyspieszenie kulki z uwzględnieniem współczynnika skalowania.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ax</td><td>Przyspieszenie liniowe w osi X [g] </td></tr>
+    <tr><td class="paramname">ay</td><td>Przyspieszenie liniowe w osi Y [g] </td></tr>
+    <tr><td class="paramname">az</td><td>Przyspieszenie liniowe w osi Z [g] </td></tr>
+    <tr><td class="paramname">gx</td><td>Prędkość kątowa w osi X [°/s] </td></tr>
+    <tr><td class="paramname">gy</td><td>Prędkość kątowa w osi Y [°/s] </td></tr>
+    <tr><td class="paramname">gz</td><td>Prędkość kątowa w osi Z [°/s] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f30642bf770cf31856999d2f713cf50">&#9670;&#160;</a></span>paintEvent()</h2>
 
@@ -228,7 +390,7 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rysuje scenę gry — planszę, ściany labiryntu i kulkę. </p>
+<p>Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę. </p>
 <p>Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza rysowana jest jako kwadrat wycentrowany w widgecie, a wszystkie elementy skalują się proporcjonalnie do rozmiaru okna.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
@@ -236,6 +398,26 @@ Metody chronione</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="abe8620a29bc6a722bfb26ef85522e0ec" name="abe8620a29bc6a722bfb26ef85522e0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe8620a29bc6a722bfb26ef85522e0ec">&#9670;&#160;</a></span>resetMaze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::resetMaze </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej. </p>
+<p>Wywoływana po dotarciu kulki do celu lub na żądanie użytkownika (przycisk "Nowy labirynt"). Generuje nowy układ ścian, wyznacza nowy punkt docelowy i zeruje prędkość oraz przyspieszenie kulki. </p>
 
 </div>
 </div>
@@ -255,7 +437,7 @@ Metody chronione</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Aktualizuje pozycję kulki na planszy. </p>
-<p>Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, ogranicza pozycję do granic planszy i wywołuje update() w celu przerysowania widgetu. </p>
+<p>Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, wykrywa kolizje ze ścianami labiryntu i wywołuje update() w celu przerysowania widgetu. </p>
 
 </div>
 </div>
@@ -264,9 +446,14 @@ Metody chronione</h2></td></tr>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<b>gamewidget.cpp</b></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.8-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classGameWidget.html">GameWidget</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

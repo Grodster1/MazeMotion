@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_0',['open',['../classSensorReader.html#a8847ed9d1c9147fe0c2f50ded87b2fd8',1,'SensorReader']]]
+  ['findfarthestcell_0',['findFarthestCell',['../classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95',1,'MazeGenerator']]]
 ];

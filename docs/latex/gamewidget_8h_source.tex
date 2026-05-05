@@ -9,52 +9,71 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPainter>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
-\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}mazegenerator.h"{}}}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ }
 \DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameWidget}{GameWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
 \DoxyCodeLine{00018\ \{}
 \DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ ballX\ =\ 0.5;\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ ballY\ =\ 0.5;\ }
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ scaleFactor\ =\ 0.001;\ }
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ QTimer\ *timer;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ ballX;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{double}\ ballY;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ ballRadius\ =\ 0.02;\ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ scaleFactor\ =\ 0.001;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ pulsePhase\ =\ 0.0;\ \ \ \ }
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Implementacja\ przyśpieszenia}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ velX\ =\ 0.0;\ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ velY\ =\ 0.0;\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ accX\ =\ 0.0;\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ accY\ =\ 0.0;\ }
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ friction\ =\ 0.02;\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ accelStep\ =\ 0.0005;}
-\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00027\ \ \ \ \ QTimer\ *timer;\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ velX\ =\ 0.0;\ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ velY\ =\ 0.0;\ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ accX\ =\ 0.0;\ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ accY\ =\ 0.0;\ \ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ friction\ =\ 0.02;\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ accelStep\ =\ 0.0005;\ \ }
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ goLeft\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ goRight\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ goUp\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ goDown\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classGameWidget}{GameWidget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}{updatePos}}();}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a350024625893bd439fe761c4df0e7c6f}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{keyReleaseEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ onSensorData(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az,\ \textcolor{keywordtype}{float}\ gx,\ \textcolor{keywordtype}{float}\ gy,\ \textcolor{keywordtype}{float}\ gz);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classMazeGenerator}{MazeGenerator}}\ *generator;\ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ QVector<QRectF>\ walls;\ \ \ \ \ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ rows;\ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ cols;\ \ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ goalX;\ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ goalY;\ \ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ goLeft\ =\ \textcolor{keyword}{false};\ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ goRight\ =\ \textcolor{keyword}{false};\ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ goUp\ =\ \textcolor{keyword}{false};\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ goDown\ =\ \textcolor{keyword}{false};\ \ \ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameWon\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBoard(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWalls(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBall(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGoal(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWinOverlay(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classGameWidget}{GameWidget}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_abe8620a29bc6a722bfb26ef85522e0ec}{resetMaze}}();}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ signals:}
-\DoxyCodeLine{00093\ \};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWIDGET\_H}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}{updatePos}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a350024625893bd439fe761c4df0e7c6f}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{keyReleaseEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c}{onSensorData}}(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az,\ \textcolor{keywordtype}{float}\ gx,\ \textcolor{keywordtype}{float}\ gy,\ \textcolor{keywordtype}{float}\ gz);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ signals:}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWIDGET\_H}}
 
 \end{DoxyCode}

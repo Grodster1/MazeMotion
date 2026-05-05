@@ -2,7 +2,7 @@
 \hypertarget{classGameWidget}{}\label{classGameWidget}\index{GameWidget@{GameWidget}}
 
 
-Widget odpowiedzialny za renderowanie planszy i kuli.  
+Widget odpowiedzialny za renderowanie planszy i kulki.  
 
 
 
@@ -15,7 +15,7 @@ Diagram dziedziczenia dla Game\+Widget\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{classGameWidget__inherit__graph}
+\includegraphics[width=193pt]{classGameWidget__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,23 +24,23 @@ Diagram współpracy dla Game\+Widget\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{classGameWidget__coll__graph}
+\includegraphics[width=193pt]{classGameWidget__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Sloty publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c}\label{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c} 
-void {\bfseries on\+Sensor\+Data} (float ax, float ay, float az, float gx, float gy, float gz)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c}{on\+Sensor\+Data}} (float ax, float ay, float az, float gx, float gy, float gz)
+\begin{DoxyCompactList}\small\item\em Slot odbierający dane z czujnika IMU. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classGameWidget_a2a749d7f4d54e75f921d9ed980971633}\label{classGameWidget_a2a749d7f4d54e75f921d9ed980971633} 
-{\bfseries Game\+Widget} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\item 
+\mbox{\hyperlink{classGameWidget_a75c85efffdf79229f8173605976e8188}{Game\+Widget}} (int r, int c, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor tworzący widget gry z labiryntem. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
-\begin{DoxyCompactList}\small\item\em Rysuje scenę gry — planszę, ściany labiryntu i kulkę. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget_abe8620a29bc6a722bfb26ef85522e0ec}{reset\+Maze}} ()
+\begin{DoxyCompactList}\small\item\em Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}{update\+Pos}} ()
 \begin{DoxyCompactList}\small\item\em Aktualizuje pozycję kulki na planszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody chronione}
@@ -53,9 +53,33 @@ void \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{key\+Re
 
 
 \doxysubsection{Opis szczegółowy}
-Widget odpowiedzialny za renderowanie planszy i kuli. 
+Widget odpowiedzialny za renderowanie planszy i kulki. 
 
-Obsługuję rysowanie sceny gdy, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU 
+Obsługuje rysowanie sceny gry, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU. Plansza jest skalowalna i zawsze rysowana jako wycentrowany kwadrat. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{classGameWidget_a75c85efffdf79229f8173605976e8188}\label{classGameWidget_a75c85efffdf79229f8173605976e8188} 
+\index{GameWidget@{GameWidget}!GameWidget@{GameWidget}}
+\index{GameWidget@{GameWidget}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{GameWidget()}{GameWidget()}}
+{\footnotesize\ttfamily Game\+Widget\+::\+Game\+Widget (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor tworzący widget gry z labiryntem. 
+
+Generuje labirynt o zadanym rozmiarze, wyznacza punkt docelowy i uruchamia timer aktualizacji pozycji.
+
+
+\begin{DoxyParams}{Parametry}
+{\em r} & Liczba wierszy labiryntu \\
+\hline
+{\em c} & Liczba kolumn labiryntu \\
+\hline
+{\em parent} & Widget rodzica (domyślnie nullptr) \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Dokumentacja funkcji składowych}
 \Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
@@ -92,6 +116,33 @@ Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-\/repeat systemu
 {\em event} & Zdarzenie klawiatury \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c}\label{classGameWidget_a871684b9a1c5f716ffd85cdf4b56fc0c} 
+\index{GameWidget@{GameWidget}!onSensorData@{onSensorData}}
+\index{onSensorData@{onSensorData}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{onSensorData}{onSensorData}}
+{\footnotesize\ttfamily void Game\+Widget\+::on\+Sensor\+Data (\begin{DoxyParamCaption}\item[{float}]{ax,  }\item[{float}]{ay,  }\item[{float}]{az,  }\item[{float}]{gx,  }\item[{float}]{gy,  }\item[{float}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot odbierający dane z czujnika IMU. 
+
+Mapuje odczyty z akcelerometru na przyspieszenie kulki z uwzględnieniem współczynnika skalowania.
+
+
+\begin{DoxyParams}{Parametry}
+{\em ax} & Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
+\hline
+{\em ay} & Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
+\hline
+{\em az} & Przyspieszenie liniowe w osi Z \mbox{[}g\mbox{]} \\
+\hline
+{\em gx} & Prędkość kątowa w osi X \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gy} & Prędkość kątowa w osi Y \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gz} & Prędkość kątowa w osi Z \mbox{[}°/s\mbox{]} \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
 \index{GameWidget@{GameWidget}!paintEvent@{paintEvent}}
 \index{paintEvent@{paintEvent}!GameWidget@{GameWidget}}
@@ -100,7 +151,7 @@ Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-\/repeat systemu
 
 
 
-Rysuje scenę gry — planszę, ściany labiryntu i kulkę. 
+Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę. 
 
 Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza rysowana jest jako kwadrat wycentrowany w widgecie, a wszystkie elementy skalują się proporcjonalnie do rozmiaru okna.
 
@@ -109,7 +160,17 @@ Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza r
 {\em event} & Zdarzenie rysowania (nieużywane bezpośrednio) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}\label{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2} 
+\Hypertarget{classGameWidget_abe8620a29bc6a722bfb26ef85522e0ec}\label{classGameWidget_abe8620a29bc6a722bfb26ef85522e0ec} 
+\index{GameWidget@{GameWidget}!resetMaze@{resetMaze}}
+\index{resetMaze@{resetMaze}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{resetMaze()}{resetMaze()}}
+{\footnotesize\ttfamily void Game\+Widget\+::reset\+Maze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej. 
+
+Wywoływana po dotarciu kulki do celu lub na żądanie użytkownika (przycisk "{}\+Nowy labirynt"{}). Generuje nowy układ ścian, wyznacza nowy punkt docelowy i zeruje prędkość oraz przyspieszenie kulki. \Hypertarget{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2}\label{classGameWidget_aa1cdaf4afeea032a52303a3c71cdeda2} 
 \index{GameWidget@{GameWidget}!updatePos@{updatePos}}
 \index{updatePos@{updatePos}!GameWidget@{GameWidget}}
 \doxysubsubsection{\texorpdfstring{updatePos()}{updatePos()}}
@@ -119,7 +180,7 @@ Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza r
 
 Aktualizuje pozycję kulki na planszy. 
 
-Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, ogranicza pozycję do granic planszy i wywołuje update() w celu przerysowania widgetu. 
+Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, wykrywa kolizje ze ścianami labiryntu i wywołuje update() w celu przerysowania widgetu. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,5 +1,5 @@
 <map id="GameWidget" name="GameWidget">
-<area shape="rect" id="Node000001" title="Widget odpowiedzialny za renderowanie planszy i kuli." alt="" coords="5,79,112,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="19,5,98,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,44,61,79,56,79,56,44"/>
+<area shape="rect" id="Node000001" title="Widget odpowiedzialny za renderowanie planszy i kulki." alt="" coords="5,119,156,304"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="45,5,116,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,85,83,119,78,119,78,85"/>
 </map>

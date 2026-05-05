@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.8-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
@@ -6,13 +7,36 @@
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MazeMotion: Hierarchia klas</title>
+<script type="text/javascript">document.documentElement.classList.add('dark-mode');</script>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeTabs.init()
+</script>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,6 +48,18 @@
    <div id="projectname">MazeMotion
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,18 +71,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Szukaj');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
-</div><!-- top -->
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -75,44 +116,20 @@ $(function() {
 <div class="textblock">
 <p><a href="hierarchy.html">Idź do tekstowej hierarchii klas</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" usemap="#aCell" alt=""/>
-<map name="aCell" id="aCell">
-<area shape="rect" href="structCell.html" title=" " alt="" coords="5,5,52,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aMazeGenerator" alt=""/>
-<map name="aMazeGenerator" id="aMazeGenerator">
-<area shape="rect" href="classMazeGenerator.html" title=" " alt="" coords="5,5,128,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aQMainWindow" alt=""/>
-<map name="aQMainWindow" id="aQMainWindow">
-<area shape="rect" title=" " alt="" coords="5,5,121,31"/>
-<area shape="rect" href="classMainWindow.html" title=" " alt="" coords="169,5,276,31"/>
-<area shape="poly" title=" " alt="" coords="135,15,169,15,169,21,135,21"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aQObject" alt=""/>
-<map name="aQObject" id="aQObject">
-<area shape="rect" title=" " alt="" coords="5,5,80,31"/>
-<area shape="rect" href="classSensorReader.html" title="Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy." alt="" coords="128,5,240,31"/>
-<area shape="poly" title=" " alt="" coords="94,15,128,15,128,21,94,21"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aQWidget" alt=""/>
-<map name="aQWidget" id="aQWidget">
-<area shape="rect" title=" " alt="" coords="5,31,84,56"/>
-<area shape="rect" href="classChartPanel.html" title=" " alt="" coords="139,5,231,31"/>
-<area shape="poly" title=" " alt="" coords="97,31,139,24,140,29,98,37"/>
-<area shape="rect" href="classGameWidget.html" title="Widget odpowiedzialny za renderowanie planszy i kuli." alt="" coords="132,55,239,80"/>
-<area shape="poly" title=" " alt="" coords="98,50,132,56,131,61,97,55"/>
-</map>
-</td></tr>
+<tr><td><iframe scrolling="no" frameborder="0" src="inherit_graph_0.svg" width="58" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></td></tr>
+<tr><td><iframe scrolling="no" frameborder="0" src="inherit_graph_1.svg" width="134" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></td></tr>
+<tr><td><iframe scrolling="no" frameborder="0" src="inherit_graph_2.svg" width="282" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></td></tr>
+<tr><td><iframe scrolling="no" frameborder="0" src="inherit_graph_3.svg" width="246" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></td></tr>
+<tr><td><iframe scrolling="no" frameborder="0" src="inherit_graph_4.svg" width="244" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.8-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

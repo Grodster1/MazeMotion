@@ -18,13 +18,14 @@
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSensorReader}{SensorReader}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a8847ed9d1c9147fe0c2f50ded87b2fd8}{open}}(\textcolor{keyword}{const}\ QString\ \&portName);}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ signals:}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}{dataReceived}}(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az,\ \textcolor{keywordtype}{float}\ gx,\ \textcolor{keywordtype}{float}\ gy,\ \textcolor{keywordtype}{float}\ gz);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
-\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a2cbf6c3ccf9fc63bfcd0a4c6115b25d5}{close}}();}
+\DoxyCodeLine{00033\ signals:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a3ac283d48a779b4fb75432f3c9819c1e}{dataReceived}}(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay,\ \textcolor{keywordtype}{float}\ az,\ \textcolor{keywordtype}{float}\ gx,\ \textcolor{keywordtype}{float}\ gy,\ \textcolor{keywordtype}{float}\ gz);}
 \DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SENSORREADER\_H}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SENSORREADER\_H}}
 
 \end{DoxyCode}

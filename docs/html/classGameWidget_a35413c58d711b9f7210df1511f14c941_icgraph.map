@@ -1,0 +1,5 @@
+<map id="GameWidget::drawGoal" name="GameWidget::drawGoal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,416,31"/>
+<area shape="rect" id="Node000002" href="$classGameWidget.html#a3f30642bf770cf31856999d2f713cf50" title="Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę." alt="" coords="5,5,191,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,21,191,21,191,15,225,15"/>
+</map>

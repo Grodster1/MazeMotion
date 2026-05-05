@@ -1,0 +1,17 @@
+<map id="chartpanel.cpp" name="chartpanel.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="275,5,394,31"/>
+<area shape="rect" id="Node000002" href="$chartpanel_8h.html" title=" " alt="" coords="94,79,197,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,33,190,76,188,71,303,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="221,79,320,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="326,33,292,70,288,67,322,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="345,79,455,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="347,29,382,67,378,70,343,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="480,79,576,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="367,28,485,71,483,76,365,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,72,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,106,69,147,66,142,127,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,152,195,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="148,104,148,138,143,138,143,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="219,152,298,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="165,102,230,142,227,147,162,106"/>
+</map>

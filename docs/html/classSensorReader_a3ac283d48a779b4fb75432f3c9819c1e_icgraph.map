@@ -1,0 +1,9 @@
+<map id="SensorReader::dataReceived" name="SensorReader::dataReceived">
+<area shape="rect" id="Node000001" title="Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych." alt="" coords="523,31,732,56"/>
+<area shape="rect" id="Node000002" href="$classMainWindow.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="271,5,468,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="509,34,468,30,468,25,509,29"/>
+<area shape="rect" id="Node000003" href="$classSensorReader.html#acf4bdcdaadc0b62270b973bd8f501035" title=" " alt="" coords="264,55,475,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="509,57,475,60,474,55,509,52"/>
+<area shape="rect" id="Node000004" href="$classSensorReader.html#a15f06ed449d5a2606797e6fa2f8882e6" title=" " alt="" coords="5,55,216,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,70,216,70,216,65,250,65"/>
+</map>

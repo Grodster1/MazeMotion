@@ -1,0 +1,9 @@
+<map id="MazeGenerator::findFarthestCell" name="MazeGenerator::findFarthestCell">
+<area shape="rect" id="Node000001" title="Wyznacza komórkę najdalszą od punktu startowego (0, 0)." alt="" coords="499,31,729,56"/>
+<area shape="rect" id="Node000002" href="$classGameWidget.html#a75c85efffdf79229f8173605976e8188" title="Konstruktor tworzący widget gry z labiryntem." alt="" coords="251,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="485,34,450,30,451,25,485,28"/>
+<area shape="rect" id="Node000003" href="$classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec" title="Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej." alt="" coords="259,55,442,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="485,58,443,62,442,56,484,52"/>
+<area shape="rect" id="Node000004" href="$classMainWindow.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,55,203,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,70,203,70,203,65,246,65"/>
+</map>

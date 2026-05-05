@@ -1,0 +1,23 @@
+<map id="gamewidget.cpp" name="gamewidget.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="255,5,386,31"/>
+<area shape="rect" id="Node000002" href="$gamewidget_8h.html" title=" " alt="" coords="207,79,322,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,33,284,69,280,66,309,29"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="347,79,409,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="332,29,362,66,358,70,328,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,84,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,107,94,150,92,145,229,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="109,152,202,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="249,106,186,147,183,142,246,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="226,152,303,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="267,104,267,138,262,138,262,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="328,152,399,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="282,102,338,142,335,146,279,106"/>
+<area shape="rect" id="Node000007" href="$mazegenerator_8h.html" title=" " alt="" coords="423,152,555,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="301,101,440,145,439,150,300,107"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="356,225,429,251"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="475,180,421,219,418,215,472,175"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="454,225,523,251"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="491,178,491,212,486,212,486,178"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="547,225,619,251"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="505,175,558,215,555,219,502,179"/>
+</map>

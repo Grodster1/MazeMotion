@@ -1,0 +1,6 @@
+<map id="MazeGenerator::generate" name="MazeGenerator::generate">
+<area shape="rect" id="Node000001" title="Generuje nowy labirynt o zadanym rozmiarze." alt="" coords="5,29,193,55"/>
+<area shape="rect" id="Node000002" href="$classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7" title="Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS)." alt="" coords="241,29,436,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,39,228,39,228,45,194,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="300,31,292,21,296,11,312,5,339,3,372,7,385,16,381,20,370,11,339,8,313,10,300,15,297,20,304,27"/>
+</map>

@@ -1,17 +1,128 @@
 \doxysection{Dokumentacja klasy Maze\+Generator}
 \hypertarget{classMazeGenerator}{}\label{classMazeGenerator}\index{MazeGenerator@{MazeGenerator}}
+
+
+Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego.  
+
+
+
+
+{\ttfamily \#include $<$mazegenerator.\+h$>$}
+
+
+
+Diagram współpracy dla Maze\+Generator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classMazeGenerator__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{classMazeGenerator_ad2614d8adc80721dbae5660402d48573}\label{classMazeGenerator_ad2614d8adc80721dbae5660402d48573} 
+{\bfseries Maze\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjalizujący generator liczb losowych. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMazeGenerator_af77955852c4c984380267aad381c10e9}{generate}} (int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Generuje nowy labirynt o zadanym rozmiarze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMazeGenerator_a2d39ddff6b97442c74dc31f88b2653a7}{make\+Path}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS). \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classMazeGenerator_ae17625db3730bbdc67f682346d691d95}{find\+Farthest\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em Wyznacza komórkę najdalszą od punktu startowego (0, 0). \end{DoxyCompactList}\item 
+QVector$<$ QRectF $>$ \mbox{\hyperlink{classMazeGenerator_a2fc679414b0d2bbea0a5b4aee8103583}{get\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMazeGenerator_a18659b92b0d6a1faeee1c9f7f381bed2}{get\+Thickness}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca grubość ścian w znormalizowanych współrzędnych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa odpowiedzialna za generowanie labiryntu i wyznaczanie punktu docelowego. 
+
+Generuje labirynt metodą Recursive Backtracking (DFS), zapewniającą dokładnie jedną ścieżkę między dowolnymi dwoma komórkami. Udostępnia listę ścian jako znormalizowane prostokąty (0.\+0 -- 1.\+0) oraz wyznacza najdalszą komórkę od startu za pomocą BFS. 
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classMazeGenerator_ae17625db3730bbdc67f682346d691d95}\label{classMazeGenerator_ae17625db3730bbdc67f682346d691d95} 
+\index{MazeGenerator@{MazeGenerator}!findFarthestCell@{findFarthestCell}}
+\index{findFarthestCell@{findFarthestCell}!MazeGenerator@{MazeGenerator}}
+\doxysubsubsection{\texorpdfstring{findFarthestCell()}{findFarthestCell()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Maze\+Generator\+::find\+Farthest\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wyznacza komórkę najdalszą od punktu startowego (0, 0). 
+
+Wykorzystuje algorytm BFS do obliczenia odległości od komórki startowej do wszystkich pozostałych komórek.
+
+\begin{DoxyReturn}{Zwraca}
+Para (wiersz, kolumna) najdalszej komórki 
+\end{DoxyReturn}
 \Hypertarget{classMazeGenerator_af77955852c4c984380267aad381c10e9}\label{classMazeGenerator_af77955852c4c984380267aad381c10e9} 
-void {\bfseries generate} (int rows, int cols)
-\item 
-\Hypertarget{classMazeGenerator_a2d39ddff6b97442c74dc31f88b2653a7}\label{classMazeGenerator_a2d39ddff6b97442c74dc31f88b2653a7} 
-void {\bfseries make\+Path} (int row, int col)
-\item 
+\index{MazeGenerator@{MazeGenerator}!generate@{generate}}
+\index{generate@{generate}!MazeGenerator@{MazeGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void Maze\+Generator\+::generate (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Generuje nowy labirynt o zadanym rozmiarze. 
+
+Tworzy siatkę komórek i uruchamia algorytm Recursive Backtracking począwszy od komórki (0, 0).
+
+
+\begin{DoxyParams}{Parametry}
+{\em rows} & Liczba wierszy labiryntu \\
+\hline
+{\em cols} & Liczba kolumn labiryntu \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMazeGenerator_a18659b92b0d6a1faeee1c9f7f381bed2}\label{classMazeGenerator_a18659b92b0d6a1faeee1c9f7f381bed2} 
+\index{MazeGenerator@{MazeGenerator}!getThickness@{getThickness}}
+\index{getThickness@{getThickness}!MazeGenerator@{MazeGenerator}}
+\doxysubsubsection{\texorpdfstring{getThickness()}{getThickness()}}
+{\footnotesize\ttfamily double Maze\+Generator\+::get\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca grubość ścian w znormalizowanych współrzędnych. 
+
+\begin{DoxyReturn}{Zwraca}
+Grubość ściany 
+\end{DoxyReturn}
 \Hypertarget{classMazeGenerator_a2fc679414b0d2bbea0a5b4aee8103583}\label{classMazeGenerator_a2fc679414b0d2bbea0a5b4aee8103583} 
-QVector$<$ QRectF $>$ {\bfseries get\+Walls} ()
-\end{DoxyCompactItemize}
+\index{MazeGenerator@{MazeGenerator}!getWalls@{getWalls}}
+\index{getWalls@{getWalls}!MazeGenerator@{MazeGenerator}}
+\doxysubsubsection{\texorpdfstring{getWalls()}{getWalls()}}
+{\footnotesize\ttfamily QVector$<$ QRectF $>$ Maze\+Generator\+::get\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych. 
+
+Każda ściana reprezentowana jest jako QRectF o współrzędnych z zakresu 0.\+0 -- 1.\+0. Dla uniknięcia duplikatów, w głównej pętli uwzględniane są tylko ściany górne i lewe każdej komórki, a krawędzie dolna i prawa siatki dodawane są osobno.
+
+\begin{DoxyReturn}{Zwraca}
+Wektor prostokątów reprezentujących ściany 
+\end{DoxyReturn}
+\Hypertarget{classMazeGenerator_a2d39ddff6b97442c74dc31f88b2653a7}\label{classMazeGenerator_a2d39ddff6b97442c74dc31f88b2653a7} 
+\index{MazeGenerator@{MazeGenerator}!makePath@{makePath}}
+\index{makePath@{makePath}!MazeGenerator@{MazeGenerator}}
+\doxysubsubsection{\texorpdfstring{makePath()}{makePath()}}
+{\footnotesize\ttfamily void Maze\+Generator\+::make\+Path (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS). 
+
+Odwiedza komórkę, losowo miesza kolejność kierunków, a następnie dla każdego nieodwiedzonego sąsiada usuwa ścianę i rekurencyjnie kontynuuje drążenie.
+
+
+\begin{DoxyParams}{Parametry}
+{\em row} & Wiersz aktualnej komórki \\
+\hline
+{\em col} & Kolumna aktualnej komórki \\
+\hline
+\end{DoxyParams}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}

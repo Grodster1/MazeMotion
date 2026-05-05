@@ -1,0 +1,5 @@
+<map id="SensorReader::onReadyRead" name="SensorReader::onReadyRead">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,216,31"/>
+<area shape="rect" id="Node000002" href="$classSensorReader.html#a3ac283d48a779b4fb75432f3c9819c1e" title="Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych." alt="" coords="264,5,473,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,15,251,15,251,21,216,21"/>
+</map>

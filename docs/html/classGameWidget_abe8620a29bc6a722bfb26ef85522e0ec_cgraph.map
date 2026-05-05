@@ -1,0 +1,12 @@
+<map id="GameWidget::resetMaze" name="GameWidget::resetMaze">
+<area shape="rect" id="Node000001" title="Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej." alt="" coords="5,55,188,80"/>
+<area shape="rect" id="Node000002" href="$classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95" title="Wyznacza komórkę najdalszą od punktu startowego (0, 0)." alt="" coords="236,5,467,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,52,271,31,272,36,163,57"/>
+<area shape="rect" id="Node000003" href="$classMazeGenerator.html#af77955852c4c984380267aad381c10e9" title="Generuje nowy labirynt o zadanym rozmiarze." alt="" coords="257,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,65,243,65,243,70,188,70"/>
+<area shape="rect" id="Node000005" href="$classMazeGenerator.html#a2fc679414b0d2bbea0a5b4aee8103583" title="Zwraca listę ścian labiryntu jako prostokąty w znormalizowanych współrzędnych." alt="" coords="258,104,445,129"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="163,77,272,99,271,104,162,83"/>
+<area shape="rect" id="Node000004" href="$classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7" title="Rekurencyjnie drąży ścieżki w labiryncie (algorytm DFS)." alt="" coords="515,55,709,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="445,65,501,65,501,70,445,70"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="570,56,561,46,566,36,583,30,612,28,649,32,659,37,663,42,658,45,655,41,647,37,612,33,584,35,569,40,566,46,574,53"/>
+</map>
