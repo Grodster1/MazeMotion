@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "gamelogic.h"
 #include "gamewidget.h"
 #include "sensorreader.h"
 #include "chartpanel.h"
@@ -19,6 +20,7 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    GameLogic *gameLogic;
     GameWidget *gameWidget;
     SensorReader *sensorReader;
     ChartPanel *chartPanel;
