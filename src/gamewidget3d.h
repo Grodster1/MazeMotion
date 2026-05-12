@@ -24,6 +24,10 @@ private:
 
     GameLogic *logic;   ///< Wskaźnik do logiki gry
 
+    void drawWalls();
+    void drawBall();
+    void drawGoal();
+    void drawBoard();
 
     bool goRight = false;
     bool goLeft = false;

@@ -11,6 +11,7 @@
 #include <QPushButton>
 #include <QToolBar>
 #include <QSplitter>
+#include <QStackedWidget>
 
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +33,7 @@ class MainWindow : public QMainWindow
     GameWidget3D *gameWidget3D;
     QPushButton *switchViewButton;
     QSplitter *splitter;
+    QStackedWidget *gameStack;
     bool connected = false;
 
 

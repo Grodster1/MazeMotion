@@ -5,12 +5,88 @@ GameWidget3D::GameWidget3D(GameLogic *logic, QWidget *parent)
     : QOpenGLWidget(parent), logic(logic)
 {
     setFocusPolicy(Qt::StrongFocus);
-
-    // QTimer *timer = new QTimer(this);
-    // connect(timer, &QTimer::timeout, logic, &GameLogic::updatePos);
-    // connect(logic, &GameLogic::stateUpdated, this, QOverload<>::of(&QWidget::update));
-    // timer->start(16);
     connect(logic, &GameLogic::stateUpdated, this, QOverload<>::of(&QWidget::update));
+}
+
+void GameWidget3D::drawWalls() {
+    float wallHeight = 0.05f;
+    glColor3f(0.31f, 0.20f, 0.08f);
+
+    for (const QRectF &wall : logic->getWalls()) {
+        float x = wall.x();
+        float y = wall.y();
+        float w = wall.width();
+        float h = wall.height();
+
+        glBegin(GL_QUADS);
+        // Góra
+        glVertex3f(x, y, wallHeight);
+        glVertex3f(x+w, y, wallHeight);
+        glVertex3f(x+w, y+h, wallHeight);
+        glVertex3f(x, y+h, wallHeight);
+
+        // Przód
+        glVertex3f(x, y, 0);
+        glVertex3f(x+w, y, 0);
+        glVertex3f(x+w, y, wallHeight);
+        glVertex3f(x, y, wallHeight);
+
+        // Tył
+        glVertex3f(x, y+h, 0);
+        glVertex3f(x+w, y+h, 0);
+        glVertex3f(x+w, y+h, wallHeight);
+        glVertex3f(x, y+h, wallHeight);
+
+        // Lewa
+        glVertex3f(x, y, 0);
+        glVertex3f(x, y+h, 0);
+        glVertex3f(x, y+h, wallHeight);
+        glVertex3f(x, y, wallHeight);
+
+        // Prawa
+        glVertex3f(x+w, y, 0);
+        glVertex3f(x+w, y+h, 0);
+        glVertex3f(x+w, y+h, wallHeight);
+        glVertex3f(x+w, y, wallHeight);
+        glEnd();
+    }
+}
+
+void GameWidget3D::drawBall(){
+    float bx = logic->getBallX();
+    float by = logic->getBallY();
+    float br = logic->getBallRadius();
+
+    glColor3f(0.2f, 0.2f, 0.2f);
+    glPushMatrix();
+    glTranslatef(bx, by, br);
+    GLUquadric *quad = gluNewQuadric();
+    gluSphere(quad, br, 20, 20);
+    gluDeleteQuadric(quad);
+    glPopMatrix();
+}
+
+void GameWidget3D::drawGoal() {
+    float pulse = 0.7f + 0.3f * std::sin(logic->getPulsePhase());
+    float gr = logic->getBallRadius() * pulse;
+
+    glColor3f(0.0f, 0.8f, 0.0f);
+    glPushMatrix();
+    glTranslatef(logic->getGoalX(), logic->getGoalY(), gr);
+    GLUquadric *quad = gluNewQuadric();
+    gluSphere(quad, gr, 16, 16);
+    gluDeleteQuadric(quad);
+    glPopMatrix();
+}
+
+void GameWidget3D::drawBoard(){
+    glColor3f(0.76f, 0.74f, 0.65f);
+    glBegin(GL_QUADS);
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(1.0f, 1.0f, 0.0f);
+    glVertex3f(0.0f, 1.0f, 0.0f);
+    glEnd();
 }
 
 void GameWidget3D::initializeGL() {
@@ -32,19 +108,19 @@ void GameWidget3D::paintGL() {
     glLoadIdentity();
 
     gluLookAt(
-        0.5, -0.3, 1.2,   // pozycja kamery
-        0.5,  0.5, 0.0,   // punkt na który patrzy
-        0.0,  0.0, 1.0    // wektor "do góry"
+        0.5, 0.3, 1.2,
+        0.5, 0.5, 0.0,
+        0.0, 0.0, 1.0
         );
 
+    // Odwróć oś Y — logika gry ma Y w dół, OpenGL w górę
+    glScalef(1.0f, -1.0f, 1.0f);
+    glTranslatef(0.0f, -1.0f, 0.0f);
 
-    glColor3f(0.76f, 0.74f, 0.65f);
-    glBegin(GL_QUADS);
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(0.0f, 1.0f, 0.0f);
-    glEnd();
+    drawBoard();
+    drawWalls();
+    drawGoal();
+    drawBall();
 }
 
 void GameWidget3D::keyPressEvent(QKeyEvent *event) {

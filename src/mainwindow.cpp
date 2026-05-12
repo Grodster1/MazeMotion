@@ -23,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     splitter = new QSplitter(Qt::Horizontal);
     splitter->addWidget(gameWidget);
     splitter->addWidget(chartPanel);
-    //splitter->addWidget(gameWidget3D);  // dodaj do splittera ale ukryty
 
 
     QHBoxLayout *layout = new QHBoxLayout(central);
