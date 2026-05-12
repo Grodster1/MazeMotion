@@ -14,13 +14,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     gameWidget = new GameWidget(gameLogic, this);
     sensorReader = new SensorReader(this);
     chartPanel = new ChartPanel(this);
+    gameWidget3D = new GameWidget3D(gameLogic, this);
+    gameWidget3D->hide();
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
 
-    QSplitter *splitter = new QSplitter(Qt::Horizontal);
+    splitter = new QSplitter(Qt::Horizontal);
     splitter->addWidget(gameWidget);
     splitter->addWidget(chartPanel);
+    //splitter->addWidget(gameWidget3D);  // dodaj do splittera ale ukryty
+
 
     QHBoxLayout *layout = new QHBoxLayout(central);
     layout->addWidget(splitter);
@@ -33,7 +37,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     connectButton = new QPushButton("Połącz");
     newMazeButton = new QPushButton("Generuj labirynt");
+    switchViewButton = new QPushButton("3D");
 
+    toolBar->addWidget(switchViewButton);
     toolBar->addWidget(portCombo);
     toolBar->addWidget(connectButton);
     toolBar->addWidget(newMazeButton);
@@ -82,8 +88,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 gameLogic->setSensorAcceleration(ax, ay);
             });
     connect(sensorReader, &SensorReader::dataReceived, chartPanel, &ChartPanel::onSensorData);
-
-    // Przyciski
+    connect(switchViewButton, &QPushButton::clicked, this, &MainWindow::onSwitchView);
     connect(connectButton, &QPushButton::clicked, this, &MainWindow::onConnectClicked);
     connect(newMazeButton, &QPushButton::clicked, gameLogic, &GameLogic::resetMaze);
 }
@@ -97,6 +102,21 @@ void MainWindow::onConnectClicked() {
         sensorReader->close();
         connectButton->setText("Połącz");
         connected = false;
+    }
+}
+void MainWindow::onSwitchView() {
+    if(gameWidget->isVisible()) {
+        splitter->replaceWidget(0, gameWidget3D);
+        gameWidget->hide();
+        gameWidget3D->show();
+        gameWidget3D->setFocus();
+        switchViewButton->setText("2D");
+    } else {
+        splitter->replaceWidget(0, gameWidget);
+        gameWidget3D->hide();
+        gameWidget->show();
+        gameWidget->setFocus();
+        switchViewButton->setText("3D");
     }
 }
 

@@ -7,6 +7,9 @@ GameLogic::GameLogic(int rows, int cols, QObject *parent)
 {
     generator = new MazeGenerator();
     resetMaze();
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &GameLogic::updatePos);
+    timer->start(16);
 }
 
 void GameLogic::resetMaze() {

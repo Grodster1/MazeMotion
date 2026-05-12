@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVector>
 #include <QRectF>
+#include <QTimer>
 #include "mazegenerator.h"
 
 /**
@@ -99,6 +100,7 @@ private:
 
     double pulsePhase = 0.0;  ///< Faza animacji celu
     bool gameWon = false;     ///< Flaga wygranej
+    QTimer *timer;
 };
 
 #endif // GAMELOGIC_H

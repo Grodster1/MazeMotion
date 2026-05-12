@@ -43,7 +43,6 @@ private:
     void drawWinOverlay(QPainter &painter, double boardSize);
 
     GameLogic *logic;   ///< Wskaźnik do logiki gry
-    QTimer *timer;      ///< Timer aktualizacji
 
     // Flagi klawiatury — lokalne dla tego widgetu
     bool goLeft = false;

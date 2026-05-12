@@ -6,10 +6,11 @@ GameWidget::GameWidget(GameLogic *logic, QWidget *parent)
 {
     setFocusPolicy(Qt::StrongFocus);
 
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, logic, &GameLogic::updatePos);
+    // timer = new QTimer(this);
+    // connect(timer, &QTimer::timeout, logic, &GameLogic::updatePos);
+    // connect(logic, &GameLogic::stateUpdated, this, QOverload<>::of(&QWidget::update));
+    // timer->start(16);
     connect(logic, &GameLogic::stateUpdated, this, QOverload<>::of(&QWidget::update));
-    timer->start(16);
 }
 
 void GameWidget::paintEvent(QPaintEvent *event) {

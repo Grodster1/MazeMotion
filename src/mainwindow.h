@@ -4,11 +4,13 @@
 #include <QMainWindow>
 #include "gamelogic.h"
 #include "gamewidget.h"
+#include "gamewidget3d.h"
 #include "sensorreader.h"
 #include "chartpanel.h"
 #include <QComboBox>
 #include <QPushButton>
 #include <QToolBar>
+#include <QSplitter>
 
 
 QT_BEGIN_NAMESPACE
@@ -27,6 +29,9 @@ class MainWindow : public QMainWindow
     QComboBox *portCombo;
     QPushButton *connectButton;
     QPushButton *newMazeButton;
+    GameWidget3D *gameWidget3D;
+    QPushButton *switchViewButton;
+    QSplitter *splitter;
     bool connected = false;
 
 
@@ -39,5 +44,6 @@ private:
 
 public slots:
     void onConnectClicked();
+    void onSwitchView();
 };
 #endif // MAINWINDOW_H
