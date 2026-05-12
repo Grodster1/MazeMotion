@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.19)
 project(MazeMotion LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets SerialPort Charts)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets SerialPort Charts OpenGLWidgets)
+find_package(OpenGL REQUIRED)
 
 qt_standard_project_setup()
 
@@ -22,6 +23,8 @@ qt_add_executable(MazeMotion
     src/chartpanel.cpp
     src/mazegenerator.cpp
     src/mazegenerator.h
+    src/gamewidget3d.cpp
+    src/gamewidget3d.h
 )
 
 target_include_directories(MazeMotion PRIVATE src)
@@ -32,6 +35,8 @@ target_link_libraries(MazeMotion
         Qt::Widgets
         Qt6::SerialPort
         Qt6::Charts
+        Qt6::OpenGLWidgets
+        OpenGL::GLU
 )
 
 install(TARGETS MazeMotion
