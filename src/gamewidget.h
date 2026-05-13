@@ -20,7 +20,7 @@ class GameWidget : public QWidget
 public:
     /**
      * @brief Konstruktor tworzący widget gry 2D.
-     * @param logic Wskaźnik do współdzielonej logiki gry
+     * @param logic  Wskaźnik do współdzielonej logiki gry
      * @param parent Widget rodzica
      */
     explicit GameWidget(GameLogic *logic, QWidget *parent = nullptr);

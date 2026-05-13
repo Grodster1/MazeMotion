@@ -15,14 +15,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     sensorReader = new SensorReader(this);
     chartPanel = new ChartPanel(this);
     gameWidget3D = new GameWidget3D(gameLogic, this);
-    gameWidget3D->hide();
+    //gameWidget3D->hide();
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
 
+
+    gameStack = new QStackedWidget(this);
+    gameStack->addWidget(gameWidget);    // index 0 = 2D
+    gameStack->addWidget(gameWidget3D);  // index 1 = 3D
+    gameStack->setCurrentIndex(0);
+    gameStack->setMinimumSize(400, 400);
+    gameStack->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
     splitter = new QSplitter(Qt::Horizontal);
-    splitter->addWidget(gameWidget);
+    splitter->addWidget(gameStack);
     splitter->addWidget(chartPanel);
+    splitter->setSizes({1000, 600});
 
 
     QHBoxLayout *layout = new QHBoxLayout(central);
@@ -104,16 +113,12 @@ void MainWindow::onConnectClicked() {
     }
 }
 void MainWindow::onSwitchView() {
-    if(gameWidget->isVisible()) {
-        splitter->replaceWidget(0, gameWidget3D);
-        gameWidget->hide();
-        gameWidget3D->show();
+    if (gameStack->currentWidget() == gameWidget) {
+        gameStack->setCurrentWidget(gameWidget3D);
         gameWidget3D->setFocus();
         switchViewButton->setText("2D");
     } else {
-        splitter->replaceWidget(0, gameWidget);
-        gameWidget3D->hide();
-        gameWidget->show();
+        gameStack->setCurrentWidget(gameWidget);
         gameWidget->setFocus();
         switchViewButton->setText("3D");
     }

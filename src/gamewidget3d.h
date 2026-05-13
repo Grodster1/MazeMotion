@@ -12,6 +12,7 @@ class GameWidget3D : public QOpenGLWidget, protected QOpenGLFunctions
     Q_OBJECT
 public:
     explicit GameWidget3D(GameLogic *logic, QWidget *parent = nullptr);
+    void forceRefresh();
 
 protected:
     void initializeGL() override;
@@ -28,6 +29,7 @@ private:
     void drawBall();
     void drawGoal();
     void drawBoard();
+
 
     bool goRight = false;
     bool goLeft = false;

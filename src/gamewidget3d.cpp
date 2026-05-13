@@ -8,6 +8,13 @@ GameWidget3D::GameWidget3D(GameLogic *logic, QWidget *parent)
     connect(logic, &GameLogic::stateUpdated, this, QOverload<>::of(&QWidget::update));
 }
 
+void GameWidget3D::forceRefresh() {
+    makeCurrent();
+    resizeGL(width(), height());
+    doneCurrent();
+    update();
+}
+
 void GameWidget3D::drawWalls() {
     float wallHeight = 0.05f;
     glColor3f(0.31f, 0.20f, 0.08f);
@@ -108,12 +115,11 @@ void GameWidget3D::paintGL() {
     glLoadIdentity();
 
     gluLookAt(
-        0.5, 0.3, 1.2,
+        0.5, 0.3, 1.8,
         0.5, 0.5, 0.0,
         0.0, 0.0, 1.0
         );
 
-    // Odwróć oś Y — logika gry ma Y w dół, OpenGL w górę
     glScalef(1.0f, -1.0f, 1.0f);
     glTranslatef(0.0f, -1.0f, 0.0f);
 
