@@ -74,6 +74,10 @@ signals:
      * @brief Emitowany po każdej aktualizacji stanu — widgety powinny się przerysować.
      */
     void stateUpdated();
+    /**
+     * @brief Emitowany po wygenerowaniu nowego labiryntu
+     */
+    void mazeChanged();
 
 private:
     MazeGenerator *generator;   ///< Generator labiryntu

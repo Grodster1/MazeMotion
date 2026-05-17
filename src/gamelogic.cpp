@@ -25,6 +25,7 @@ void GameLogic::resetMaze() {
     velX = velY = accX = accY = 0.0;
     pulsePhase = 0.0;
     gameWon = false;
+    emit mazeChanged();
 }
 
 void GameLogic::setSensorAcceleration(float ax, float ay) {
