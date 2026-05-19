@@ -43,10 +43,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         portCombo->addItem(info.portName());
     }
 
-    connectButton = new QPushButton("Połącz");
-    newMazeButton = new QPushButton("Generuj labirynt");
-    switchViewButton = new QPushButton("3D");
+    connectButton = new QPushButton(tr("Połącz"));
+    newMazeButton = new QPushButton(tr("Generuj labirynt"));
+    switchViewButton = new QPushButton(tr("3D"));
+    langButton = new QPushButton(tr("English"));
 
+    toolBar->addWidget(langButton);
     toolBar->addWidget(switchViewButton);
     toolBar->addWidget(portCombo);
     toolBar->addWidget(connectButton);
@@ -99,16 +101,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(switchViewButton, &QPushButton::clicked, this, &MainWindow::onSwitchView);
     connect(connectButton, &QPushButton::clicked, this, &MainWindow::onConnectClicked);
     connect(newMazeButton, &QPushButton::clicked, gameLogic, &GameLogic::resetMaze);
+    connect(langButton, &QPushButton::clicked, this, &MainWindow::onSwitchLanguage);
+}
+
+void MainWindow::retranslateUI() {
+    connectButton->setText(connected ? tr("Rozłącz") : tr("Połącz"));
+    newMazeButton->setText(tr("Generuj labirynt"));
+    langButton->setText(isPolish ? tr("English") : tr("Polski"));
+    chartPanel->retranslateUI();
 }
 
 void MainWindow::onConnectClicked() {
     if(!connected) {
         sensorReader->open(portCombo->currentText());
-        connectButton->setText("Rozłącz");
+        connectButton->setText(tr("Rozłącz"));
         connected = true;
     } else {
         sensorReader->close();
-        connectButton->setText("Połącz");
+        connectButton->setText(tr("Połącz"));
         connected = false;
     }
 }
@@ -122,6 +132,21 @@ void MainWindow::onSwitchView() {
         gameWidget->setFocus();
         switchViewButton->setText("3D");
     }
+}
+
+void MainWindow::onSwitchLanguage() {
+    if (isPolish) {
+        translator = new QTranslator(this);
+        translator->load("mazemotion_en", ":/translations");
+        qApp->installTranslator(translator);
+        isPolish = false;
+    } else {
+        qApp->removeTranslator(translator);
+        delete translator;
+        translator = nullptr;
+        isPolish = true;
+    }
+    retranslateUI();
 }
 
 MainWindow::~MainWindow()

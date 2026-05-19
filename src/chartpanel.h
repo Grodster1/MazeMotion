@@ -15,6 +15,7 @@ class ChartPanel : public QWidget
 
 public:
     explicit ChartPanel(QWidget *parent = nullptr);
+    void retranslateUI();
 
 public slots:
     void onSensorData(float ax, float ay, float az, float gx, float gy, float gz);

@@ -105,7 +105,7 @@ void GameWidget::drawWinOverlay(QPainter &painter, double boardSize) {
     font.setPixelSize(boardSize * 0.08);
     font.setBold(true);
     painter.setFont(font);
-    painter.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, "Wygrana!");
+    painter.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, tr("Wygrana!"));
 }
 
 void GameWidget::keyPressEvent(QKeyEvent *event) {

@@ -26,7 +26,7 @@ ChartPanel::ChartPanel(QWidget *parent) : QWidget(parent){
 
     QValueAxis *accAxisY = new QValueAxis();
     accAxisY->setRange(-2.0, 2.0);
-    accAxisY->setTitleText("Przyśpieszenie [g]");
+    accAxisY->setTitleText(tr("Przyśpieszenie [g]"));
 
     QValueAxis *accAxisX = new QValueAxis();
     accAxisX->setRange(0, 200);
@@ -36,7 +36,7 @@ ChartPanel::ChartPanel(QWidget *parent) : QWidget(parent){
 
     QValueAxis *gyroAxisY = new QValueAxis();
     gyroAxisY->setRange(-500.0, 500.0);
-    gyroAxisY->setTitleText("Prędkość kątowa [°/s]");
+    gyroAxisY->setTitleText(tr("Prędkość kątowa [°/s]"));
 
     QValueAxis *gyroAxisX = new QValueAxis();
     gyroAxisX->setRange(0, 200);
@@ -76,8 +76,15 @@ ChartPanel::ChartPanel(QWidget *parent) : QWidget(parent){
     gyroY->setName("Y");
     gyroZ->setName("Z");
 
-    accChart->setTitle("Akcelerometr");
-    gyroChart->setTitle("Żyroskop");
+    accChart->setTitle(tr("Akcelerometr"));
+    gyroChart->setTitle(tr("Żyroskop"));
+}
+
+void ChartPanel::retranslateUI() {
+    accChart->setTitle(tr("Akcelerometr"));
+    gyroChart->setTitle(tr("Żyroskop"));
+    accChart->axes(Qt::Vertical).first()->setTitleText(tr("Przyśpieszenie [g]"));
+    gyroChart->axes(Qt::Vertical).first()->setTitleText(tr("Prędkość kątowa [°/s]"));
 }
 
 

@@ -12,6 +12,7 @@
 #include <QToolBar>
 #include <QSplitter>
 #include <QStackedWidget>
+#include <QTranslator>
 
 
 QT_BEGIN_NAMESPACE
@@ -30,10 +31,13 @@ class MainWindow : public QMainWindow
     QComboBox *portCombo;
     QPushButton *connectButton;
     QPushButton *newMazeButton;
+    QPushButton *langButton;
     GameWidget3D *gameWidget3D;
     QPushButton *switchViewButton;
     QSplitter *splitter;
     QStackedWidget *gameStack;
+    QTranslator *translator = nullptr;
+    bool isPolish = true;
     bool connected = false;
 
 
@@ -43,9 +47,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void retranslateUI();
 
 public slots:
     void onConnectClicked();
     void onSwitchView();
+    void onSwitchLanguage();
 };
 #endif // MAINWINDOW_H

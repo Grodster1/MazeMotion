@@ -95,6 +95,10 @@ GameWidget3D::~GameWidget3D() {
     doneCurrent();
 }
 
+void GameWidget3D::retranslateUI(){
+    winLabel->setText(tr("Wygrana!"));
+}
+
 void GameWidget3D::forceRefresh() {
     if (!glInitialized) return;
     makeCurrent();
@@ -343,7 +347,7 @@ void GameWidget3D::paintGL() {
         font.setPixelSize(height() * 0.08);
         font.setBold(true);
         painter.setFont(font);
-        painter.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, "Wygrana!");
+        painter.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, tr("Wygrana!"));
     }
 }
 

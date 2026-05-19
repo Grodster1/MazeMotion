@@ -48,6 +48,13 @@ public:
      */
     void forceRefresh();
 
+    /**
+     * @brief Odpowiada za zmianę języka winLabel.
+     *
+     * Wywoływana po zmianie języka w mainWindow.
+     */
+    void retranslateUI();
+
 protected:
     /**
      * @brief Inicjalizuje kontekst OpenGL — shadery, geometrię i macierz widoku.
