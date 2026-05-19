@@ -111,7 +111,6 @@ $(document).ready(function(){initNavTree('classGameWidget.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#pub-slots">Sloty publiczne</a> &#124;
 <a href="#pub-methods">Metody publiczne</a> &#124;
 <a href="#pro-methods">Metody chronione</a> &#124;
 <a href="classGameWidget-members.html">Lista wszystkich składowych</a>  </div>
@@ -119,57 +118,49 @@ $(document).ready(function(){initNavTree('classGameWidget.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p>Widget odpowiedzialny za renderowanie planszy i kulki.  
+<p>Widget odpowiedzialny za renderowanie 2D planszy i kulki.  
  <a href="classGameWidget.html#details">Więcej...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gamewidget_8h_source.html">gamewidget.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagram dziedziczenia dla GameWidget</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__inherit__graph.svg" width="162" height="310"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__inherit__graph.svg" width="162" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Diagram współpracy dla GameWidget:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__coll__graph.svg" width="162" height="310"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget__coll__graph.svg" width="162" height="270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
-Sloty publiczne</h2></td></tr>
-<tr class="memitem:a871684b9a1c5f716ffd85cdf4b56fc0c" id="r_a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c">onSensorData</a> (float ax, float ay, float az, float gx, float gy, float gz)</td></tr>
-<tr class="memdesc:a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot odbierający dane z czujnika IMU.  <br /></td></tr>
-<tr class="separator:a871684b9a1c5f716ffd85cdf4b56fc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a75c85efffdf79229f8173605976e8188" id="r_a75c85efffdf79229f8173605976e8188"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a75c85efffdf79229f8173605976e8188">GameWidget</a> (int r, int c, QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a75c85efffdf79229f8173605976e8188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor tworzący widget gry z labiryntem.  <br /></td></tr>
-<tr class="separator:a75c85efffdf79229f8173605976e8188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">paintEvent</a> (QPaintEvent *event) override</td></tr>
-<tr class="memdesc:a3f30642bf770cf31856999d2f713cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę.  <br /></td></tr>
-<tr class="separator:a3f30642bf770cf31856999d2f713cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe8620a29bc6a722bfb26ef85522e0ec" id="r_abe8620a29bc6a722bfb26ef85522e0ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#abe8620a29bc6a722bfb26ef85522e0ec">resetMaze</a> ()</td></tr>
-<tr class="memdesc:abe8620a29bc6a722bfb26ef85522e0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej.  <br /></td></tr>
-<tr class="separator:abe8620a29bc6a722bfb26ef85522e0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1cdaf4afeea032a52303a3c71cdeda2" id="r_aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2">updatePos</a> ()</td></tr>
-<tr class="memdesc:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje pozycję kulki na planszy.  <br /></td></tr>
-<tr class="separator:aa1cdaf4afeea032a52303a3c71cdeda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa57938aa0c3ba843755bb75958364e3" id="r_aaa57938aa0c3ba843755bb75958364e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#aaa57938aa0c3ba843755bb75958364e3">GameWidget</a> (<a class="el" href="classGameLogic.html">GameLogic</a> *logic, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aaa57938aa0c3ba843755bb75958364e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor tworzący widget gry 2D.  <br /></td></tr>
+<tr class="separator:aaa57938aa0c3ba843755bb75958364e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea8ca61c40be122cac8b5fb61ba6a03" id="r_abea8ca61c40be122cac8b5fb61ba6a03"><td class="memItemLeft" align="right" valign="top"><a id="abea8ca61c40be122cac8b5fb61ba6a03" name="abea8ca61c40be122cac8b5fb61ba6a03"></a>
+<a class="el" href="classGameLogic.html">GameLogic</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getLogic</b> () const</td></tr>
+<tr class="memdesc:abea8ca61c40be122cac8b5fb61ba6a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca wskaźnik do logiki gry. <br /></td></tr>
+<tr class="separator:abea8ca61c40be122cac8b5fb61ba6a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Metody chronione</h2></td></tr>
-<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
-<tr class="memdesc:a350024625893bd439fe761c4df0e7c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje naciśnięcie klawisza strzałki.  <br /></td></tr>
+<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top"><a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>paintEvent</b> (QPaintEvent *event) override</td></tr>
+<tr class="separator:a3f30642bf770cf31856999d2f713cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top"><a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressEvent</b> (QKeyEvent *event) override</td></tr>
 <tr class="separator:a350024625893bd439fe761c4df0e7c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">keyReleaseEvent</a> (QKeyEvent *event) override</td></tr>
-<tr class="memdesc:a834496522f3fb964cfa0c87c17be3558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zwolnienie klawisza strzałki.  <br /></td></tr>
+<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top"><a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>keyReleaseEvent</b> (QKeyEvent *event) override</td></tr>
 <tr class="separator:a834496522f3fb964cfa0c87c17be3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>Widget odpowiedzialny za renderowanie planszy i kulki. </p>
-<p>Obsługuje rysowanie sceny gry, fizykę ruchu kulki oraz sterowanie za pomocą klawiatury i danych pochodzących z IMU. Plansza jest skalowalna i zawsze rysowana jako wycentrowany kwadrat. </p>
+<div class="textblock"><p>Widget odpowiedzialny za renderowanie 2D planszy i kulki. </p>
+<p>Obsługuje rysowanie sceny gry oraz sterowanie klawiaturą. Logika gry (fizyka, kolizje, labirynt) delegowana jest do klasy <a class="el" href="classGameLogic.html" title="Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem.">GameLogic</a>. </p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
-<a id="a75c85efffdf79229f8173605976e8188" name="a75c85efffdf79229f8173605976e8188"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75c85efffdf79229f8173605976e8188">&#9670;&#160;</a></span>GameWidget()</h2>
+<a id="aaa57938aa0c3ba843755bb75958364e3" name="aaa57938aa0c3ba843755bb75958364e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa57938aa0c3ba843755bb75958364e3">&#9670;&#160;</a></span>GameWidget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,14 +171,8 @@ Metody chronione</h2></td></tr>
         <tr>
           <td class="memname">GameWidget::GameWidget </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramtype"><a class="el" href="classGameLogic.html">GameLogic</a> *&#160;</td>
+          <td class="paramname"><em>logic</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -208,236 +193,14 @@ Metody chronione</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Konstruktor tworzący widget gry z labiryntem. </p>
-<p>Generuje labirynt o zadanym rozmiarze, wyznacza punkt docelowy i uruchamia timer aktualizacji pozycji.</p>
+<p>Konstruktor tworzący widget gry 2D. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">r</td><td>Liczba wierszy labiryntu </td></tr>
-    <tr><td class="paramname">c</td><td>Liczba kolumn labiryntu </td></tr>
-    <tr><td class="paramname">parent</td><td>Widget rodzica (domyślnie nullptr) </td></tr>
+    <tr><td class="paramname">logic</td><td>Wskaźnik do współdzielonej logiki gry </td></tr>
+    <tr><td class="paramname">parent</td><td>Widget rodzica </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a350024625893bd439fe761c4df0e7c6f">&#9670;&#160;</a></span>keyPressEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::keyPressEvent </td>
-          <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Obsługuje naciśnięcie klawisza strzałki. </p>
-<p>Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a834496522f3fb964cfa0c87c17be3558">&#9670;&#160;</a></span>keyReleaseEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::keyReleaseEvent </td>
-          <td>(</td>
-          <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Obsługuje zwolnienie klawisza strzałki. </p>
-<p>Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a871684b9a1c5f716ffd85cdf4b56fc0c" name="a871684b9a1c5f716ffd85cdf4b56fc0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a871684b9a1c5f716ffd85cdf4b56fc0c">&#9670;&#160;</a></span>onSensorData</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::onSensorData </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>ax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>ay</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>az</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>gx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>gy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>gz</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Slot odbierający dane z czujnika IMU. </p>
-<p>Mapuje odczyty z akcelerometru na przyspieszenie kulki z uwzględnieniem współczynnika skalowania.</p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ax</td><td>Przyspieszenie liniowe w osi X [g] </td></tr>
-    <tr><td class="paramname">ay</td><td>Przyspieszenie liniowe w osi Y [g] </td></tr>
-    <tr><td class="paramname">az</td><td>Przyspieszenie liniowe w osi Z [g] </td></tr>
-    <tr><td class="paramname">gx</td><td>Prędkość kątowa w osi X [°/s] </td></tr>
-    <tr><td class="paramname">gy</td><td>Prędkość kątowa w osi Y [°/s] </td></tr>
-    <tr><td class="paramname">gz</td><td>Prędkość kątowa w osi Z [°/s] </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f30642bf770cf31856999d2f713cf50">&#9670;&#160;</a></span>paintEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::paintEvent </td>
-          <td>(</td>
-          <td class="paramtype">QPaintEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rysuje scenę gry — planszę, ściany labiryntu, punkt docelowy i kulkę. </p>
-<p>Wywoływana automatycznie przez Qt przy każdym odświeżeniu widgetu. Plansza rysowana jest jako kwadrat wycentrowany w widgecie, a wszystkie elementy skalują się proporcjonalnie do rozmiaru okna.</p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Zdarzenie rysowania (nieużywane bezpośrednio) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abe8620a29bc6a722bfb26ef85522e0ec" name="abe8620a29bc6a722bfb26ef85522e0ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe8620a29bc6a722bfb26ef85522e0ec">&#9670;&#160;</a></span>resetMaze()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::resetMaze </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resetuje stan gry — generuje nowy labirynt i przywraca kulkę do pozycji startowej. </p>
-<p>Wywoływana po dotarciu kulki do celu lub na żądanie użytkownika (przycisk "Nowy labirynt"). Generuje nowy układ ścian, wyznacza nowy punkt docelowy i zeruje prędkość oraz przyspieszenie kulki. </p>
-
-</div>
-</div>
-<a id="aa1cdaf4afeea032a52303a3c71cdeda2" name="aa1cdaf4afeea032a52303a3c71cdeda2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1cdaf4afeea032a52303a3c71cdeda2">&#9670;&#160;</a></span>updatePos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameWidget::updatePos </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Aktualizuje pozycję kulki na planszy. </p>
-<p>Wywoływana cyklicznie przez QTimer co 16 ms. Aktualizuje prędkość kulki na podstawie przyspieszenia (z akcelerometru lub klawiatury), stosuje tarcie, wykrywa kolizje ze ścianami labiryntu i wywołuje update() w celu przerysowania widgetu. </p>
 
 </div>
 </div>

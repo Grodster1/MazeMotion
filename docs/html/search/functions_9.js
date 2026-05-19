@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updatepos_0',['updatePos',['../classGameWidget.html#aa1cdaf4afeea032a52303a3c71cdeda2',1,'GameWidget']]]
+  ['resetmaze_0',['resetMaze',['../classGameLogic.html#afa53c9940bcd963050c5ca4216970c7b',1,'GameLogic']]],
+  ['resizegl_1',['resizeGL',['../classGameWidget3D.html#a97d249be6bfb5f72ae8a946ad7c3fa6c',1,'GameWidget3D']]]
 ];

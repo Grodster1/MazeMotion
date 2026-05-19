@@ -1,0 +1,167 @@
+\doxysection{Dokumentacja klasy Game\+Logic}
+\hypertarget{classGameLogic}{}\label{classGameLogic}\index{GameLogic@{GameLogic}}
+
+
+Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem.  
+
+
+
+
+{\ttfamily \#include $<$gamelogic.\+h$>$}
+
+
+
+Diagram dziedziczenia dla Game\+Logic
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classGameLogic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Game\+Logic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classGameLogic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGameLogic_aacfb7e984faf9e3aae37b3160420fb49}\label{classGameLogic_aacfb7e984faf9e3aae37b3160420fb49} 
+void {\bfseries game\+Won\+Signal} ()
+\begin{DoxyCompactList}\small\item\em Emitowany gdy kulka dotrze do celu. \end{DoxyCompactList}\item 
+\Hypertarget{classGameLogic_a8028fa8ba031ece2b2e099234b2e0e38}\label{classGameLogic_a8028fa8ba031ece2b2e099234b2e0e38} 
+void {\bfseries state\+Updated} ()
+\begin{DoxyCompactList}\small\item\em Emitowany po każdej aktualizacji stanu — widgety powinny się przerysować. \end{DoxyCompactList}\item 
+\Hypertarget{classGameLogic_aadead7469e428c79fa552c7d0b5fb630}\label{classGameLogic_aadead7469e428c79fa552c7d0b5fb630} 
+void {\bfseries maze\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Emitowany po wygenerowaniu nowego labiryntu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameLogic_acd8e9410d9e128cef8ae6971d31b30a5}{Game\+Logic}} (int rows, int cols, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjalizujący logikę gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameLogic_a1cf0a1c91a36fc89fd11b7ad1c990159}{update\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje pozycję kulki — fizyka, tarcie, kolizje. \end{DoxyCompactList}\item 
+\Hypertarget{classGameLogic_afa53c9940bcd963050c5ca4216970c7b}\label{classGameLogic_afa53c9940bcd963050c5ca4216970c7b} 
+void {\bfseries reset\+Maze} ()
+\begin{DoxyCompactList}\small\item\em Resetuje stan gry — nowy labirynt, kulka na starcie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameLogic_a8f628b63effdab13cb8a724f0a29b9d8}{set\+Sensor\+Acceleration}} (float ax, float ay)
+\begin{DoxyCompactList}\small\item\em Ustawia przyspieszenie kulki na podstawie danych z akcelerometru. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameLogic_ac617979451bc29e80d2260957aa8e817}{set\+Keyboard\+Acceleration}} (double dx, double dy)
+\begin{DoxyCompactList}\small\item\em Ustawia przyspieszenie kulki na podstawie klawiatury. \end{DoxyCompactList}\item 
+\Hypertarget{classGameLogic_a57474edc3e1c5d8e9e51030451982ad7}\label{classGameLogic_a57474edc3e1c5d8e9e51030451982ad7} 
+double {\bfseries get\+BallX} () const
+\item 
+\Hypertarget{classGameLogic_adcaef4e4134e31c165f05a708dca90f1}\label{classGameLogic_adcaef4e4134e31c165f05a708dca90f1} 
+double {\bfseries get\+BallY} () const
+\item 
+\Hypertarget{classGameLogic_afcfb2b480630b780447d7a3c8fbba2d6}\label{classGameLogic_afcfb2b480630b780447d7a3c8fbba2d6} 
+double {\bfseries get\+Ball\+Radius} () const
+\item 
+\Hypertarget{classGameLogic_a94914848a4ae8092a55704dd6ad736be}\label{classGameLogic_a94914848a4ae8092a55704dd6ad736be} 
+double {\bfseries get\+GoalX} () const
+\item 
+\Hypertarget{classGameLogic_afdbb492af9cfca374df9ce62a2e451ae}\label{classGameLogic_afdbb492af9cfca374df9ce62a2e451ae} 
+double {\bfseries get\+GoalY} () const
+\item 
+\Hypertarget{classGameLogic_a27439b905535c8a12fcd5dc0b3bdacac}\label{classGameLogic_a27439b905535c8a12fcd5dc0b3bdacac} 
+double {\bfseries get\+Pulse\+Phase} () const
+\item 
+\Hypertarget{classGameLogic_a12a3bc6554191d1b75b31accbecc7b9b}\label{classGameLogic_a12a3bc6554191d1b75b31accbecc7b9b} 
+bool {\bfseries is\+Game\+Won} () const
+\item 
+\Hypertarget{classGameLogic_ad339b8954031d6330474f7ae1056408c}\label{classGameLogic_ad339b8954031d6330474f7ae1056408c} 
+int {\bfseries get\+Rows} () const
+\item 
+\Hypertarget{classGameLogic_a569dd47a9bab0c8327b7e9189e6d5191}\label{classGameLogic_a569dd47a9bab0c8327b7e9189e6d5191} 
+int {\bfseries get\+Cols} () const
+\item 
+\Hypertarget{classGameLogic_a8e2713b4cbde050b541f18becc7a81e7}\label{classGameLogic_a8e2713b4cbde050b541f18becc7a81e7} 
+const QVector$<$ QRectF $>$ \& {\bfseries get\+Walls} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem. 
+
+Oddzielona od warstwy renderowania, dzięki czemu może być współdzielona przez widgety 2D (\doxylink{classGameWidget}{Game\+Widget}) i 3D (\doxylink{classGameWidget3D}{Game\+Widget3D}). 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{classGameLogic_acd8e9410d9e128cef8ae6971d31b30a5}\label{classGameLogic_acd8e9410d9e128cef8ae6971d31b30a5} 
+\index{GameLogic@{GameLogic}!GameLogic@{GameLogic}}
+\index{GameLogic@{GameLogic}!GameLogic@{GameLogic}}
+\doxysubsubsection{\texorpdfstring{GameLogic()}{GameLogic()}}
+{\footnotesize\ttfamily Game\+Logic\+::\+Game\+Logic (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols,  }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor inicjalizujący logikę gry. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em rows} & Liczba wierszy labiryntu \\
+\hline
+{\em cols} & Liczba kolumn labiryntu \\
+\hline
+{\em parent} & Obiekt rodzica \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classGameLogic_ac617979451bc29e80d2260957aa8e817}\label{classGameLogic_ac617979451bc29e80d2260957aa8e817} 
+\index{GameLogic@{GameLogic}!setKeyboardAcceleration@{setKeyboardAcceleration}}
+\index{setKeyboardAcceleration@{setKeyboardAcceleration}!GameLogic@{GameLogic}}
+\doxysubsubsection{\texorpdfstring{setKeyboardAcceleration()}{setKeyboardAcceleration()}}
+{\footnotesize\ttfamily void Game\+Logic\+::set\+Keyboard\+Acceleration (\begin{DoxyParamCaption}\item[{double}]{dx,  }\item[{double}]{dy }\end{DoxyParamCaption})}
+
+
+
+Ustawia przyspieszenie kulki na podstawie klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em dx} & Kierunek w osi X (-\/1, 0, 1) \\
+\hline
+{\em dy} & Kierunek w osi Y (-\/1, 0, 1) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameLogic_a8f628b63effdab13cb8a724f0a29b9d8}\label{classGameLogic_a8f628b63effdab13cb8a724f0a29b9d8} 
+\index{GameLogic@{GameLogic}!setSensorAcceleration@{setSensorAcceleration}}
+\index{setSensorAcceleration@{setSensorAcceleration}!GameLogic@{GameLogic}}
+\doxysubsubsection{\texorpdfstring{setSensorAcceleration()}{setSensorAcceleration()}}
+{\footnotesize\ttfamily void Game\+Logic\+::set\+Sensor\+Acceleration (\begin{DoxyParamCaption}\item[{float}]{ax,  }\item[{float}]{ay }\end{DoxyParamCaption})}
+
+
+
+Ustawia przyspieszenie kulki na podstawie danych z akcelerometru. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em ax} & Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
+\hline
+{\em ay} & Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameLogic_a1cf0a1c91a36fc89fd11b7ad1c990159}\label{classGameLogic_a1cf0a1c91a36fc89fd11b7ad1c990159} 
+\index{GameLogic@{GameLogic}!updatePos@{updatePos}}
+\index{updatePos@{updatePos}!GameLogic@{GameLogic}}
+\doxysubsubsection{\texorpdfstring{updatePos()}{updatePos()}}
+{\footnotesize\ttfamily void Game\+Logic\+::update\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Aktualizuje pozycję kulki — fizyka, tarcie, kolizje. 
+
+Wywoływana cyklicznie przez timer widgetu. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/gamelogic.\+h\item 
+/home/wiktor/\+Desktop/\+WDS/\+Maze\+Motion/src/gamelogic.\+cpp\end{DoxyCompactItemize}

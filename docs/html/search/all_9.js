@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['paintevent_0',['paintEvent',['../classGameWidget.html#a3f30642bf770cf31856999d2f713cf50',1,'GameWidget']]]
+  ['open_0',['open',['../classSensorReader.html#a8847ed9d1c9147fe0c2f50ded87b2fd8',1,'SensorReader']]]
 ];

@@ -1,0 +1,77 @@
+\doxysection{gamelogic.\+h}
+\hypertarget{gamelogic_8h_source}{}\label{gamelogic_8h_source}\index{/home/wiktor/Desktop/WDS/MazeMotion/src/gamelogic.h@{/home/wiktor/Desktop/WDS/MazeMotion/src/gamelogic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMELOGIC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMELOGIC\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}mazegenerator.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameLogic}{GameLogic}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classGameLogic}{GameLogic}}(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_a1cf0a1c91a36fc89fd11b7ad1c990159}{updatePos}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_afa53c9940bcd963050c5ca4216970c7b}{resetMaze}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_a8f628b63effdab13cb8a724f0a29b9d8}{setSensorAcceleration}}(\textcolor{keywordtype}{float}\ ax,\ \textcolor{keywordtype}{float}\ ay);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_ac617979451bc29e80d2260957aa8e817}{setKeyboardAcceleration}}(\textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dy);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Gettery\ —\ widgety\ odczytują\ stan\ do\ rysowania}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ getBallX()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ballX;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ getBallY()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ballY;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ getBallRadius()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ballRadius;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{double}\ getGoalX()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ goalX;\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{double}\ getGoalY()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ goalY;\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{double}\ getPulsePhase()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pulsePhase;\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ isGameWon()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ gameWon;\ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ getRows()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rows;\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ getCols()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ cols;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ QVector<QRectF>\&\ getWalls()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ walls;\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ signals:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_aacfb7e984faf9e3aae37b3160420fb49}{gameWonSignal}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_a8028fa8ba031ece2b2e099234b2e0e38}{stateUpdated}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameLogic_aadead7469e428c79fa552c7d0b5fb630}{mazeChanged}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classMazeGenerator}{MazeGenerator}}\ *generator;\ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ QVector<QRectF>\ walls;\ \ \ \ \ \ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ rows;\ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ cols;\ \ \ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{double}\ ballX;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ ballY;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ ballRadius\ =\ 0.02;\ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{double}\ scaleFactor\ =\ 0.001;\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{double}\ velX\ =\ 0.0;\ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{double}\ velY\ =\ 0.0;\ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{double}\ accX\ =\ 0.0;\ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{double}\ accY\ =\ 0.0;\ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ friction\ =\ 0.02;\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ accelStep\ =\ 0.0005;\ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ goalX;\ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ goalY;\ \ \ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{double}\ pulsePhase\ =\ 0.0;\ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameWon\ =\ \textcolor{keyword}{false};\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ QTimer\ *timer;}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMELOGIC\_H}}
+
+\end{DoxyCode}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emainwindow_0',['~MainWindow',['../classMainWindow.html#a1f7d2c56410fc1bfa135bb907d43313f',1,'MainWindow']]]
+  ['updatepos_0',['updatePos',['../classGameLogic.html#a1cf0a1c91a36fc89fd11b7ad1c990159',1,'GameLogic']]]
 ];

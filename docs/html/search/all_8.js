@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['onsensordata_0',['onSensorData',['../classGameWidget.html#a871684b9a1c5f716ffd85cdf4b56fc0c',1,'GameWidget']]],
-  ['open_1',['open',['../classSensorReader.html#a8847ed9d1c9147fe0c2f50ded87b2fd8',1,'SensorReader']]]
+  ['mainwindow_0',['MainWindow',['../classMainWindow.html',1,'']]],
+  ['makepath_1',['makePath',['../classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7',1,'MazeGenerator']]],
+  ['mazechanged_2',['mazeChanged',['../classGameLogic.html#aadead7469e428c79fa552c7d0b5fb630',1,'GameLogic']]],
+  ['mazegenerator_3',['mazegenerator',['../classMazeGenerator.html',1,'MazeGenerator'],['../classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573',1,'MazeGenerator::MazeGenerator()']]]
 ];

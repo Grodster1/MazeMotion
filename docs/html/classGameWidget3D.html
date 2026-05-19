@@ -1,0 +1,424 @@
+<!-- HTML header for doxygen 1.9.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MazeMotion: Dokumentacja klasy GameWidget3D</title>
+<script type="text/javascript">document.documentElement.classList.add('dark-mode');</script>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeTabs.init()
+</script>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MazeMotion
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classGameWidget3D.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pro-methods">Metody chronione</a> &#124;
+<a href="classGameWidget3D-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy GameWidget3D</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Widget renderujący scenę gry w 3D z wykorzystaniem OpenGL 3.3 Core Profile.  
+ <a href="classGameWidget3D.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="gamewidget3d_8h_source.html">gamewidget3d.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla GameWidget3D</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__inherit__graph.svg" width="307" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Diagram współpracy dla GameWidget3D:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__coll__graph.svg" width="307" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:aa0995fe7a5b4db3cae92c8c868c5106f" id="r_aa0995fe7a5b4db3cae92c8c868c5106f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#aa0995fe7a5b4db3cae92c8c868c5106f">GameWidget3D</a> (<a class="el" href="classGameLogic.html">GameLogic</a> *logic, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa0995fe7a5b4db3cae92c8c868c5106f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor tworzący widget gry 3D.  <br /></td></tr>
+<tr class="separator:aa0995fe7a5b4db3cae92c8c868c5106f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7c3874a0eb42adc6829f4ac828a222" id="r_a5b7c3874a0eb42adc6829f4ac828a222"><td class="memItemLeft" align="right" valign="top"><a id="a5b7c3874a0eb42adc6829f4ac828a222" name="a5b7c3874a0eb42adc6829f4ac828a222"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~GameWidget3D</b> ()</td></tr>
+<tr class="memdesc:a5b7c3874a0eb42adc6829f4ac828a222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor zwalniający zasoby OpenGL (VAO, VBO, shadery). <br /></td></tr>
+<tr class="separator:a5b7c3874a0eb42adc6829f4ac828a222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef81e51aeb20e50c1f7099295304bbb" id="r_a7ef81e51aeb20e50c1f7099295304bbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a7ef81e51aeb20e50c1f7099295304bbb">forceRefresh</a> ()</td></tr>
+<tr class="memdesc:a7ef81e51aeb20e50c1f7099295304bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wymusza odświeżenie kontekstu OpenGL i przerysowanie sceny.  <br /></td></tr>
+<tr class="separator:a7ef81e51aeb20e50c1f7099295304bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Metody chronione</h2></td></tr>
+<tr class="memitem:ad13b480f201fbcb6302e1253fad3e1d7" id="r_ad13b480f201fbcb6302e1253fad3e1d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#ad13b480f201fbcb6302e1253fad3e1d7">initializeGL</a> () override</td></tr>
+<tr class="memdesc:ad13b480f201fbcb6302e1253fad3e1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje kontekst OpenGL — shadery, geometrię i macierz widoku.  <br /></td></tr>
+<tr class="separator:ad13b480f201fbcb6302e1253fad3e1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d249be6bfb5f72ae8a946ad7c3fa6c" id="r_a97d249be6bfb5f72ae8a946ad7c3fa6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a97d249be6bfb5f72ae8a946ad7c3fa6c">resizeGL</a> (int w, int h) override</td></tr>
+<tr class="memdesc:a97d249be6bfb5f72ae8a946ad7c3fa6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu.  <br /></td></tr>
+<tr class="separator:a97d249be6bfb5f72ae8a946ad7c3fa6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3857cfce14380848d25b665bacb37b18" id="r_a3857cfce14380848d25b665bacb37b18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a3857cfce14380848d25b665bacb37b18">paintGL</a> () override</td></tr>
+<tr class="memdesc:a3857cfce14380848d25b665bacb37b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderuje pełną scenę 3D — podłogę, ściany, cel i kulkę.  <br /></td></tr>
+<tr class="separator:a3857cfce14380848d25b665bacb37b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55913c1e16e4dd05565b70654e956df4" id="r_a55913c1e16e4dd05565b70654e956df4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a55913c1e16e4dd05565b70654e956df4">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a55913c1e16e4dd05565b70654e956df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje naciśnięcie klawisza strzałki.  <br /></td></tr>
+<tr class="separator:a55913c1e16e4dd05565b70654e956df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f8045abf2393555d22d79e942218f1" id="r_a97f8045abf2393555d22d79e942218f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a97f8045abf2393555d22d79e942218f1">keyReleaseEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a97f8045abf2393555d22d79e942218f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zwolnienie klawisza strzałki.  <br /></td></tr>
+<tr class="separator:a97f8045abf2393555d22d79e942218f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Widget renderujący scenę gry w 3D z wykorzystaniem OpenGL 3.3 Core Profile. </p>
+<p>Wykorzystuje nowoczesny potok renderowania oparty na shaderach z oświetleniem Phonga, bufory wierzchołków (VBO/VAO) oraz wielopróbkowanie (MSAA 4x). Logika gry (fizyka, kolizje, labirynt) delegowana jest do klasy <a class="el" href="classGameLogic.html" title="Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem.">GameLogic</a>, dzięki czemu widget odpowiada wyłącznie za wizualizację. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="aa0995fe7a5b4db3cae92c8c868c5106f" name="aa0995fe7a5b4db3cae92c8c868c5106f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0995fe7a5b4db3cae92c8c868c5106f">&#9670;&#160;</a></span>GameWidget3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameWidget3D::GameWidget3D </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGameLogic.html">GameLogic</a> *&#160;</td>
+          <td class="paramname"><em>logic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor tworzący widget gry 3D. </p>
+<p>Konfiguruje format powierzchni OpenGL (3.3 Core, MSAA 4x, 24-bit depth), podłącza sygnał aktualizacji stanu gry i tworzy overlay wygranej.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logic</td><td>Wskaźnik do współdzielonej logiki gry </td></tr>
+    <tr><td class="paramname">parent</td><td>Widget rodzica </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a7ef81e51aeb20e50c1f7099295304bbb" name="a7ef81e51aeb20e50c1f7099295304bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef81e51aeb20e50c1f7099295304bbb">&#9670;&#160;</a></span>forceRefresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::forceRefresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wymusza odświeżenie kontekstu OpenGL i przerysowanie sceny. </p>
+<p>Wywoływana po przełączeniu widoku z 2D na 3D, aby zaktualizować viewport i macierz projekcji do aktualnego rozmiaru widgetu. </p>
+
+</div>
+</div>
+<a id="ad13b480f201fbcb6302e1253fad3e1d7" name="ad13b480f201fbcb6302e1253fad3e1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13b480f201fbcb6302e1253fad3e1d7">&#9670;&#160;</a></span>initializeGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::initializeGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicjalizuje kontekst OpenGL — shadery, geometrię i macierz widoku. </p>
+<p>Kompiluje i linkuje vertex/fragment shader z oświetleniem Phonga, buduje geometrię podłogi, ścian i sfery jednostkowej, oraz konfiguruje macierz widoku (pozycja i orientacja kamery). </p>
+
+</div>
+</div>
+<a id="a55913c1e16e4dd05565b70654e956df4" name="a55913c1e16e4dd05565b70654e956df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55913c1e16e4dd05565b70654e956df4">&#9670;&#160;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje naciśnięcie klawisza strzałki. </p>
+<p>Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a97f8045abf2393555d22d79e942218f1" name="a97f8045abf2393555d22d79e942218f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f8045abf2393555d22d79e942218f1">&#9670;&#160;</a></span>keyReleaseEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zwolnienie klawisza strzałki. </p>
+<p>Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3857cfce14380848d25b665bacb37b18" name="a3857cfce14380848d25b665bacb37b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3857cfce14380848d25b665bacb37b18">&#9670;&#160;</a></span>paintGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::paintGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renderuje pełną scenę 3D — podłogę, ściany, cel i kulkę. </p>
+<p>Ustawia uniformy shaderów (macierze, pozycja światła i kamery), rysuje wszystkie elementy sceny, a następnie zwalnia shader. </p>
+
+</div>
+</div>
+<a id="a97d249be6bfb5f72ae8a946ad7c3fa6c" name="a97d249be6bfb5f72ae8a946ad7c3fa6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d249be6bfb5f72ae8a946ad7c3fa6c">&#9670;&#160;</a></span>resizeGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::resizeGL </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Nowa szerokość widgetu w pikselach </td></tr>
+    <tr><td class="paramname">h</td><td>Nowa wysokość widgetu w pikselach </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>/home/wiktor/Desktop/WDS/MazeMotion/src/<a class="el" href="gamewidget3d_8h_source.html">gamewidget3d.h</a></li>
+<li>/home/wiktor/Desktop/WDS/MazeMotion/src/<b>gamewidget3d.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.8-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classGameWidget3D.html">GameWidget3D</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

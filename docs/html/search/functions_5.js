@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['makepath_0',['makePath',['../classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7',1,'MazeGenerator']]],
-  ['mazegenerator_1',['MazeGenerator',['../classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573',1,'MazeGenerator']]]
+  ['keypressevent_0',['keyPressEvent',['../classGameWidget3D.html#a55913c1e16e4dd05565b70654e956df4',1,'GameWidget3D']]],
+  ['keyreleaseevent_1',['keyReleaseEvent',['../classGameWidget3D.html#a97f8045abf2393555d22d79e942218f1',1,'GameWidget3D']]]
 ];

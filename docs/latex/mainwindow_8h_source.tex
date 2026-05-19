@@ -6,42 +6,52 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}gamewidget.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}sensorreader.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}chartpanel.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QToolBar>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ QT\_BEGIN\_NAMESPACE}
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }Ui\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};}
-\DoxyCodeLine{00016\ \}}
-\DoxyCodeLine{00017\ QT\_END\_NAMESPACE}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
-\DoxyCodeLine{00020\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classGameWidget}{GameWidget}}\ *gameWidget;}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classSensorReader}{SensorReader}}\ *sensorReader;}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classChartPanel}{ChartPanel}}\ *chartPanel;}
-\DoxyCodeLine{00025\ \ \ \ \ QComboBox\ *portCombo;}
-\DoxyCodeLine{00026\ \ \ \ \ QPushButton\ *connectButton;}
-\DoxyCodeLine{00027\ \ \ \ \ QPushButton\ *newMazeButton;}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ connected\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMainWindow}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classMainWindow}{\string~MainWindow}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00036\ \ \ \ \ Ui::MainWindow\ *ui;}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ onConnectClicked();}
-\DoxyCodeLine{00040\ \};}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}gamelogic.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}gamewidget.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}gamewidget3d.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}sensorreader.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}chartpanel.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QToolBar>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QSplitter>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classGameLogic}{GameLogic}}\ *gameLogic;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classGameWidget}{GameWidget}}\ *gameWidget;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classSensorReader}{SensorReader}}\ *sensorReader;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classChartPanel}{ChartPanel}}\ *chartPanel;}
+\DoxyCodeLine{00030\ \ \ \ \ QComboBox\ *portCombo;}
+\DoxyCodeLine{00031\ \ \ \ \ QPushButton\ *connectButton;}
+\DoxyCodeLine{00032\ \ \ \ \ QPushButton\ *newMazeButton;}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classGameWidget3D}{GameWidget3D}}\ *gameWidget3D;}
+\DoxyCodeLine{00034\ \ \ \ \ QPushButton\ *switchViewButton;}
+\DoxyCodeLine{00035\ \ \ \ \ QSplitter\ *splitter;}
+\DoxyCodeLine{00036\ \ \ \ \ QStackedWidget\ *gameStack;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ connected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMainWindow}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classMainWindow}{\string~MainWindow}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ onConnectClicked();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ onSwitchView();}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
 
 \end{DoxyCode}

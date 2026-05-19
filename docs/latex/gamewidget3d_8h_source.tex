@@ -1,0 +1,96 @@
+\doxysection{gamewidget3d.\+h}
+\hypertarget{gamewidget3d_8h_source}{}\label{gamewidget3d_8h_source}\index{/home/wiktor/Desktop/WDS/MazeMotion/src/gamewidget3d.h@{/home/wiktor/Desktop/WDS/MazeMotion/src/gamewidget3d.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEWIDGET3D\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEWIDGET3D\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QOpenGLWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QOpenGLFunctions\_3\_3\_Core>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QOpenGLShaderProgram>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QOpenGLBuffer>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QOpenGLVertexArrayObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QMatrix4x4>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QVector3D>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}gamelogic.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameWidget3D}{GameWidget3D}}\ :\ \textcolor{keyword}{public}\ QOpenGLWidget,\ \textcolor{keyword}{protected}\ QOpenGLFunctions\_3\_3\_Core}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classGameWidget3D}{GameWidget3D}}(\mbox{\hyperlink{classGameLogic}{GameLogic}}\ *logic,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classGameWidget3D_a5b7c3874a0eb42adc6829f4ac828a222}{\string~GameWidget3D}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb}{forceRefresh}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7}{initializeGL}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c}{resizeGL}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_a3857cfce14380848d25b665bacb37b18}{paintGL}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget3D_a97f8045abf2393555d22d79e942218f1}{keyReleaseEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classGameLogic}{GameLogic}}\ *logic;\ \ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ QOpenGLShaderProgram\ *shaderProgram\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ uModelLoc;\ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ uViewLoc;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ uProjLoc;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ uColorLoc;\ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ uLightPosLoc;\ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ uViewPosLoc;\ \ \ \ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ QOpenGLVertexArrayObject\ boardVAO;\ \ }
+\DoxyCodeLine{00109\ \ \ \ \ QOpenGLBuffer\ boardVBO;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ QOpenGLVertexArrayObject\ wallsVAO;\ \ }
+\DoxyCodeLine{00112\ \ \ \ \ QOpenGLBuffer\ wallsVBO;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ wallsVertexCount\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ QOpenGLVertexArrayObject\ sphereVAO;\ }
+\DoxyCodeLine{00116\ \ \ \ \ QOpenGLBuffer\ sphereVBO;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ sphereVertexCount\ =\ 0;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ QMatrix4x4\ projectionMatrix;\ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ QMatrix4x4\ viewMatrix;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ buildBoardGeometry();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ buildWallsGeometry();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ buildSphereGeometry(\textcolor{keywordtype}{int}\ stacks,\ \textcolor{keywordtype}{int}\ slices);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBoard();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWalls();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBall();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGoal();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{int}\ cachedWallCount\ =\ -\/1;\ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ glInitialized\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ QLabel\ *winLabel\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ goLeft\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ goRight\ =\ \textcolor{keyword}{false};\ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ goUp\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ goDown\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ onStateUpdated();}
+\DoxyCodeLine{00188\ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWIDGET3D\_H}}
+
+\end{DoxyCode}

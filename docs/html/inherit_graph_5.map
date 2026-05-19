@@ -1,0 +1,7 @@
+<map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,84,56"/>
+<area shape="rect" id="Node000001" href="$classChartPanel.html" title=" " alt="" coords="139,5,231,31"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="97,31,139,24,140,29,98,37"/>
+<area shape="rect" id="Node000002" href="$classGameWidget.html" title="Widget odpowiedzialny za renderowanie 2D planszy i kulki." alt="" coords="132,55,239,80"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="98,50,132,56,131,61,97,55"/>
+</map>

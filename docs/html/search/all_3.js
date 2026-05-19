@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['findfarthestcell_0',['findFarthestCell',['../classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95',1,'MazeGenerator']]]
+  ['findfarthestcell_0',['findFarthestCell',['../classMazeGenerator.html#ae17625db3730bbdc67f682346d691d95',1,'MazeGenerator']]],
+  ['forcerefresh_1',['forceRefresh',['../classGameWidget3D.html#a7ef81e51aeb20e50c1f7099295304bbb',1,'GameWidget3D']]]
 ];

@@ -1,5 +1,7 @@
 <map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,80,31"/>
-<area shape="rect" id="Node000001" href="$classSensorReader.html" title="Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy." alt="" coords="128,5,240,31"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="94,15,128,15,128,21,94,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,80,56"/>
+<area shape="rect" id="Node000001" href="$classGameLogic.html" title="Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem." alt="" coords="137,5,231,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="93,32,136,24,137,29,94,37"/>
+<area shape="rect" id="Node000002" href="$classSensorReader.html" title="Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy." alt="" coords="128,55,240,80"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="94,49,128,55,127,60,93,54"/>
 </map>
