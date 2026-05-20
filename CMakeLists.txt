@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(MazeMotion LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets SerialPort Charts OpenGLWidgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets SerialPort Charts OpenGLWidgets LinguistTools)
 find_package(OpenGL REQUIRED)
 
 qt_standard_project_setup()
@@ -25,6 +25,11 @@ qt_add_executable(MazeMotion
     src/mazegenerator.h
     src/gamewidget3d.cpp
     src/gamewidget3d.h
+)
+
+qt_add_translations(MazeMotion
+    TS_FILES translations/mazemotion_en.ts
+    RESOURCE_PREFIX "/translations"
 )
 
 target_include_directories(MazeMotion PRIVATE src)
