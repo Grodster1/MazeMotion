@@ -1,5 +1,19 @@
-
 #include <Arduino_LSM6DS3.h>
+
+byte checksum;
+
+void printWithChecksum(float val, bool last) {
+  char buf[12];
+  sprintf(buf, "%.2f", val);
+  for (int i = 0; buf[i] != '\0'; i++) {
+    checksum ^= buf[i];
+  }
+  Serial.print(buf);
+  if (!last) {
+    checksum ^= ',';
+    Serial.print(',');
+  }
+}
 
 void setup() {
   Serial.begin(115200);
@@ -7,7 +21,6 @@ void setup() {
 
   if (!IMU.begin()) {
     Serial.println("Failed to initialize IMU!");
-
     while (1);
   }
 }
@@ -20,19 +33,19 @@ void loop() {
     IMU.readGyroscope(gx, gy, gz);
     IMU.readAcceleration(ax, ay, az);
 
-    String data = String(ax, 2) + "," + String(ay, 2) + "," + String(az, 2) + ","
-                + String(gx, 2) + "," + String(gy, 2) + "," + String(gz, 2);
+    checksum = 0;
 
-    byte checksum = 0;
-    for (int i = 0; i < data.length(); i++) {
-      checksum ^= data.charAt(i);
-    }
+    printWithChecksum(ax, false);
+    printWithChecksum(ay, false);
+    printWithChecksum(az, false);
+    printWithChecksum(gx, false);
+    printWithChecksum(gy, false);
+    printWithChecksum(gz, true);
 
-    Serial.print(data);
     Serial.print('*');
-    if (checksum < 0x10) Serial.print('0');  
+    if (checksum < 0x10) Serial.print('0');
     Serial.println(String(checksum, HEX));
 
-    delay(16);
+    delay(10);
   }
 }
