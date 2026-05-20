@@ -89,7 +89,7 @@ private:
     double ballX;               ///< Znormalizowana pozycja kulki w osi X
     double ballY;               ///< Znormalizowana pozycja kulki w osi Y
     double ballRadius = 0.02;   ///< Znormalizowany promień kulki
-    double scaleFactor = 0.001; ///< Współczynnik skalowania danych z akcelerometru
+    double scaleFactor = 0.002; ///< Współczynnik skalowania danych z akcelerometru
 
     double velX = 0.0;  ///< Składowa prędkości X
     double velY = 0.0;  ///< Składowa prędkości Y

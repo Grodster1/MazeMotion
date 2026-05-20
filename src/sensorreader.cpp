@@ -31,11 +31,14 @@ void SensorReader::close(){
 
 void SensorReader::onReadyRead(){
     buffer += serialPort->readAll();
-    int index = buffer.indexOf('\n');
 
+    float ax, ay, az, gx, gy, gz;
+    bool hasData = false;
+
+    int index = buffer.indexOf('\n');
     while(index != -1){
         QByteArray byteLine = buffer.left(index);
-        buffer.remove(0, index+1);
+        buffer.remove(0, index + 1);
         QString line = QString::fromUtf8(byteLine).trimmed();
 
         int starIndex = line.indexOf('*');
@@ -59,22 +62,22 @@ void SensorReader::onReadyRead(){
             continue;
         }
 
-
-        QStringList list = line.split(',');
-
+        QStringList list = data.split(',');
         if(list.size() == 6){
-            float ax = list[0].toFloat();
-            float ay = list[1].toFloat();
-            float az = list[2].toFloat();
-
-            float gx = list[3].toFloat();
-            float gy = list[4].toFloat();
-            float gz = list[5].toFloat();
-
-            emit dataReceived(ax, ay, az, gx, gy, gz);
+            ax = list[0].toFloat();
+            ay = list[1].toFloat();
+            az = list[2].toFloat();
+            gx = list[3].toFloat();
+            gy = list[4].toFloat();
+            gz = list[5].toFloat();
+            hasData = true;
         }
 
         index = buffer.indexOf('\n');
+    }
+
+    if(hasData){
+        emit dataReceived(ax, ay, az, gx, gy, gz);
     }
 }
 

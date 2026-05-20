@@ -29,8 +29,9 @@ void GameLogic::resetMaze() {
 }
 
 void GameLogic::setSensorAcceleration(float ax, float ay) {
-    accX = ax * scaleFactor;
-    accY = -ay * scaleFactor;
+    double alpha = 0.3;
+    accX = accX * (1.0 - alpha) + (ax * scaleFactor) * alpha;
+    accY = accY * (1.0 - alpha) + (-ay * scaleFactor) * alpha;
 }
 
 void GameLogic::setKeyboardAcceleration(double dx, double dy) {
@@ -50,6 +51,11 @@ void GameLogic::updatePos() {
     velY += accY;
     velX *= (1.0 - friction);
     velY *= (1.0 - friction);
+
+    double maxVel = 0.012;
+    velX = qBound(-maxVel, velX, maxVel);
+    velY = qBound(-maxVel, velY, maxVel);
+
     ballX += velX;
     ballY += velY;
 
