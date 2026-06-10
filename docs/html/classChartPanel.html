@@ -117,29 +117,171 @@ $(document).ready(function(){initNavTree('classChartPanel.html',''); initResizab
   <div class="headertitle"><div class="title">Dokumentacja klasy ChartPanel</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Panel z wykresami czasowymi danych sensorycznych.  
+ <a href="classChartPanel.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="chartpanel_8h_source.html">chartpanel.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagram dziedziczenia dla ChartPanel</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classChartPanel__inherit__graph.svg" width="140" height="210"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classChartPanel__inherit__graph.svg" width="140" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Diagram współpracy dla ChartPanel:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classChartPanel__coll__graph.svg" width="140" height="210"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classChartPanel__coll__graph.svg" width="140" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Sloty publiczne</h2></td></tr>
-<tr class="memitem:a21590716113a934cb2a6747f99dcd0ae" id="r_a21590716113a934cb2a6747f99dcd0ae"><td class="memItemLeft" align="right" valign="top"><a id="a21590716113a934cb2a6747f99dcd0ae" name="a21590716113a934cb2a6747f99dcd0ae"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onSensorData</b> (float ax, float ay, float az, float gx, float gy, float gz)</td></tr>
+<tr class="memitem:a21590716113a934cb2a6747f99dcd0ae" id="r_a21590716113a934cb2a6747f99dcd0ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChartPanel.html#a21590716113a934cb2a6747f99dcd0ae">onSensorData</a> (float ax, float ay, float az, float gx, float gy, float gz)</td></tr>
+<tr class="memdesc:a21590716113a934cb2a6747f99dcd0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot odbierający dane z czujnika IMU i aktualizujący wykresy.  <br /></td></tr>
 <tr class="separator:a21590716113a934cb2a6747f99dcd0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a31ff59140093fdc0dfada6719493c4f8" id="r_a31ff59140093fdc0dfada6719493c4f8"><td class="memItemLeft" align="right" valign="top"><a id="a31ff59140093fdc0dfada6719493c4f8" name="a31ff59140093fdc0dfada6719493c4f8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ChartPanel</b> (QWidget *parent=nullptr)</td></tr>
+<tr class="memitem:a31ff59140093fdc0dfada6719493c4f8" id="r_a31ff59140093fdc0dfada6719493c4f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChartPanel.html#a31ff59140093fdc0dfada6719493c4f8">ChartPanel</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a31ff59140093fdc0dfada6719493c4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor tworzący panel wykresów.  <br /></td></tr>
 <tr class="separator:a31ff59140093fdc0dfada6719493c4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f5480d427197fd2430ad2ea78a248a" id="r_a79f5480d427197fd2430ad2ea78a248a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChartPanel.html#a79f5480d427197fd2430ad2ea78a248a">retranslateUI</a> ()</td></tr>
+<tr class="memdesc:a79f5480d427197fd2430ad2ea78a248a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odświeża teksty wykresów po zmianie języka interfejsu.  <br /></td></tr>
+<tr class="separator:a79f5480d427197fd2430ad2ea78a248a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Panel z wykresami czasowymi danych sensorycznych. </p>
+<p>Wyświetla dwa wykresy aktualizowane w czasie rzeczywistym: przyspieszenie liniowe (akcelerometr, 3 osie) oraz prędkość kątową (żyroskop, 3 osie). Okno obserwacji obejmuje ostatnich 200 próbek i przesuwa się automatycznie. Zrealizowany z wykorzystaniem modułu Qt Charts. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a31ff59140093fdc0dfada6719493c4f8" name="a31ff59140093fdc0dfada6719493c4f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ff59140093fdc0dfada6719493c4f8">&#9670;&#160;</a></span>ChartPanel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ChartPanel::ChartPanel </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor tworzący panel wykresów. </p>
+<p>Inicjalizuje dwa wykresy (akcelerometr i żyroskop) z osiami, seriami danych i widokami. Układ pionowy (QVBoxLayout).</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>- Widget rodzica </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a21590716113a934cb2a6747f99dcd0ae" name="a21590716113a934cb2a6747f99dcd0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21590716113a934cb2a6747f99dcd0ae">&#9670;&#160;</a></span>onSensorData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChartPanel::onSensorData </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>az</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot odbierający dane z czujnika IMU i aktualizujący wykresy. </p>
+<p>Dopisuje nowe punkty do serii, usuwa najstarsze przy przekroczeniu 200 próbek i przesuwa okno obserwacji osi X.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ax</td><td>- Przyspieszenie liniowe w osi X [g] </td></tr>
+    <tr><td class="paramname">ay</td><td>- Przyspieszenie liniowe w osi Y [g] </td></tr>
+    <tr><td class="paramname">az</td><td>- Przyspieszenie liniowe w osi Z [g] </td></tr>
+    <tr><td class="paramname">gx</td><td>- Prędkość kątowa w osi X [°/s] </td></tr>
+    <tr><td class="paramname">gy</td><td>- Prędkość kątowa w osi Y [°/s] </td></tr>
+    <tr><td class="paramname">gz</td><td>- Prędkość kątowa w osi Z [°/s] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79f5480d427197fd2430ad2ea78a248a" name="a79f5480d427197fd2430ad2ea78a248a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f5480d427197fd2430ad2ea78a248a">&#9670;&#160;</a></span>retranslateUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChartPanel::retranslateUI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odświeża teksty wykresów po zmianie języka interfejsu. </p>
+<p>Aktualizuje tytuły wykresów oraz opisy osi pionowych. </p>
+
+</div>
+</div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<a class="el" href="chartpanel_8h_source.html">chartpanel.h</a></li>
 <li>/home/wiktor/Desktop/WDS/MazeMotion/src/<b>chartpanel.cpp</b></li>

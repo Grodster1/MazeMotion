@@ -7,5 +7,6 @@ var classGameWidget3D =
     [ "keyPressEvent", "classGameWidget3D.html#a55913c1e16e4dd05565b70654e956df4", null ],
     [ "keyReleaseEvent", "classGameWidget3D.html#a97f8045abf2393555d22d79e942218f1", null ],
     [ "paintGL", "classGameWidget3D.html#a3857cfce14380848d25b665bacb37b18", null ],
-    [ "resizeGL", "classGameWidget3D.html#a97d249be6bfb5f72ae8a946ad7c3fa6c", null ]
+    [ "resizeGL", "classGameWidget3D.html#a97d249be6bfb5f72ae8a946ad7c3fa6c", null ],
+    [ "retranslateUI", "classGameWidget3D.html#aa7ef9883c282b1aaa691c62d5e441b37", null ]
 ];

@@ -145,14 +145,14 @@ Metody publiczne</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Metody chronione</h2></td></tr>
-<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top"><a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>paintEvent</b> (QPaintEvent *event) override</td></tr>
+<tr class="memitem:a3f30642bf770cf31856999d2f713cf50" id="r_a3f30642bf770cf31856999d2f713cf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">paintEvent</a> (QPaintEvent *event) override</td></tr>
+<tr class="memdesc:a3f30642bf770cf31856999d2f713cf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje scenę gry — planszę, ściany, cel i kulkę.  <br /></td></tr>
 <tr class="separator:a3f30642bf770cf31856999d2f713cf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top"><a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>keyPressEvent</b> (QKeyEvent *event) override</td></tr>
+<tr class="memitem:a350024625893bd439fe761c4df0e7c6f" id="r_a350024625893bd439fe761c4df0e7c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a350024625893bd439fe761c4df0e7c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje naciśnięcie klawisza strzałki.  <br /></td></tr>
 <tr class="separator:a350024625893bd439fe761c4df0e7c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top"><a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>keyReleaseEvent</b> (QKeyEvent *event) override</td></tr>
+<tr class="memitem:a834496522f3fb964cfa0c87c17be3558" id="r_a834496522f3fb964cfa0c87c17be3558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">keyReleaseEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a834496522f3fb964cfa0c87c17be3558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zwolnienie klawisza strzałki.  <br /></td></tr>
 <tr class="separator:a834496522f3fb964cfa0c87c17be3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
@@ -196,8 +196,111 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>keyReleaseEvent</b> (
 <p>Konstruktor tworzący widget gry 2D. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">logic</td><td>Wskaźnik do współdzielonej logiki gry </td></tr>
-    <tr><td class="paramname">parent</td><td>Widget rodzica </td></tr>
+    <tr><td class="paramname">logic</td><td>- Wskaźnik do współdzielonej logiki gry </td></tr>
+    <tr><td class="paramname">parent</td><td>- Widget rodzica </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a350024625893bd439fe761c4df0e7c6f" name="a350024625893bd439fe761c4df0e7c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350024625893bd439fe761c4df0e7c6f">&#9670;&#160;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje naciśnięcie klawisza strzałki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>- Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a834496522f3fb964cfa0c87c17be3558" name="a834496522f3fb964cfa0c87c17be3558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834496522f3fb964cfa0c87c17be3558">&#9670;&#160;</a></span>keyReleaseEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zwolnienie klawisza strzałki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>- Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f30642bf770cf31856999d2f713cf50" name="a3f30642bf770cf31856999d2f713cf50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f30642bf770cf31856999d2f713cf50">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rysuje scenę gry — planszę, ściany, cel i kulkę. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>- Zdarzenie rysowania </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,5 +1,5 @@
 <map id="ChartPanel" name="ChartPanel">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,135,204"/>
+<area shape="rect" id="Node000001" title="Panel z wykresami czasowymi danych sensorycznych." alt="" coords="5,119,135,224"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="35,5,105,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,85,73,119,67,119,67,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,85,73,118,67,118,67,85"/>
 </map>

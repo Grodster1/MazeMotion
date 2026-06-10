@@ -11,8 +11,7 @@ Widget renderujący scenę gry w 3D z wykorzystaniem Open\+GL 3.\+3 Core Profile
 
 
 
-Diagram dziedziczenia dla Game\+Widget3D
-\nopagebreak
+Diagram dziedziczenia dla Game\+Widget3D\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Diagram dziedziczenia dla Game\+Widget3D
 \end{figure}
 
 
-Diagram współpracy dla Game\+Widget3D\+:
-\nopagebreak
+Diagram współpracy dla Game\+Widget3D\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,7 +36,9 @@ Diagram współpracy dla Game\+Widget3D\+:
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Game\+Widget3D} ()
 \begin{DoxyCompactList}\small\item\em Destruktor zwalniający zasoby Open\+GL (VAO, VBO, shadery). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb}{force\+Refresh}} ()
-\begin{DoxyCompactList}\small\item\em Wymusza odświeżenie kontekstu Open\+GL i przerysowanie sceny. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wymusza odświeżenie kontekstu Open\+GL i przerysowanie sceny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37}{retranslate\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Odpowiada za zmianę języka win\+Label. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,9 +74,9 @@ Konfiguruje format powierzchni Open\+GL (3.\+3 Core, MSAA 4x, 24-\/bit depth), p
 
 
 \begin{DoxyParams}{Parametry}
-{\em logic} & Wskaźnik do współdzielonej logiki gry \\
+{\em logic} & -\/ Wskaźnik do współdzielonej logiki gry \\
 \hline
-{\em parent} & Widget rodzica \\
+{\em parent} & -\/ Widget rodzica \\
 \hline
 \end{DoxyParams}
 
@@ -116,7 +116,7 @@ Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-\/r
 
 
 \begin{DoxyParams}{Parametry}
-{\em event} & Zdarzenie klawiatury \\
+{\em event} & -\/ Zdarzenie klawiatury \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classGameWidget3D_a97f8045abf2393555d22d79e942218f1}\label{classGameWidget3D_a97f8045abf2393555d22d79e942218f1} 
@@ -133,7 +133,7 @@ Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-\/repeat systemu
 
 
 \begin{DoxyParams}{Parametry}
-{\em event} & Zdarzenie klawiatury \\
+{\em event} & -\/ Zdarzenie klawiatury \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classGameWidget3D_a3857cfce14380848d25b665bacb37b18}\label{classGameWidget3D_a3857cfce14380848d25b665bacb37b18} 
@@ -158,12 +158,22 @@ Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu.
 
 
 \begin{DoxyParams}{Parametry}
-{\em w} & Nowa szerokość widgetu w pikselach \\
+{\em w} & -\/ Nowa szerokość widgetu w pikselach \\
 \hline
-{\em h} & Nowa wysokość widgetu w pikselach \\
+{\em h} & -\/ Nowa wysokość widgetu w pikselach \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37}\label{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37} 
+\index{GameWidget3D@{GameWidget3D}!retranslateUI@{retranslateUI}}
+\index{retranslateUI@{retranslateUI}!GameWidget3D@{GameWidget3D}}
+\doxysubsubsection{\texorpdfstring{retranslateUI()}{retranslateUI()}}
+{\footnotesize\ttfamily void Game\+Widget3\+D\+::retranslate\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Odpowiada za zmianę języka win\+Label. 
+
+Wywoływana po zmianie języka w main\+Window. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

@@ -125,12 +125,12 @@ $(document).ready(function(){initNavTree('classGameWidget3D.html',''); initResiz
 <div class="dynheader">
 Diagram dziedziczenia dla GameWidget3D</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__inherit__graph.svg" width="307" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__inherit__graph.svg" width="307" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Diagram współpracy dla GameWidget3D:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__coll__graph.svg" width="307" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGameWidget3D__coll__graph.svg" width="307" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -145,6 +145,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a7ef81e51aeb20e50c1f7099295304bbb" id="r_a7ef81e51aeb20e50c1f7099295304bbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#a7ef81e51aeb20e50c1f7099295304bbb">forceRefresh</a> ()</td></tr>
 <tr class="memdesc:a7ef81e51aeb20e50c1f7099295304bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wymusza odświeżenie kontekstu OpenGL i przerysowanie sceny.  <br /></td></tr>
 <tr class="separator:a7ef81e51aeb20e50c1f7099295304bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ef9883c282b1aaa691c62d5e441b37" id="r_aa7ef9883c282b1aaa691c62d5e441b37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameWidget3D.html#aa7ef9883c282b1aaa691c62d5e441b37">retranslateUI</a> ()</td></tr>
+<tr class="memdesc:aa7ef9883c282b1aaa691c62d5e441b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odpowiada za zmianę języka winLabel.  <br /></td></tr>
+<tr class="separator:aa7ef9883c282b1aaa691c62d5e441b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Metody chronione</h2></td></tr>
@@ -206,8 +209,8 @@ Metody chronione</h2></td></tr>
 <p>Konfiguruje format powierzchni OpenGL (3.3 Core, MSAA 4x, 24-bit depth), podłącza sygnał aktualizacji stanu gry i tworzy overlay wygranej.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">logic</td><td>Wskaźnik do współdzielonej logiki gry </td></tr>
-    <tr><td class="paramname">parent</td><td>Widget rodzica </td></tr>
+    <tr><td class="paramname">logic</td><td>- Wskaźnik do współdzielonej logiki gry </td></tr>
+    <tr><td class="paramname">parent</td><td>- Widget rodzica </td></tr>
   </table>
   </dd>
 </dl>
@@ -291,7 +294,7 @@ Metody chronione</h2></td></tr>
 <p>Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+    <tr><td class="paramname">event</td><td>- Zdarzenie klawiatury </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,7 +329,7 @@ Metody chronione</h2></td></tr>
 <p>Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-repeat systemu operacyjnego.</p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+    <tr><td class="paramname">event</td><td>- Zdarzenie klawiatury </td></tr>
   </table>
   </dd>
 </dl>
@@ -398,11 +401,31 @@ Metody chronione</h2></td></tr>
 <p>Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">w</td><td>Nowa szerokość widgetu w pikselach </td></tr>
-    <tr><td class="paramname">h</td><td>Nowa wysokość widgetu w pikselach </td></tr>
+    <tr><td class="paramname">w</td><td>- Nowa szerokość widgetu w pikselach </td></tr>
+    <tr><td class="paramname">h</td><td>- Nowa wysokość widgetu w pikselach </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aa7ef9883c282b1aaa691c62d5e441b37" name="aa7ef9883c282b1aaa691c62d5e441b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ef9883c282b1aaa691c62d5e441b37">&#9670;&#160;</a></span>retranslateUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameWidget3D::retranslateUI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odpowiada za zmianę języka winLabel. </p>
+<p>Wywoływana po zmianie języka w mainWindow. </p>
 
 </div>
 </div>

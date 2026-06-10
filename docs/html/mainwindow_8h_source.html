@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('mainwindow_8h_source.html',''); initRe
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QToolBar&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QSplitter&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QStackedWidget&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QTranslator&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>QT_BEGIN_NAMESPACE</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>Ui {</div>
@@ -135,42 +135,56 @@ $(document).ready(function(){initNavTree('mainwindow_8h_source.html',''); initRe
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>QT_END_NAMESPACE</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classMainWindow.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Q_OBJECT</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classGameLogic.html">GameLogic</a> *gameLogic;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classGameWidget.html">GameWidget</a> *gameWidget;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classSensorReader.html">SensorReader</a> *sensorReader;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classChartPanel.html">ChartPanel</a> *chartPanel;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QComboBox *portCombo;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    QPushButton *connectButton;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    QPushButton *newMazeButton;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="classGameWidget3D.html">GameWidget3D</a> *gameWidget3D;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QPushButton *switchViewButton;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QSplitter *splitter;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QStackedWidget *gameStack;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> connected = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classMainWindow.html">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classMainWindow.html">~MainWindow</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Ui::MainWindow *ui;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> onConnectClicked();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> onSwitchView();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classMainWindow.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_OBJECT</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classGameLogic.html">GameLogic</a> *gameLogic;           </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classGameWidget.html">GameWidget</a> *gameWidget;         </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classSensorReader.html">SensorReader</a> *sensorReader;     </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classChartPanel.html">ChartPanel</a> *chartPanel;         </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QComboBox *portCombo;           </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QPushButton *connectButton;     </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    QPushButton *newMazeButton;     </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    QPushButton *langButton;        </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classGameWidget3D.html">GameWidget3D</a> *gameWidget3D;     </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QPushButton *switchViewButton;  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    QSplitter *splitter;            </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    QStackedWidget *gameStack;      </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    QTranslator *translator = <span class="keyword">nullptr</span>; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> isPolish = <span class="keyword">true</span>;           </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> connected = <span class="keyword">false</span>;         </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classMainWindow.html">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="classMainWindow.html#a1f7d2c56410fc1bfa135bb907d43313f">~MainWindow</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Ui::MainWindow *ui;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> retranslateUI();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#ab191d4445d7faca3b2d48e2374d1d35a">onConnectClicked</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#adbeb31447557d3b9b1742b86a29e45f5">onSwitchView</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#ac6a1ccd315480034ea4b3c783cba0993">onSwitchLanguage</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
-<div class="ttc" id="aclassChartPanel_html"><div class="ttname"><a href="classChartPanel.html">ChartPanel</a></div><div class="ttdef"><b>Definition</b> chartpanel.h:8</div></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="aclassChartPanel_html"><div class="ttname"><a href="classChartPanel.html">ChartPanel</a></div><div class="ttdoc">Panel z wykresami czasowymi danych sensorycznych.</div><div class="ttdef"><b>Definition</b> chartpanel.h:18</div></div>
 <div class="ttc" id="aclassGameLogic_html"><div class="ttname"><a href="classGameLogic.html">GameLogic</a></div><div class="ttdoc">Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem.</div><div class="ttdef"><b>Definition</b> gamelogic.h:17</div></div>
 <div class="ttc" id="aclassGameWidget3D_html"><div class="ttname"><a href="classGameWidget3D.html">GameWidget3D</a></div><div class="ttdoc">Widget renderujący scenę gry w 3D z wykorzystaniem OpenGL 3.3 Core Profile.</div><div class="ttdef"><b>Definition</b> gamewidget3d.h:24</div></div>
 <div class="ttc" id="aclassGameWidget_html"><div class="ttname"><a href="classGameWidget.html">GameWidget</a></div><div class="ttdoc">Widget odpowiedzialny za renderowanie 2D planszy i kulki.</div><div class="ttdef"><b>Definition</b> gamewidget.h:17</div></div>
-<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdef"><b>Definition</b> mainwindow.h:24</div></div>
+<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Główne okno aplikacji MazeMotion.</div><div class="ttdef"><b>Definition</b> mainwindow.h:31</div></div>
+<div class="ttc" id="aclassMainWindow_html_a1f7d2c56410fc1bfa135bb907d43313f"><div class="ttname"><a href="classMainWindow.html#a1f7d2c56410fc1bfa135bb907d43313f">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow() override</div><div class="ttdoc">Destruktor głównego okna.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:152</div></div>
+<div class="ttc" id="aclassMainWindow_html_ab191d4445d7faca3b2d48e2374d1d35a"><div class="ttname"><a href="classMainWindow.html#ab191d4445d7faca3b2d48e2374d1d35a">MainWindow::onConnectClicked</a></div><div class="ttdeci">void onConnectClicked()</div><div class="ttdoc">Slot obsługujący nawiązanie lub rozłączenie połączenia z Arduino.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:114</div></div>
+<div class="ttc" id="aclassMainWindow_html_ac6a1ccd315480034ea4b3c783cba0993"><div class="ttname"><a href="classMainWindow.html#ac6a1ccd315480034ea4b3c783cba0993">MainWindow::onSwitchLanguage</a></div><div class="ttdeci">void onSwitchLanguage()</div><div class="ttdoc">Slot przełączający język interfejsu między polskim a angielskim.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:137</div></div>
+<div class="ttc" id="aclassMainWindow_html_adbeb31447557d3b9b1742b86a29e45f5"><div class="ttname"><a href="classMainWindow.html#adbeb31447557d3b9b1742b86a29e45f5">MainWindow::onSwitchView</a></div><div class="ttdeci">void onSwitchView()</div><div class="ttdoc">Slot przełączający widok gry między trybem 2D a 3D.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:125</div></div>
 <div class="ttc" id="aclassSensorReader_html"><div class="ttname"><a href="classSensorReader.html">SensorReader</a></div><div class="ttdoc">Klasa odpowiedzialna za komunikację z płytką Arduino Nano 33 IoT przez port szeregowy.</div><div class="ttdef"><b>Definition</b> sensorreader.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

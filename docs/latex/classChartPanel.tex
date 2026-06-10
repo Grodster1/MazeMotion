@@ -2,6 +2,15 @@
 \hypertarget{classChartPanel}{}\label{classChartPanel}\index{ChartPanel@{ChartPanel}}
 
 
+Panel z wykresami czasowymi danych sensorycznych.  
+
+
+
+
+{\ttfamily \#include $<$chartpanel.\+h$>$}
+
+
+
 Diagram dziedziczenia dla Chart\+Panel\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,16 +30,81 @@ Diagram współpracy dla Chart\+Panel\+:\nopagebreak
 \doxysubsubsection*{Sloty publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classChartPanel_a21590716113a934cb2a6747f99dcd0ae}\label{classChartPanel_a21590716113a934cb2a6747f99dcd0ae} 
-void {\bfseries on\+Sensor\+Data} (float ax, float ay, float az, float gx, float gy, float gz)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classChartPanel_a21590716113a934cb2a6747f99dcd0ae}{on\+Sensor\+Data}} (float ax, float ay, float az, float gx, float gy, float gz)
+\begin{DoxyCompactList}\small\item\em Slot odbierający dane z czujnika IMU i aktualizujący wykresy. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classChartPanel_a31ff59140093fdc0dfada6719493c4f8}\label{classChartPanel_a31ff59140093fdc0dfada6719493c4f8} 
-{\bfseries Chart\+Panel} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classChartPanel_a31ff59140093fdc0dfada6719493c4f8}{Chart\+Panel}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor tworzący panel wykresów. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChartPanel_a79f5480d427197fd2430ad2ea78a248a}{retranslate\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Odświeża teksty wykresów po zmianie języka interfejsu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Opis szczegółowy}
+Panel z wykresami czasowymi danych sensorycznych. 
+
+Wyświetla dwa wykresy aktualizowane w czasie rzeczywistym\+: przyspieszenie liniowe (akcelerometr, 3 osie) oraz prędkość kątową (żyroskop, 3 osie). Okno obserwacji obejmuje ostatnich 200 próbek i przesuwa się automatycznie. Zrealizowany z wykorzystaniem modułu Qt Charts. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{classChartPanel_a31ff59140093fdc0dfada6719493c4f8}\label{classChartPanel_a31ff59140093fdc0dfada6719493c4f8} 
+\index{ChartPanel@{ChartPanel}!ChartPanel@{ChartPanel}}
+\index{ChartPanel@{ChartPanel}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{ChartPanel()}{ChartPanel()}}
+{\footnotesize\ttfamily Chart\+Panel\+::\+Chart\+Panel (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor tworzący panel wykresów. 
+
+Inicjalizuje dwa wykresy (akcelerometr i żyroskop) z osiami, seriami danych i widokami. Układ pionowy (QVBox\+Layout).
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & -\/ Widget rodzica \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classChartPanel_a21590716113a934cb2a6747f99dcd0ae}\label{classChartPanel_a21590716113a934cb2a6747f99dcd0ae} 
+\index{ChartPanel@{ChartPanel}!onSensorData@{onSensorData}}
+\index{onSensorData@{onSensorData}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{onSensorData}{onSensorData}}
+{\footnotesize\ttfamily void Chart\+Panel\+::on\+Sensor\+Data (\begin{DoxyParamCaption}\item[{float}]{ax,  }\item[{float}]{ay,  }\item[{float}]{az,  }\item[{float}]{gx,  }\item[{float}]{gy,  }\item[{float}]{gz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot odbierający dane z czujnika IMU i aktualizujący wykresy. 
+
+Dopisuje nowe punkty do serii, usuwa najstarsze przy przekroczeniu 200 próbek i przesuwa okno obserwacji osi X.
+
+
+\begin{DoxyParams}{Parametry}
+{\em ax} & -\/ Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
+\hline
+{\em ay} & -\/ Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
+\hline
+{\em az} & -\/ Przyspieszenie liniowe w osi Z \mbox{[}g\mbox{]} \\
+\hline
+{\em gx} & -\/ Prędkość kątowa w osi X \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gy} & -\/ Prędkość kątowa w osi Y \mbox{[}°/s\mbox{]} \\
+\hline
+{\em gz} & -\/ Prędkość kątowa w osi Z \mbox{[}°/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classChartPanel_a79f5480d427197fd2430ad2ea78a248a}\label{classChartPanel_a79f5480d427197fd2430ad2ea78a248a} 
+\index{ChartPanel@{ChartPanel}!retranslateUI@{retranslateUI}}
+\index{retranslateUI@{retranslateUI}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{retranslateUI()}{retranslateUI()}}
+{\footnotesize\ttfamily void Chart\+Panel\+::retranslate\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Odświeża teksty wykresów po zmianie języka interfejsu. 
+
+Aktualizuje tytuły wykresów oraz opisy osi pionowych. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

@@ -11,8 +11,7 @@ Widget odpowiedzialny za renderowanie 2D planszy i kulki.
 
 
 
-Diagram dziedziczenia dla Game\+Widget
-\nopagebreak
+Diagram dziedziczenia dla Game\+Widget\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Diagram dziedziczenia dla Game\+Widget
 \end{figure}
 
 
-Diagram współpracy dla Game\+Widget\+:
-\nopagebreak
+Diagram współpracy dla Game\+Widget\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,15 +38,12 @@ Diagram współpracy dla Game\+Widget\+:
 \doxysubsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
-void {\bfseries paint\+Event} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
-\Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
-void {\bfseries key\+Press\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\item 
-\Hypertarget{classGameWidget_a834496522f3fb964cfa0c87c17be3558}\label{classGameWidget_a834496522f3fb964cfa0c87c17be3558} 
-void {\bfseries key\+Release\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Rysuje scenę gry — planszę, ściany, cel i kulkę. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget_a350024625893bd439fe761c4df0e7c6f}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje naciśnięcie klawisza strzałki. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{key\+Release\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zwolnienie klawisza strzałki. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegółowy}
@@ -69,9 +64,57 @@ Konstruktor tworzący widget gry 2D.
 
 
 \begin{DoxyParams}{Parametry}
-{\em logic} & Wskaźnik do współdzielonej logiki gry \\
+{\em logic} & -\/ Wskaźnik do współdzielonej logiki gry \\
 \hline
-{\em parent} & Widget rodzica \\
+{\em parent} & -\/ Widget rodzica \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{classGameWidget_a350024625893bd439fe761c4df0e7c6f}\label{classGameWidget_a350024625893bd439fe761c4df0e7c6f} 
+\index{GameWidget@{GameWidget}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje naciśnięcie klawisza strzałki. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & -\/ Zdarzenie klawiatury \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameWidget_a834496522f3fb964cfa0c87c17be3558}\label{classGameWidget_a834496522f3fb964cfa0c87c17be3558} 
+\index{GameWidget@{GameWidget}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zwolnienie klawisza strzałki. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & -\/ Zdarzenie klawiatury \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGameWidget_a3f30642bf770cf31856999d2f713cf50}\label{classGameWidget_a3f30642bf770cf31856999d2f713cf50} 
+\index{GameWidget@{GameWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!GameWidget@{GameWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void Game\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Rysuje scenę gry — planszę, ściany, cel i kulkę. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & -\/ Zdarzenie rysowania \\
 \hline
 \end{DoxyParams}
 

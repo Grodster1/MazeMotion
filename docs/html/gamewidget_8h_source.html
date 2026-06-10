@@ -133,30 +133,39 @@ $(document).ready(function(){initNavTree('gamewidget_8h_source.html',''); initRe
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classGameWidget.html#abea8ca61c40be122cac8b5fb61ba6a03">   31</a></span>    <a class="code hl_class" href="classGameLogic.html">GameLogic</a>* <a class="code hl_function" href="classGameWidget.html#abea8ca61c40be122cac8b5fb61ba6a03">getLogic</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> logic; }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> paintEvent(QPaintEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> keyPressEvent(QKeyEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> keyReleaseEvent(QKeyEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> drawBoard(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> drawWalls(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> drawGoal(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> drawBall(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> drawWinOverlay(QPainter &amp;painter, <span class="keywordtype">double</span> boardSize);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classGameLogic.html">GameLogic</a> *logic;   </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Flagi klawiatury — lokalne dla tego widgetu</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> goLeft = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> goRight = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> goUp = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> goDown = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">keyReleaseEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> drawBoard(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> drawWalls(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> drawGoal(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> drawBall(QPainter &amp;painter, <span class="keywordtype">double</span> offsetX, <span class="keywordtype">double</span> offsetY, <span class="keywordtype">double</span> boardSize);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> drawWinOverlay(QPainter &amp;painter, <span class="keywordtype">double</span> boardSize);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_class" href="classGameLogic.html">GameLogic</a> *logic;   </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Flagi klawiatury — lokalne dla tego widgetu</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> goLeft = <span class="keyword">false</span>;    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">bool</span> goRight = <span class="keyword">false</span>;   </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">bool</span> goUp = <span class="keyword">false</span>;      </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">bool</span> goDown = <span class="keyword">false</span>;    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// GAMEWIDGET_H</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// GAMEWIDGET_H</span></div>
 <div class="ttc" id="aclassGameLogic_html"><div class="ttname"><a href="classGameLogic.html">GameLogic</a></div><div class="ttdoc">Klasa zawierająca logikę gry — fizykę kulki, kolizje i zarządzanie labiryntem.</div><div class="ttdef"><b>Definition</b> gamelogic.h:17</div></div>
 <div class="ttc" id="aclassGameWidget_html"><div class="ttname"><a href="classGameWidget.html">GameWidget</a></div><div class="ttdoc">Widget odpowiedzialny za renderowanie 2D planszy i kulki.</div><div class="ttdef"><b>Definition</b> gamewidget.h:17</div></div>
+<div class="ttc" id="aclassGameWidget_html_a350024625893bd439fe761c4df0e7c6f"><div class="ttname"><a href="classGameWidget.html#a350024625893bd439fe761c4df0e7c6f">GameWidget::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje naciśnięcie klawisza strzałki.</div><div class="ttdef"><b>Definition</b> gamewidget.cpp:111</div></div>
+<div class="ttc" id="aclassGameWidget_html_a3f30642bf770cf31856999d2f713cf50"><div class="ttname"><a href="classGameWidget.html#a3f30642bf770cf31856999d2f713cf50">GameWidget::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Rysuje scenę gry — planszę, ściany, cel i kulkę.</div><div class="ttdef"><b>Definition</b> gamewidget.cpp:16</div></div>
+<div class="ttc" id="aclassGameWidget_html_a834496522f3fb964cfa0c87c17be3558"><div class="ttname"><a href="classGameWidget.html#a834496522f3fb964cfa0c87c17be3558">GameWidget::keyReleaseEvent</a></div><div class="ttdeci">void keyReleaseEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje zwolnienie klawisza strzałki.</div><div class="ttdef"><b>Definition</b> gamewidget.cpp:129</div></div>
 <div class="ttc" id="aclassGameWidget_html_abea8ca61c40be122cac8b5fb61ba6a03"><div class="ttname"><a href="classGameWidget.html#abea8ca61c40be122cac8b5fb61ba6a03">GameWidget::getLogic</a></div><div class="ttdeci">GameLogic * getLogic() const</div><div class="ttdoc">Zwraca wskaźnik do logiki gry.</div><div class="ttdef"><b>Definition</b> gamewidget.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

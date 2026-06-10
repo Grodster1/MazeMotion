@@ -1,7 +1,7 @@
 <map id="GameWidget3D" name="GameWidget3D">
-<area shape="rect" id="Node000001" title="Widget renderujący scenę gry w 3D z wykorzystaniem OpenGL 3.3 Core Profile." alt="" coords="69,133,222,339"/>
+<area shape="rect" id="Node000001" title="Widget renderujący scenę gry w 3D z wykorzystaniem OpenGL 3.3 Core Profile." alt="" coords="69,133,222,359"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,13,125,78"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,89,105,132,100,134,82,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,90,103,132,98,134,81,92"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="149,5,301,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,99,191,134,186,132,201,97"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,99,193,134,188,132,202,97"/>
 </map>

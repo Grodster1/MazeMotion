@@ -21,26 +21,32 @@
 \DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classGameLogic}{GameLogic}}*\ \mbox{\hyperlink{classGameWidget_abea8ca61c40be122cac8b5fb61ba6a03}{getLogic}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ logic;\ \}}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ paintEvent(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ keyPressEvent(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ keyReleaseEvent(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBoard(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWalls(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGoal(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBall(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWinOverlay(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ boardSize);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classGameLogic}{GameLogic}}\ *logic;\ \ \ }
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Flagi\ klawiatury\ —\ lokalne\ dla\ tego\ widgetu}}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ goLeft\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ goRight\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ goUp\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ goDown\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00052\ \};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWIDGET\_H}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a3f30642bf770cf31856999d2f713cf50}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a350024625893bd439fe761c4df0e7c6f}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameWidget_a834496522f3fb964cfa0c87c17be3558}{keyReleaseEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBoard(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWalls(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ drawGoal(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ drawBall(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ offsetX,\ \textcolor{keywordtype}{double}\ offsetY,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ drawWinOverlay(QPainter\ \&painter,\ \textcolor{keywordtype}{double}\ boardSize);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classGameLogic}{GameLogic}}\ *logic;\ \ \ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Flagi\ klawiatury\ —\ lokalne\ dla\ tego\ widgetu}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ goLeft\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ goRight\ =\ \textcolor{keyword}{false};\ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ goUp\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ goDown\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAMEWIDGET\_H}}
 
 \end{DoxyCode}

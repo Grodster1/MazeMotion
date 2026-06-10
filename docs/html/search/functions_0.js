@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['close_0',['close',['../classSensorReader.html#a2cbf6c3ccf9fc63bfcd0a4c6115b25d5',1,'SensorReader']]]
+  ['chartpanel_0',['ChartPanel',['../classChartPanel.html#a31ff59140093fdc0dfada6719493c4f8',1,'ChartPanel']]],
+  ['close_1',['close',['../classSensorReader.html#a2cbf6c3ccf9fc63bfcd0a4c6115b25d5',1,'SensorReader']]]
 ];
