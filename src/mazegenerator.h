@@ -47,8 +47,8 @@ public:
      * Tworzy siatkę komórek i uruchamia algorytm Recursive Backtracking
      * począwszy od komórki (0, 0).
      *
-     * @param rows Liczba wierszy labiryntu
-     * @param cols Liczba kolumn labiryntu
+     * @param rows - Liczba wierszy labiryntu
+     * @param cols - Liczba kolumn labiryntu
      */
     void generate(int rows, int cols);
 
@@ -59,8 +59,8 @@ public:
      * a następnie dla każdego nieodwiedzonego sąsiada usuwa ścianę
      * i rekurencyjnie kontynuuje drążenie.
      *
-     * @param row Wiersz aktualnej komórki
-     * @param col Kolumna aktualnej komórki
+     * @param row - Wiersz aktualnej komórki
+     * @param col - Kolumna aktualnej komórki
      */
     void makePath(int row, int col);
 

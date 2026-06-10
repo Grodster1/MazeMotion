@@ -22,7 +22,7 @@ public:
     explicit SensorReader(QObject *parent = nullptr);
 /**
  * @brief Otwiera port szeregowy o danej nazwie.
- * @param portName nazwa portu (np. /dev/ttyACM0)
+ * @param portName - nazwa portu (np. /dev/ttyACM0)
  */
     void open(const QString &portName);
 
@@ -33,12 +33,12 @@ public:
 signals:
 /**
  * @brief Sygnał emitowany po odebraniu i sparsowaniu pełnej ramki danych.
- * @param ax Przyspieszenie liniowe w osi X [g]
- * @param ay Przyspieszenie liniowe w osi Y [g]
- * @param az Przyspieszenie liniowe w osi Z [g]
- * @param gx Prędkość kątowa w osi X [°/s]
- * @param gy Prędkość kątowa w osi Y [°/s]
- * @param gz Prędkość kątowa w osi Z [°/s]
+ * @param ax - Przyspieszenie liniowe w osi X [g]
+ * @param ay - Przyspieszenie liniowe w osi Y [g]
+ * @param az - Przyspieszenie liniowe w osi Z [g]
+ * @param gx - Prędkość kątowa w osi X [°/s]
+ * @param gy - Prędkość kątowa w osi Y [°/s]
+ * @param gz - Prędkość kątowa w osi Z [°/s]
  */
     void dataReceived(float ax, float ay, float az, float gx, float gy, float gz);
 

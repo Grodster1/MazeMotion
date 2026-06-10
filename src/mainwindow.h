@@ -54,7 +54,7 @@ public:
      * Inicjalizuje logikę gry, widgety 2D/3D, panel wykresów, pasek narzędzi,
      * podłącza sygnały komunikacji z Arduino oraz sterowania interfejsem.
      *
-     * @param parent Widget rodzica
+     * @param parent - Widget rodzica
      */
     explicit MainWindow(QWidget *parent = nullptr);
 

@@ -30,8 +30,8 @@ public:
      * Konfiguruje format powierzchni OpenGL (3.3 Core, MSAA 4x, 24-bit depth),
      * podłącza sygnał aktualizacji stanu gry i tworzy overlay wygranej.
      *
-     * @param logic Wskaźnik do współdzielonej logiki gry
-     * @param parent Widget rodzica
+     * @param logic - Wskaźnik do współdzielonej logiki gry
+     * @param parent - Widget rodzica
      */
     explicit GameWidget3D(GameLogic *logic, QWidget *parent = nullptr);
 
@@ -67,8 +67,8 @@ protected:
 
     /**
      * @brief Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu.
-     * @param w Nowa szerokość widgetu w pikselach
-     * @param h Nowa wysokość widgetu w pikselach
+     * @param w - Nowa szerokość widgetu w pikselach
+     * @param h - Nowa wysokość widgetu w pikselach
      */
     void resizeGL(int w, int h) override;
 
@@ -86,7 +86,7 @@ protected:
      * Ustawia przyspieszenie kulki w odpowiednim kierunku.
      * Ignoruje zdarzenia auto-repeat systemu operacyjnego.
      *
-     * @param event Zdarzenie klawiatury
+     * @param event - Zdarzenie klawiatury
      */
     void keyPressEvent(QKeyEvent *event) override;
 
@@ -96,7 +96,7 @@ protected:
      * Zeruje przyspieszenie w danym kierunku.
      * Ignoruje zdarzenia auto-repeat systemu operacyjnego.
      *
-     * @param event Zdarzenie klawiatury
+     * @param event - Zdarzenie klawiatury
      */
     void keyReleaseEvent(QKeyEvent *event) override;
 
@@ -149,8 +149,8 @@ private:
      * Sfera jest skalowana macierzą modelu do rozmiaru kulki lub celu.
      * Normalne wierzchołków równe znormalizowanym pozycjom (dla poprawnego oświetlenia).
      *
-     * @param stacks Liczba podziałów wzdłuż osi Z (równoleżników)
-     * @param slices Liczba podziałów wokół osi Z (południków)
+     * @param stacks - Liczba podziałów wzdłuż osi Z (równoleżników)
+     * @param slices - Liczba podziałów wokół osi Z (południków)
      */
     void buildSphereGeometry(int stacks, int slices);
 
