@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['resetmaze_0',['resetMaze',['../classGameLogic.html#afa53c9940bcd963050c5ca4216970c7b',1,'GameLogic']]],
-  ['resizegl_1',['resizeGL',['../classGameWidget3D.html#a97d249be6bfb5f72ae8a946ad7c3fa6c',1,'GameWidget3D']]],
-  ['retranslateui_2',['retranslateui',['../classChartPanel.html#a79f5480d427197fd2430ad2ea78a248a',1,'ChartPanel::retranslateUI()'],['../classGameWidget3D.html#aa7ef9883c282b1aaa691c62d5e441b37',1,'GameWidget3D::retranslateUI()']]]
+  ['setazimuth_0',['setAzimuth',['../classGameWidget3D.html#a16b45f4ff668b48a1ebc662e5080f518',1,'GameWidget3D']]],
+  ['setelevation_1',['setElevation',['../classGameWidget3D.html#a2c222f379e6833aa4edd745a0054c023',1,'GameWidget3D']]],
+  ['setkeyboardacceleration_2',['setKeyboardAcceleration',['../classGameLogic.html#ac617979451bc29e80d2260957aa8e817',1,'GameLogic']]],
+  ['setsensoracceleration_3',['setSensorAcceleration',['../classGameLogic.html#a8f628b63effdab13cb8a724f0a29b9d8',1,'GameLogic']]],
+  ['stateupdated_4',['stateUpdated',['../classGameLogic.html#a8028fa8ba031ece2b2e099234b2e0e38',1,'GameLogic']]]
 ];

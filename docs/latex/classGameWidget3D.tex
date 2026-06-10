@@ -11,7 +11,8 @@ Widget renderujący scenę gry w 3D z wykorzystaniem Open\+GL 3.\+3 Core Profile
 
 
 
-Diagram dziedziczenia dla Game\+Widget3D\nopagebreak
+Diagram dziedziczenia dla Game\+Widget3D
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,13 +21,21 @@ Diagram dziedziczenia dla Game\+Widget3D\nopagebreak
 \end{figure}
 
 
-Diagram współpracy dla Game\+Widget3D\+:\nopagebreak
+Diagram współpracy dla Game\+Widget3D\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=302pt]{classGameWidget3D__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Sloty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGameWidget3D_a16b45f4ff668b48a1ebc662e5080f518}{set\+Azimuth}} (int value)
+\begin{DoxyCompactList}\small\item\em Ustawia kąt obrotu kamery w poziomie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameWidget3D_a2c222f379e6833aa4edd745a0054c023}{set\+Elevation}} (int value)
+\begin{DoxyCompactList}\small\item\em Ustawia kąt elewacji kamery. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,23 +44,30 @@ Diagram współpracy dla Game\+Widget3D\+:\nopagebreak
 \Hypertarget{classGameWidget3D_a5b7c3874a0eb42adc6829f4ac828a222}\label{classGameWidget3D_a5b7c3874a0eb42adc6829f4ac828a222} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Game\+Widget3D} ()
 \begin{DoxyCompactList}\small\item\em Destruktor zwalniający zasoby Open\+GL (VAO, VBO, shadery). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb}{force\+Refresh}} ()
+\Hypertarget{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb}\label{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb} 
+void {\bfseries force\+Refresh} ()
 \begin{DoxyCompactList}\small\item\em Wymusza odświeżenie kontekstu Open\+GL i przerysowanie sceny. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37}{retranslate\+UI}} ()
-\begin{DoxyCompactList}\small\item\em Odpowiada za zmianę języka win\+Label. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37}\label{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37} 
+void {\bfseries retranslate\+UI} ()
+\begin{DoxyCompactList}\small\item\em Odświeża teksty po zmianie języka. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody chronione}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7}{initialize\+GL}} () override
-\begin{DoxyCompactList}\small\item\em Inicjalizuje kontekst Open\+GL — shadery, geometrię i macierz widoku. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c}{resize\+GL}} (int w, int h) override
-\begin{DoxyCompactList}\small\item\em Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_a3857cfce14380848d25b665bacb37b18}{paint\+GL}} () override
-\begin{DoxyCompactList}\small\item\em Renderuje pełną scenę 3D — podłogę, ściany, cel i kulkę. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\begin{DoxyCompactList}\small\item\em Obsługuje naciśnięcie klawisza strzałki. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classGameWidget3D_a97f8045abf2393555d22d79e942218f1}{key\+Release\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
-\begin{DoxyCompactList}\small\item\em Obsługuje zwolnienie klawisza strzałki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7}\label{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7} 
+void {\bfseries initialize\+GL} () override
+\item 
+\Hypertarget{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c}\label{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c} 
+void {\bfseries resize\+GL} (int w, int h) override
+\item 
+\Hypertarget{classGameWidget3D_a3857cfce14380848d25b665bacb37b18}\label{classGameWidget3D_a3857cfce14380848d25b665bacb37b18} 
+void {\bfseries paint\+GL} () override
+\item 
+\Hypertarget{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4}\label{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4} 
+void {\bfseries key\+Press\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+\Hypertarget{classGameWidget3D_a97f8045abf2393555d22d79e942218f1}\label{classGameWidget3D_a97f8045abf2393555d22d79e942218f1} 
+void {\bfseries key\+Release\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegółowy}
@@ -70,110 +86,47 @@ Wykorzystuje nowoczesny potok renderowania oparty na shaderach z oświetleniem P
 
 Konstruktor tworzący widget gry 3D. 
 
-Konfiguruje format powierzchni Open\+GL (3.\+3 Core, MSAA 4x, 24-\/bit depth), podłącza sygnał aktualizacji stanu gry i tworzy overlay wygranej.
 
-
-\begin{DoxyParams}{Parametry}
-{\em logic} & -\/ Wskaźnik do współdzielonej logiki gry \\
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in,out}}  & {\em logic} & -\/ Wskaźnik do współdzielonej logiki gry \\
 \hline
-{\em parent} & -\/ Widget rodzica \\
+\mbox{\texttt{ in,out}}  & {\em parent} & -\/ Widget rodzica \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Dokumentacja funkcji składowych}
-\Hypertarget{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb}\label{classGameWidget3D_a7ef81e51aeb20e50c1f7099295304bbb} 
-\index{GameWidget3D@{GameWidget3D}!forceRefresh@{forceRefresh}}
-\index{forceRefresh@{forceRefresh}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{forceRefresh()}{forceRefresh()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::force\+Refresh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\Hypertarget{classGameWidget3D_a16b45f4ff668b48a1ebc662e5080f518}\label{classGameWidget3D_a16b45f4ff668b48a1ebc662e5080f518} 
+\index{GameWidget3D@{GameWidget3D}!setAzimuth@{setAzimuth}}
+\index{setAzimuth@{setAzimuth}!GameWidget3D@{GameWidget3D}}
+\doxysubsubsection{\texorpdfstring{setAzimuth}{setAzimuth}}
+{\footnotesize\ttfamily void Game\+Widget3\+D\+::set\+Azimuth (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Wymusza odświeżenie kontekstu Open\+GL i przerysowanie sceny. 
-
-Wywoływana po przełączeniu widoku z 2D na 3D, aby zaktualizować viewport i macierz projekcji do aktualnego rozmiaru widgetu. \Hypertarget{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7}\label{classGameWidget3D_ad13b480f201fbcb6302e1253fad3e1d7} 
-\index{GameWidget3D@{GameWidget3D}!initializeGL@{initializeGL}}
-\index{initializeGL@{initializeGL}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{initializeGL()}{initializeGL()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::initialize\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+Ustawia kąt obrotu kamery w poziomie. 
 
 
-
-Inicjalizuje kontekst Open\+GL — shadery, geometrię i macierz widoku. 
-
-Kompiluje i linkuje vertex/fragment shader z oświetleniem Phonga, buduje geometrię podłogi, ścian i sfery jednostkowej, oraz konfiguruje macierz widoku (pozycja i orientacja kamery). \Hypertarget{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4}\label{classGameWidget3D_a55913c1e16e4dd05565b70654e956df4} 
-\index{GameWidget3D@{GameWidget3D}!keyPressEvent@{keyPressEvent}}
-\index{keyPressEvent@{keyPressEvent}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
-
-
-
-Obsługuje naciśnięcie klawisza strzałki. 
-
-Ustawia przyspieszenie kulki w odpowiednim kierunku. Ignoruje zdarzenia auto-\/repeat systemu operacyjnego.
-
-
-\begin{DoxyParams}{Parametry}
-{\em event} & -\/ Zdarzenie klawiatury \\
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em value} & -\/ Kąt azymutu w stopniach (0--360) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classGameWidget3D_a97f8045abf2393555d22d79e942218f1}\label{classGameWidget3D_a97f8045abf2393555d22d79e942218f1} 
-\index{GameWidget3D@{GameWidget3D}!keyReleaseEvent@{keyReleaseEvent}}
-\index{keyReleaseEvent@{keyReleaseEvent}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+\Hypertarget{classGameWidget3D_a2c222f379e6833aa4edd745a0054c023}\label{classGameWidget3D_a2c222f379e6833aa4edd745a0054c023} 
+\index{GameWidget3D@{GameWidget3D}!setElevation@{setElevation}}
+\index{setElevation@{setElevation}!GameWidget3D@{GameWidget3D}}
+\doxysubsubsection{\texorpdfstring{setElevation}{setElevation}}
+{\footnotesize\ttfamily void Game\+Widget3\+D\+::set\+Elevation (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
-Obsługuje zwolnienie klawisza strzałki. 
-
-Zeruje przyspieszenie w danym kierunku. Ignoruje zdarzenia auto-\/repeat systemu operacyjnego.
+Ustawia kąt elewacji kamery. 
 
 
-\begin{DoxyParams}{Parametry}
-{\em event} & -\/ Zdarzenie klawiatury \\
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em value} & -\/ Kąt elewacji w stopniach (10--80) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classGameWidget3D_a3857cfce14380848d25b665bacb37b18}\label{classGameWidget3D_a3857cfce14380848d25b665bacb37b18} 
-\index{GameWidget3D@{GameWidget3D}!paintGL@{paintGL}}
-\index{paintGL@{paintGL}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{paintGL()}{paintGL()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::paint\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-
-
-Renderuje pełną scenę 3D — podłogę, ściany, cel i kulkę. 
-
-Ustawia uniformy shaderów (macierze, pozycja światła i kamery), rysuje wszystkie elementy sceny, a następnie zwalnia shader. \Hypertarget{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c}\label{classGameWidget3D_a97d249be6bfb5f72ae8a946ad7c3fa6c} 
-\index{GameWidget3D@{GameWidget3D}!resizeGL@{resizeGL}}
-\index{resizeGL@{resizeGL}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{resizeGL()}{resizeGL()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::resize\+GL (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
-
-
-
-Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu. 
-
-
-\begin{DoxyParams}{Parametry}
-{\em w} & -\/ Nowa szerokość widgetu w pikselach \\
-\hline
-{\em h} & -\/ Nowa wysokość widgetu w pikselach \\
-\hline
-\end{DoxyParams}
-\Hypertarget{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37}\label{classGameWidget3D_aa7ef9883c282b1aaa691c62d5e441b37} 
-\index{GameWidget3D@{GameWidget3D}!retranslateUI@{retranslateUI}}
-\index{retranslateUI@{retranslateUI}!GameWidget3D@{GameWidget3D}}
-\doxysubsubsection{\texorpdfstring{retranslateUI()}{retranslateUI()}}
-{\footnotesize\ttfamily void Game\+Widget3\+D\+::retranslate\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Odpowiada za zmianę języka win\+Label. 
-
-Wywoływana po zmianie języka w main\+Window. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

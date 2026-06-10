@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatepos_0',['updatePos',['../classGameLogic.html#a1cf0a1c91a36fc89fd11b7ad1c990159',1,'GameLogic']]]
+  ['_7egamewidget3d_0',['~GameWidget3D',['../classGameWidget3D.html#a5b7c3874a0eb42adc6829f4ac828a222',1,'GameWidget3D']]]
 ];

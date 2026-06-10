@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['keypressevent_0',['keypressevent',['../classGameWidget.html#a350024625893bd439fe761c4df0e7c6f',1,'GameWidget::keyPressEvent()'],['../classGameWidget3D.html#a55913c1e16e4dd05565b70654e956df4',1,'GameWidget3D::keyPressEvent()']]],
-  ['keyreleaseevent_1',['keyreleaseevent',['../classGameWidget.html#a834496522f3fb964cfa0c87c17be3558',1,'GameWidget::keyReleaseEvent()'],['../classGameWidget3D.html#a97f8045abf2393555d22d79e942218f1',1,'GameWidget3D::keyReleaseEvent()']]]
+  ['makepath_0',['makePath',['../classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7',1,'MazeGenerator']]],
+  ['mazechanged_1',['mazeChanged',['../classGameLogic.html#aadead7469e428c79fa552c7d0b5fb630',1,'GameLogic']]],
+  ['mazegenerator_2',['MazeGenerator',['../classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573',1,'MazeGenerator']]]
 ];

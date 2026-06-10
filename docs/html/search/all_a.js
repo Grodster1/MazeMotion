@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['paintevent_0',['paintEvent',['../classGameWidget.html#a3f30642bf770cf31856999d2f713cf50',1,'GameWidget']]],
-  ['paintgl_1',['paintGL',['../classGameWidget3D.html#a3857cfce14380848d25b665bacb37b18',1,'GameWidget3D']]]
+  ['resetmaze_0',['resetMaze',['../classGameLogic.html#afa53c9940bcd963050c5ca4216970c7b',1,'GameLogic']]],
+  ['retranslateui_1',['retranslateui',['../classChartPanel.html#a79f5480d427197fd2430ad2ea78a248a',1,'ChartPanel::retranslateUI()'],['../classGameWidget3D.html#aa7ef9883c282b1aaa691c62d5e441b37',1,'GameWidget3D::retranslateUI()']]],
+  ['rightw_2',['rightW',['../structCell.html#ab547de008d910a9fcc8e9aad4f437310',1,'Cell']]]
 ];

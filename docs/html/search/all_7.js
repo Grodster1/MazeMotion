@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['leftw_0',['leftW',['../structCell.html#a3a640e7a96a00ac5b1956a6377cf7a54',1,'Cell']]]
+  ['mainwindow_0',['MainWindow',['../classMainWindow.html',1,'']]],
+  ['makepath_1',['makePath',['../classMazeGenerator.html#a2d39ddff6b97442c74dc31f88b2653a7',1,'MazeGenerator']]],
+  ['mazechanged_2',['mazeChanged',['../classGameLogic.html#aadead7469e428c79fa552c7d0b5fb630',1,'GameLogic']]],
+  ['mazegenerator_3',['mazegenerator',['../classMazeGenerator.html',1,'MazeGenerator'],['../classMazeGenerator.html#ad2614d8adc80721dbae5660402d48573',1,'MazeGenerator::MazeGenerator()']]]
 ];

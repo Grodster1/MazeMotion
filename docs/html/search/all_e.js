@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatepos_0',['updatePos',['../classGameLogic.html#a1cf0a1c91a36fc89fd11b7ad1c990159',1,'GameLogic']]]
+  ['visited_0',['visited',['../structCell.html#ac0fdf52adc7d9dd8c5de95635ff04de3',1,'Cell']]]
 ];

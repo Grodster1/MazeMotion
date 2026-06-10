@@ -30,79 +30,27 @@ Diagram współpracy dla Main\+Window\+:\nopagebreak
 \doxysubsubsection*{Sloty publiczne}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classMainWindow_ab191d4445d7faca3b2d48e2374d1d35a}{on\+Connect\+Clicked}} ()
-\begin{DoxyCompactList}\small\item\em Slot obsługujący nawiązanie lub rozłączenie połączenia z Arduino. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMainWindow_adbeb31447557d3b9b1742b86a29e45f5}{on\+Switch\+View}} ()
-\begin{DoxyCompactList}\small\item\em Slot przełączający widok gry między trybem 2D a 3D. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMainWindow_ac6a1ccd315480034ea4b3c783cba0993}{on\+Switch\+Language}} ()
-\begin{DoxyCompactList}\small\item\em Slot przełączający język interfejsu między polskim a angielskim. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classMainWindow_ab191d4445d7faca3b2d48e2374d1d35a}\label{classMainWindow_ab191d4445d7faca3b2d48e2374d1d35a} 
+void {\bfseries on\+Connect\+Clicked} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje połączenie/rozłączenie z Arduino. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_adbeb31447557d3b9b1742b86a29e45f5}\label{classMainWindow_adbeb31447557d3b9b1742b86a29e45f5} 
+void {\bfseries on\+Switch\+View} ()
+\begin{DoxyCompactList}\small\item\em Przełącza widok gry między 2D a 3D. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_ac6a1ccd315480034ea4b3c783cba0993}\label{classMainWindow_ac6a1ccd315480034ea4b3c783cba0993} 
+void {\bfseries on\+Switch\+Language} ()
+\begin{DoxyCompactList}\small\item\em Przełącza język interfejsu PL/\+EN. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Konstruktor tworzący główne okno aplikacji. \end{DoxyCompactList}\item 
-\Hypertarget{classMainWindow_a1f7d2c56410fc1bfa135bb907d43313f}\label{classMainWindow_a1f7d2c56410fc1bfa135bb907d43313f} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Main\+Window} () override
-\begin{DoxyCompactList}\small\item\em Destruktor głównego okna. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d} 
+{\bfseries Main\+Window} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Opis szczegółowy}
 Główne okno aplikacji Maze\+Motion. 
 
-Zarządza układem interfejsu\+: panelem gry (2D/3D), panelem wykresów oraz paskiem narzędzi. Obsługuje połączenie z Arduino przez port szeregowy, przełączanie trybu wizualizacji i zmianę języka interfejsu. 
-
-\doxysubsection{Dokumentacja konstruktora i destruktora}
-\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d} 
-\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
-\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
-{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Konstruktor tworzący główne okno aplikacji. 
-
-Inicjalizuje logikę gry, widgety 2D/3D, panel wykresów, pasek narzędzi, podłącza sygnały komunikacji z Arduino oraz sterowania interfejsem.
-
-
-\begin{DoxyParams}{Parametry}
-{\em parent} & -\/ Widget rodzica \\
-\hline
-\end{DoxyParams}
-
-
-\doxysubsection{Dokumentacja funkcji składowych}
-\Hypertarget{classMainWindow_ab191d4445d7faca3b2d48e2374d1d35a}\label{classMainWindow_ab191d4445d7faca3b2d48e2374d1d35a} 
-\index{MainWindow@{MainWindow}!onConnectClicked@{onConnectClicked}}
-\index{onConnectClicked@{onConnectClicked}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{onConnectClicked}{onConnectClicked}}
-{\footnotesize\ttfamily void Main\+Window\+::on\+Connect\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Slot obsługujący nawiązanie lub rozłączenie połączenia z Arduino. 
-
-Otwiera port szeregowy wybrany w liście rozwijanej lub zamyka aktywne połączenie. Aktualizuje tekst przycisku. \Hypertarget{classMainWindow_ac6a1ccd315480034ea4b3c783cba0993}\label{classMainWindow_ac6a1ccd315480034ea4b3c783cba0993} 
-\index{MainWindow@{MainWindow}!onSwitchLanguage@{onSwitchLanguage}}
-\index{onSwitchLanguage@{onSwitchLanguage}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{onSwitchLanguage}{onSwitchLanguage}}
-{\footnotesize\ttfamily void Main\+Window\+::on\+Switch\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Slot przełączający język interfejsu między polskim a angielskim. 
-
-Instaluje lub usuwa translator Qt i wywołuje retranslate\+UI() w celu odświeżenia wszystkich widocznych tekstów. \Hypertarget{classMainWindow_adbeb31447557d3b9b1742b86a29e45f5}\label{classMainWindow_adbeb31447557d3b9b1742b86a29e45f5} 
-\index{MainWindow@{MainWindow}!onSwitchView@{onSwitchView}}
-\index{onSwitchView@{onSwitchView}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{onSwitchView}{onSwitchView}}
-{\footnotesize\ttfamily void Main\+Window\+::on\+Switch\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Slot przełączający widok gry między trybem 2D a 3D. 
-
-Zmienia aktywny widget w QStacked\+Widget i aktualizuje tekst przycisku. Stan gry (pozycja kulki, labirynt) jest zachowany. 
+Zarządza układem interfejsu\+: panelem gry (2D/3D), panelem wykresów oraz paskiem narzędzi. Obsługuje połączenie z Arduino, przełączanie trybu wizualizacji, zmianę języka i sterowanie kamerą 3D. 
 
 Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 

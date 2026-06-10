@@ -60,8 +60,8 @@ Konstruktor tworzący panel wykresów.
 Inicjalizuje dwa wykresy (akcelerometr i żyroskop) z osiami, seriami danych i widokami. Układ pionowy (QVBox\+Layout).
 
 
-\begin{DoxyParams}{Parametry}
-{\em parent} & -\/ Widget rodzica \\
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in,out}}  & {\em parent} & -\/ Widget rodzica \\
 \hline
 \end{DoxyParams}
 
@@ -80,18 +80,18 @@ Slot odbierający dane z czujnika IMU i aktualizujący wykresy.
 Dopisuje nowe punkty do serii, usuwa najstarsze przy przekroczeniu 200 próbek i przesuwa okno obserwacji osi X.
 
 
-\begin{DoxyParams}{Parametry}
-{\em ax} & -\/ Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
+\begin{DoxyParams}[1]{Parametry}
+\mbox{\texttt{ in}}  & {\em ax} & -\/ Przyspieszenie liniowe w osi X \mbox{[}g\mbox{]} \\
 \hline
-{\em ay} & -\/ Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em ay} & -\/ Przyspieszenie liniowe w osi Y \mbox{[}g\mbox{]} \\
 \hline
-{\em az} & -\/ Przyspieszenie liniowe w osi Z \mbox{[}g\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em az} & -\/ Przyspieszenie liniowe w osi Z \mbox{[}g\mbox{]} \\
 \hline
-{\em gx} & -\/ Prędkość kątowa w osi X \mbox{[}°/s\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em gx} & -\/ Prędkość kątowa w osi X \mbox{[}°/s\mbox{]} \\
 \hline
-{\em gy} & -\/ Prędkość kątowa w osi Y \mbox{[}°/s\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em gy} & -\/ Prędkość kątowa w osi Y \mbox{[}°/s\mbox{]} \\
 \hline
-{\em gz} & -\/ Prędkość kątowa w osi Z \mbox{[}°/s\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em gz} & -\/ Prędkość kątowa w osi Z \mbox{[}°/s\mbox{]} \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classChartPanel_a79f5480d427197fd2430ad2ea78a248a}\label{classChartPanel_a79f5480d427197fd2430ad2ea78a248a} 
