@@ -26,79 +26,39 @@ class GameWidget3D : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
 public:
     /**
      * @brief Konstruktor tworzący widget gry 3D.
-     *
-     * Konfiguruje format powierzchni OpenGL (3.3 Core, MSAA 4x, 24-bit depth),
-     * podłącza sygnał aktualizacji stanu gry i tworzy overlay wygranej.
-     *
-     * @param logic - Wskaźnik do współdzielonej logiki gry
-     * @param parent - Widget rodzica
+     * @param[in,out] logic - Wskaźnik do współdzielonej logiki gry
+     * @param[in,out] parent - Widget rodzica
      */
     explicit GameWidget3D(GameLogic *logic, QWidget *parent = nullptr);
 
-    /**
-     * @brief Destruktor zwalniający zasoby OpenGL (VAO, VBO, shadery).
-     */
+    /** @brief Destruktor zwalniający zasoby OpenGL (VAO, VBO, shadery). */
     ~GameWidget3D();
 
-    /**
-     * @brief Wymusza odświeżenie kontekstu OpenGL i przerysowanie sceny.
-     *
-     * Wywoływana po przełączeniu widoku z 2D na 3D, aby zaktualizować
-     * viewport i macierz projekcji do aktualnego rozmiaru widgetu.
-     */
+    /** @brief Wymusza odświeżenie kontekstu OpenGL i przerysowanie sceny. */
     void forceRefresh();
 
-    /**
-     * @brief Odpowiada za zmianę języka winLabel.
-     *
-     * Wywoływana po zmianie języka w mainWindow.
-     */
+    /** @brief Odświeża teksty po zmianie języka. */
     void retranslateUI();
 
 protected:
-    /**
-     * @brief Inicjalizuje kontekst OpenGL — shadery, geometrię i macierz widoku.
-     *
-     * Kompiluje i linkuje vertex/fragment shader z oświetleniem Phonga,
-     * buduje geometrię podłogi, ścian i sfery jednostkowej,
-     * oraz konfiguruje macierz widoku (pozycja i orientacja kamery).
-     */
     void initializeGL() override;
-
-    /**
-     * @brief Aktualizuje viewport i macierz projekcji przy zmianie rozmiaru widgetu.
-     * @param w - Nowa szerokość widgetu w pikselach
-     * @param h - Nowa wysokość widgetu w pikselach
-     */
     void resizeGL(int w, int h) override;
-
-    /**
-     * @brief Renderuje pełną scenę 3D — podłogę, ściany, cel i kulkę.
-     *
-     * Ustawia uniformy shaderów (macierze, pozycja światła i kamery),
-     * rysuje wszystkie elementy sceny, a następnie zwalnia shader.
-     */
     void paintGL() override;
-
-    /**
-     * @brief Obsługuje naciśnięcie klawisza strzałki.
-     *
-     * Ustawia przyspieszenie kulki w odpowiednim kierunku.
-     * Ignoruje zdarzenia auto-repeat systemu operacyjnego.
-     *
-     * @param event - Zdarzenie klawiatury
-     */
     void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
+
+public slots:
+    /**
+     * @brief Ustawia kąt obrotu kamery w poziomie.
+     * @param[in] value - Kąt azymutu w stopniach (0--360)
+     */
+    void setAzimuth(int value);
 
     /**
-     * @brief Obsługuje zwolnienie klawisza strzałki.
-     *
-     * Zeruje przyspieszenie w danym kierunku.
-     * Ignoruje zdarzenia auto-repeat systemu operacyjnego.
-     *
-     * @param event - Zdarzenie klawiatury
+     * @brief Ustawia kąt elewacji kamery.
+     * @param[in] value - Kąt elewacji w stopniach (10--80)
      */
-    void keyReleaseEvent(QKeyEvent *event) override;
+    void setElevation(int value);
 
 private:
     GameLogic *logic;   ///< Wskaźnik do współdzielonej logiki gry
@@ -113,84 +73,61 @@ private:
     int uViewPosLoc;    ///< Lokalizacja uniformu pozycji kamery
 
     QOpenGLVertexArrayObject boardVAO;  ///< VAO podłogi
-    QOpenGLBuffer boardVBO;             ///< VBO podłogi (2 trójkąty)
+    QOpenGLBuffer boardVBO;             ///< VBO podłogi
 
     QOpenGLVertexArrayObject wallsVAO;  ///< VAO ścian labiryntu
-    QOpenGLBuffer wallsVBO;             ///< VBO ścian (przebudowywane przy resetMaze)
+    QOpenGLBuffer wallsVBO;             ///< VBO ścian
     int wallsVertexCount = 0;           ///< Liczba wierzchołków ścian
 
     QOpenGLVertexArrayObject sphereVAO; ///< VAO sfery jednostkowej
-    QOpenGLBuffer sphereVBO;            ///< VBO sfery (współdzielone przez kulkę i cel)
+    QOpenGLBuffer sphereVBO;            ///< VBO sfery
     int sphereVertexCount = 0;          ///< Liczba wierzchołków sfery
 
     QMatrix4x4 projectionMatrix;    ///< Macierz projekcji perspektywicznej
-    QMatrix4x4 viewMatrix;          ///< Macierz widoku (pozycja i orientacja kamery)
+    QMatrix4x4 viewMatrix;          ///< Macierz widoku
 
-    /**
-     * @brief Buduje geometrię podłogi (kwadrat 1x1 jako dwa trójkąty).
-     *
-     * Wierzchołki zawierają pozycję (3 floaty) i normalną (3 floaty).
-     * Normalna skierowana w górę (0, 0, 1).
-     */
+    // Kamera orbitalna
+    float cameraDistance = 1.5f;            ///< Odległość kamery od środka planszy
+    float cameraAzimuth = -M_PI / 2.0f;     ///< Kąt obrotu kamery w poziomie [rad]
+    float cameraElevation = 1.0f;           ///< Kąt elewacji kamery [rad]
+
+    /** @brief Przelicza macierz widoku na podstawie parametrów kamery orbitalnej. */
+    void updateViewMatrix();
+
+    /** @brief Buduje geometrię podłogi (kwadrat 1x1). */
     void buildBoardGeometry();
 
-    /**
-     * @brief Buduje geometrię ścian labiryntu jako prostopadłościany.
-     *
-     * Każda ściana z listy logic->getWalls() jest renderowana jako
-     * prostopadłościan o 6 ścianach, każda z poprawną normalną
-     * do oświetlenia Phonga. Wywoływana ponownie przy zmianie labiryntu.
-     */
+    /** @brief Buduje geometrię ścian labiryntu jako prostopadłościany. */
     void buildWallsGeometry();
 
     /**
-     * @brief Buduje geometrię sfery jednostkowej (promień 1.0).
-     *
-     * Sfera jest skalowana macierzą modelu do rozmiaru kulki lub celu.
-     * Normalne wierzchołków równe znormalizowanym pozycjom (dla poprawnego oświetlenia).
-     *
-     * @param stacks - Liczba podziałów wzdłuż osi Z (równoleżników)
-     * @param slices - Liczba podziałów wokół osi Z (południków)
+     * @brief Buduje geometrię sfery jednostkowej.
+     * @param[in] stacks - Liczba podziałów wzdłuż osi Z
+     * @param[in] slices - Liczba podziałów wokół osi Z
      */
     void buildSphereGeometry(int stacks, int slices);
 
-    /**
-     * @brief Rysuje podłogę labiryntu z odwróceniem osi Y.
-     */
+    /** @brief Rysuje podłogę labiryntu. */
     void drawBoard();
-
-    /**
-     * @brief Rysuje ściany labiryntu jako prostopadłościany.
-     */
+    /** @brief Rysuje ściany labiryntu. */
     void drawWalls();
-
-    /**
-     * @brief Rysuje kulkę jako sferę w pozycji odczytanej z logiki gry.
-     */
+    /** @brief Rysuje kulkę jako sferę. */
     void drawBall();
-
-    /**
-     * @brief Rysuje pulsujący cel jako zieloną sferę.
-     */
+    /** @brief Rysuje pulsujący cel jako zieloną sferę. */
     void drawGoal();
 
-    int cachedWallCount = -1;   ///< Cache liczby ścian do detekcji zmian labiryntu
+    int cachedWallCount = -1;   ///< Cache liczby ścian do detekcji zmian
     bool glInitialized = false; ///< Flaga inicjalizacji kontekstu OpenGL
 
-    QLabel *winLabel = nullptr; ///< Overlay wyświetlający komunikat o wygranej
+    QLabel *winLabel = nullptr; ///< Overlay komunikatu wygranej
 
-    bool goLeft = false;    ///< Flaga naciśnięcia klawisza w lewo
-    bool goRight = false;   ///< Flaga naciśnięcia klawisza w prawo
-    bool goUp = false;      ///< Flaga naciśnięcia klawisza w górę
-    bool goDown = false;    ///< Flaga naciśnięcia klawisza w dół
+    bool goLeft = false;    ///< Flaga klawisza w lewo
+    bool goRight = false;   ///< Flaga klawisza w prawo
+    bool goUp = false;      ///< Flaga klawisza w górę
+    bool goDown = false;    ///< Flaga klawisza w dół
 
 private slots:
-    /**
-     * @brief Slot reagujący na aktualizację stanu gry.
-     *
-     * Przebudowuje geometrię ścian jeśli labirynt się zmienił,
-     * aktualizuje widoczność overlay wygranej i wywołuje przerysowanie.
-     */
+    /** @brief Slot reagujący na aktualizację stanu gry. */
     void onStateUpdated();
 };
 

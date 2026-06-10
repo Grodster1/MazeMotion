@@ -57,7 +57,7 @@ void main() {
 }
 )";
 
-//Konstruktor
+// ─── Konstruktor ────────────────────────────────────────────────────────
 GameWidget3D::GameWidget3D(GameLogic *logic, QWidget *parent)
     : QOpenGLWidget(parent), logic(logic),
     boardVBO(QOpenGLBuffer::VertexBuffer),
@@ -95,7 +95,7 @@ GameWidget3D::~GameWidget3D() {
     doneCurrent();
 }
 
-void GameWidget3D::retranslateUI(){
+void GameWidget3D::retranslateUI() {
     winLabel->setText(tr("Wygrana!"));
 }
 
@@ -112,7 +112,36 @@ void GameWidget3D::onStateUpdated() {
     update();
 }
 
-//Inicjalizacja OpenGL
+// ─── Kamera orbitalna ───────────────────────────────────────────────────
+void GameWidget3D::updateViewMatrix() {
+    float centerX = 0.5f;
+    float centerY = 0.5f;
+
+    float camX = centerX + cameraDistance * sin(cameraElevation) * cos(cameraAzimuth);
+    float camY = centerY + cameraDistance * sin(cameraElevation) * sin(cameraAzimuth);
+    float camZ = cameraDistance * cos(cameraElevation);
+
+    viewMatrix.setToIdentity();
+    viewMatrix.lookAt(
+        QVector3D(camX, camY, camZ),
+        QVector3D(centerX, centerY, 0.0f),
+        QVector3D(0.0f, 0.0f, 1.0f)
+        );
+}
+
+void GameWidget3D::setAzimuth(int value) {
+    cameraAzimuth = value * M_PI / 180.0f;
+    updateViewMatrix();
+    update();
+}
+
+void GameWidget3D::setElevation(int value) {
+    cameraElevation = value * M_PI / 180.0f;
+    updateViewMatrix();
+    update();
+}
+
+// ─── Inicjalizacja OpenGL ───────────────────────────────────────────────
 void GameWidget3D::initializeGL() {
     initializeOpenGLFunctions();
 
@@ -138,13 +167,9 @@ void GameWidget3D::initializeGL() {
     buildWallsGeometry();
     buildSphereGeometry(20, 20);
 
-    // Macierz widoku
-    viewMatrix.setToIdentity();
-    viewMatrix.lookAt(
-        QVector3D(0.5f, 0.3f, 1.5f),   // pozycja kamery
-        QVector3D(0.5f, 0.55f, 0.0f),  // punkt patrzenia
-        QVector3D(0.0f, 0.0f, 1.0f)    // wektor do góry
-        );
+    // Macierz widoku — kamera orbitalna
+    updateViewMatrix();
+
     glInitialized = true;
 }
 
@@ -154,11 +179,8 @@ void GameWidget3D::resizeGL(int w, int h) {
     projectionMatrix.perspective(45.0f, float(w) / float(h ? h : 1), 0.1f, 100.0f);
 }
 
-//Budowanie geometrii
-
+// ─── Budowanie geometrii ────────────────────────────────────────────────
 void GameWidget3D::buildBoardGeometry() {
-    // Podłoga: 2 trójkąty, każdy wierzchołek ma pozycję + normalną
-    // Normalna podłogi: (0, 0, 1) — skierowana do góry
     float vertices[] = {
         // pos                  // normal
         0.0f, 0.0f, 0.0f,     0.0f, 0.0f, 1.0f,
@@ -177,10 +199,8 @@ void GameWidget3D::buildBoardGeometry() {
     boardVBO.bind();
     boardVBO.allocate(vertices, sizeof(vertices));
 
-    // aPos
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), nullptr);
-    // aNormal
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
                           reinterpret_cast<void*>(3 * sizeof(float)));
@@ -191,19 +211,15 @@ void GameWidget3D::buildBoardGeometry() {
 void GameWidget3D::buildWallsGeometry() {
     const auto &walls = logic->getWalls();
     cachedWallCount = walls.size();
-    float wh = 0.06f; // wysokość ścian
+    float wh = 0.06f;
 
-    // Każda ściana = prostopadłościan = 6 ścian * 2 trójkąty * 3 wierzchołki = 36 wierzchołków
-    // Każdy wierzchołek: 3 pos + 3 normal = 6 floatów
     std::vector<float> vertices;
     vertices.reserve(walls.size() * 36 * 6);
 
     auto addQuad = [&](QVector3D p0, QVector3D p1, QVector3D p2, QVector3D p3, QVector3D n) {
-        // Trójkąt 1
         vertices.insert(vertices.end(), {p0.x(), p0.y(), p0.z(), n.x(), n.y(), n.z()});
         vertices.insert(vertices.end(), {p1.x(), p1.y(), p1.z(), n.x(), n.y(), n.z()});
         vertices.insert(vertices.end(), {p2.x(), p2.y(), p2.z(), n.x(), n.y(), n.z()});
-        // Trójkąt 2
         vertices.insert(vertices.end(), {p0.x(), p0.y(), p0.z(), n.x(), n.y(), n.z()});
         vertices.insert(vertices.end(), {p2.x(), p2.y(), p2.z(), n.x(), n.y(), n.z()});
         vertices.insert(vertices.end(), {p3.x(), p3.y(), p3.z(), n.x(), n.y(), n.z()});
@@ -215,17 +231,11 @@ void GameWidget3D::buildWallsGeometry() {
         float w = wall.width();
         float h = wall.height();
 
-        // Góra (Z = wh)
         addQuad({x,y,wh}, {x+w,y,wh}, {x+w,y+h,wh}, {x,y+h,wh}, {0,0,1});
-        // Dół (Z = 0)
         addQuad({x,y,0}, {x,y+h,0}, {x+w,y+h,0}, {x+w,y,0}, {0,0,-1});
-        // Przód (Y = y)
         addQuad({x,y,0}, {x+w,y,0}, {x+w,y,wh}, {x,y,wh}, {0,-1,0});
-        // Tył (Y = y+h)
         addQuad({x,y+h,0}, {x,y+h,wh}, {x+w,y+h,wh}, {x+w,y+h,0}, {0,1,0});
-        // Lewa (X = x)
         addQuad({x,y,0}, {x,y,wh}, {x,y+h,wh}, {x,y+h,0}, {-1,0,0});
-        // Prawa (X = x+w)
         addQuad({x+w,y,0}, {x+w,y+h,0}, {x+w,y+h,wh}, {x+w,y,wh}, {1,0,0});
     }
 
@@ -249,7 +259,6 @@ void GameWidget3D::buildWallsGeometry() {
 
 void GameWidget3D::buildSphereGeometry(int stacks, int slices) {
     std::vector<float> vertices;
-    float radius = 1.0f; // jednostkowa sfera, skalujemy macierzą model
 
     for (int i = 0; i < stacks; ++i) {
         float phi0 = M_PI * float(i) / stacks;
@@ -259,7 +268,6 @@ void GameWidget3D::buildSphereGeometry(int stacks, int slices) {
             float theta0 = 2.0f * M_PI * float(j) / slices;
             float theta1 = 2.0f * M_PI * float(j + 1) / slices;
 
-            // 4 punkty na sferze
             auto spherePoint = [](float phi, float theta) -> QVector3D {
                 return QVector3D(
                     sin(phi) * cos(theta),
@@ -273,15 +281,12 @@ void GameWidget3D::buildSphereGeometry(int stacks, int slices) {
             QVector3D p2 = spherePoint(phi1, theta1);
             QVector3D p3 = spherePoint(phi1, theta0);
 
-            // Normalne sfery = znormalizowane pozycje
             auto addVert = [&](QVector3D p) {
                 QVector3D n = p.normalized();
                 vertices.insert(vertices.end(), {p.x(), p.y(), p.z(), n.x(), n.y(), n.z()});
             };
 
-            // Trójkąt 1
             addVert(p0); addVert(p1); addVert(p2);
-            // Trójkąt 2
             addVert(p0); addVert(p2); addVert(p3);
         }
     }
@@ -304,8 +309,7 @@ void GameWidget3D::buildSphereGeometry(int stacks, int slices) {
     sphereVAO.release();
 }
 
-// Renderowanie
-
+// ─── Renderowanie ───────────────────────────────────────────────────────
 void GameWidget3D::paintGL() {
     QPainter painter(this);
     painter.beginNativePainting();
@@ -341,7 +345,6 @@ void GameWidget3D::paintGL() {
         painter.setPen(Qt::NoPen);
         painter.drawRect(0, 0, width(), height());
 
-        // Zielony napis
         painter.setPen(QColor(0, 220, 0));
         QFont font = painter.font();
         font.setPixelSize(height() * 0.08);
@@ -353,7 +356,6 @@ void GameWidget3D::paintGL() {
 
 void GameWidget3D::drawBoard() {
     QMatrix4x4 model;
-    // Odwróć Y: skaluj Y o -1 i przesuń o 1
     model.scale(1.0f, -1.0f, 1.0f);
     model.translate(0.0f, -1.0f, 0.0f);
 
@@ -415,8 +417,7 @@ void GameWidget3D::drawGoal() {
     sphereVAO.release();
 }
 
-//Klawiatura
-
+// ─── Klawiatura ─────────────────────────────────────────────────────────
 void GameWidget3D::keyPressEvent(QKeyEvent *event) {
     if (event->isAutoRepeat()) { event->ignore(); return; }
 

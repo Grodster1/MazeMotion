@@ -38,7 +38,7 @@ public:
      * Inicjalizuje dwa wykresy (akcelerometr i żyroskop) z osiami,
      * seriami danych i widokami. Układ pionowy (QVBoxLayout).
      *
-     * @param parent - Widget rodzica
+     * @param[in,out] parent - Widget rodzica
      */
     explicit ChartPanel(QWidget *parent = nullptr);
 
@@ -56,12 +56,12 @@ public slots:
      * Dopisuje nowe punkty do serii, usuwa najstarsze przy przekroczeniu
      * 200 próbek i przesuwa okno obserwacji osi X.
      *
-     * @param ax - Przyspieszenie liniowe w osi X [g]
-     * @param ay - Przyspieszenie liniowe w osi Y [g]
-     * @param az - Przyspieszenie liniowe w osi Z [g]
-     * @param gx - Prędkość kątowa w osi X [°/s]
-     * @param gy - Prędkość kątowa w osi Y [°/s]
-     * @param gz - Prędkość kątowa w osi Z [°/s]
+     * @param[in] ax - Przyspieszenie liniowe w osi X [g]
+     * @param[in] ay - Przyspieszenie liniowe w osi Y [g]
+     * @param[in] az - Przyspieszenie liniowe w osi Z [g]
+     * @param[in] gx - Prędkość kątowa w osi X [°/s]
+     * @param[in] gy - Prędkość kątowa w osi Y [°/s]
+     * @param[in] gz - Prędkość kątowa w osi Z [°/s]
      */
     void onSensorData(float ax, float ay, float az, float gx, float gy, float gz);
 };

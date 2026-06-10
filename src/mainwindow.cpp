@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QWidget>
 #include <QSplitter>
-#include <QLabel>
 #include <QHBoxLayout>
 #include <QSerialPortInfo>
 
@@ -15,15 +14,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     sensorReader = new SensorReader(this);
     chartPanel = new ChartPanel(this);
     gameWidget3D = new GameWidget3D(gameLogic, this);
-    //gameWidget3D->hide();
 
     QWidget *central = new QWidget(this);
     setCentralWidget(central);
 
-
     gameStack = new QStackedWidget(this);
-    gameStack->addWidget(gameWidget);    // index 0 = 2D
-    gameStack->addWidget(gameWidget3D);  // index 1 = 3D
+    gameStack->addWidget(gameWidget);
+    gameStack->addWidget(gameWidget3D);
     gameStack->setCurrentIndex(0);
     gameStack->setMinimumSize(400, 400);
     gameStack->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -33,13 +30,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     splitter->addWidget(chartPanel);
     splitter->setSizes({1000, 600});
 
-
     QHBoxLayout *layout = new QHBoxLayout(central);
     layout->addWidget(splitter);
 
+    // ─── Toolbar ────────────────────────────────────────────────────
     QToolBar *toolBar = addToolBar("Narzędzia");
+
     portCombo = new QComboBox();
-    for(const QSerialPortInfo &info : QSerialPortInfo::availablePorts()){
+    for (const QSerialPortInfo &info : QSerialPortInfo::availablePorts()) {
         portCombo->addItem(info.portName());
     }
 
@@ -48,11 +46,30 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     switchViewButton = new QPushButton(tr("3D"));
     langButton = new QPushButton(tr("English"));
 
-    toolBar->addWidget(langButton);
+    // Slidery kamery 3D
+    azLabel = new QLabel(tr("Obrót:"));
+    azimuthSlider = new QSlider(Qt::Horizontal);
+    azimuthSlider->setRange(0, 360);
+    azimuthSlider->setValue(270);
+    azimuthSlider->setFixedWidth(100);
+
+    elLabel = new QLabel(tr("Kąt:"));
+    elevationSlider = new QSlider(Qt::Horizontal);
+    elevationSlider->setRange(10, 80);
+    elevationSlider->setValue(50);
+    elevationSlider->setFixedWidth(100);
+
     toolBar->addWidget(switchViewButton);
     toolBar->addWidget(portCombo);
     toolBar->addWidget(connectButton);
     toolBar->addWidget(newMazeButton);
+    toolBar->addWidget(langButton);
+    toolBar->addSeparator();
+    toolBar->addWidget(azLabel);
+    toolBar->addWidget(azimuthSlider);
+    toolBar->addWidget(elLabel);
+    toolBar->addWidget(elevationSlider);
+
     toolBar->setMovable(false);
     toolBar->setStyleSheet(
         "QToolBar {"
@@ -90,9 +107,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         "   color: #c0c0c0;"
         "   font-weight: bold;"
         "}"
+        "QSlider::groove:horizontal {"
+        "   background: #555;"
+        "   height: 4px;"
+        "   border-radius: 2px;"
+        "}"
+        "QSlider::handle:horizontal {"
+        "   background: #e0e0e0;"
+        "   width: 12px;"
+        "   margin: -4px 0;"
+        "   border-radius: 6px;"
+        "}"
         );
 
-    // Dane z czujnika → logika gry (sterowanie) + wykresy
+    // ─── Connecty ───────────────────────────────────────────────────
     connect(sensorReader, &SensorReader::dataReceived,
             this, [this](float ax, float ay, float az, float gx, float gy, float gz) {
                 gameLogic->setSensorAcceleration(ax, ay);
@@ -102,17 +130,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(connectButton, &QPushButton::clicked, this, &MainWindow::onConnectClicked);
     connect(newMazeButton, &QPushButton::clicked, gameLogic, &GameLogic::resetMaze);
     connect(langButton, &QPushButton::clicked, this, &MainWindow::onSwitchLanguage);
-}
-
-void MainWindow::retranslateUI() {
-    connectButton->setText(connected ? tr("Rozłącz") : tr("Połącz"));
-    newMazeButton->setText(tr("Generuj labirynt"));
-    langButton->setText(isPolish ? tr("English") : tr("Polski"));
-    chartPanel->retranslateUI();
+    connect(azimuthSlider, &QSlider::valueChanged, gameWidget3D, &GameWidget3D::setAzimuth);
+    connect(elevationSlider, &QSlider::valueChanged, gameWidget3D, &GameWidget3D::setElevation);
 }
 
 void MainWindow::onConnectClicked() {
-    if(!connected) {
+    if (!connected) {
         sensorReader->open(portCombo->currentText());
         connectButton->setText(tr("Rozłącz"));
         connected = true;
@@ -122,15 +145,16 @@ void MainWindow::onConnectClicked() {
         connected = false;
     }
 }
+
 void MainWindow::onSwitchView() {
     if (gameStack->currentWidget() == gameWidget) {
         gameStack->setCurrentWidget(gameWidget3D);
         gameWidget3D->setFocus();
-        switchViewButton->setText("2D");
+        switchViewButton->setText(tr("2D"));
     } else {
         gameStack->setCurrentWidget(gameWidget);
         gameWidget->setFocus();
-        switchViewButton->setText("3D");
+        switchViewButton->setText(tr("3D"));
     }
 }
 
@@ -147,6 +171,16 @@ void MainWindow::onSwitchLanguage() {
         isPolish = true;
     }
     retranslateUI();
+}
+
+void MainWindow::retranslateUI() {
+    connectButton->setText(connected ? tr("Rozłącz") : tr("Połącz"));
+    newMazeButton->setText(tr("Generuj labirynt"));
+    langButton->setText(isPolish ? tr("English") : tr("Polski"));
+    azLabel->setText(tr("Obrót:"));
+    elLabel->setText(tr("Kąt:"));
+    chartPanel->retranslateUI();
+    gameWidget3D->retranslateUI();
 }
 
 MainWindow::~MainWindow()

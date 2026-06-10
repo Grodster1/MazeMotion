@@ -20,8 +20,8 @@ class GameWidget : public QWidget
 public:
     /**
      * @brief Konstruktor tworzący widget gry 2D.
-     * @param logic - Wskaźnik do współdzielonej logiki gry
-     * @param parent - Widget rodzica
+     * @param[in,out] logic - Wskaźnik do współdzielonej logiki gry
+     * @param[in,out] parent - Widget rodzica
      */
     explicit GameWidget(GameLogic *logic, QWidget *parent = nullptr);
 
@@ -33,19 +33,19 @@ public:
 protected:
     /**
      * @brief Rysuje scenę gry — planszę, ściany, cel i kulkę.
-     * @param event - Zdarzenie rysowania
+     * @param[in] event - Zdarzenie rysowania
      */
     void paintEvent(QPaintEvent *event) override;
 
     /**
      * @brief Obsługuje naciśnięcie klawisza strzałki.
-     * @param event - Zdarzenie klawiatury
+     * @param[in] event - Zdarzenie klawiatury
      */
     void keyPressEvent(QKeyEvent *event) override;
 
     /**
      * @brief Obsługuje zwolnienie klawisza strzałki.
-     * @param event - Zdarzenie klawiatury
+     * @param[in] event - Zdarzenie klawiatury
      */
     void keyReleaseEvent(QKeyEvent *event) override;
 

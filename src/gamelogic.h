@@ -20,9 +20,9 @@ class GameLogic : public QObject
 public:
     /**
      * @brief Konstruktor inicjalizujący logikę gry.
-     * @param rows - Liczba wierszy labiryntu
-     * @param cols - Liczba kolumn labiryntu
-     * @param parent - Obiekt rodzica
+     * @param[in] rows - Liczba wierszy labiryntu
+     * @param[in] cols - Liczba kolumn labiryntu
+     * @param[in,out] parent - Obiekt rodzica
      */
     explicit GameLogic(int rows, int cols, QObject *parent = nullptr);
 
@@ -40,15 +40,15 @@ public:
 
     /**
      * @brief Ustawia przyspieszenie kulki na podstawie danych z akcelerometru.
-     * @param ax - Przyspieszenie liniowe w osi X [g]
-     * @param ay - Przyspieszenie liniowe w osi Y [g]
+     * @param[in] ax - Przyspieszenie liniowe w osi X [g]
+     * @param[in] ay - Przyspieszenie liniowe w osi Y [g]
      */
     void setSensorAcceleration(float ax, float ay);
 
     /**
      * @brief Ustawia przyspieszenie kulki na podstawie klawiatury.
-     * @param dx - Kierunek w osi X (-1, 0, 1)
-     * @param dy - Kierunek w osi Y (-1, 0, 1)
+     * @param[in] dx - Kierunek w osi X (-1, 0, 1)
+     * @param[in] dy - Kierunek w osi Y (-1, 0, 1)
      */
     void setKeyboardAcceleration(double dx, double dy);
 
